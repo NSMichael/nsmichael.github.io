@@ -23,14 +23,14 @@
 1、大部分社交平台接口不支持https协议。
 问题描述：在iOS9下，系统默认会拦截对http协议接口的访问，因此无法获取http协议接口的数据。对ShareSDK来说，具体表现可能是，无法授权、分享、获取用户信息等。
 还可能造成我们的编辑界面里传http之类的网络图片的时候，我们的编辑界面不会显示图片截图，解决">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/48233-78b765315e490f5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/48233-53c3512991615182.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/48233-d8fa5a67d6db6789.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/48233-092d7ec225e27252.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/48233-266f955bf2e396b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/48233-8ae6702723d5e328.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/48233-d39104cc5f98a847.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-08-18T10:32:09.000Z">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/1.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/2.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/3.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/4.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/5.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/6.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/7.png">
+<meta property="og:updated_time" content="2016-08-24T02:47:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode6升级到Xcode7 适配问题">
 <meta name="twitter:description" content="@(Xcode)[升级|适配|Xcode7]
@@ -40,7 +40,7 @@
 1、大部分社交平台接口不支持https协议。
 问题描述：在iOS9下，系统默认会拦截对http协议接口的访问，因此无法获取http协议接口的数据。对ShareSDK来说，具体表现可能是，无法授权、分享、获取用户信息等。
 还可能造成我们的编辑界面里传http之类的网络图片的时候，我们的编辑界面不会显示图片截图，解决">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/48233-78b765315e490f5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://7xr98q.com1.z0.glb.clouddn.com/1.png">
   
     <link rel="alternate" href="/atom.xml" title="耿功发的博客" type="application/atom+xml">
   
@@ -122,8 +122,8 @@
 <p><strong>1、大部分社交平台接口不支持https协议。</strong></p>
 <p>问题描述：在iOS9下，系统默认会拦截对http协议接口的访问，因此无法获取http协议接口的数据。对ShareSDK来说，具体表现可能是，无法授权、分享、获取用户信息等。</p>
 <p>还可能造成我们的编辑界面里传http之类的网络图片的时候，我们的编辑界面不会显示图片截图，解决的办法或者全面关闭https,允许使用http请求；或者把图片的域添加；又或者选择使用https的图片</p>
-<p>解决方案：<br><strong>（1）暂时退回到http协议。</strong><br>具体方法：<br>在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。<br>然后给它添加一个Key：NSAllowsArbitraryLoads，类型为Boolean类型，值为YES；<br><img src="http://upload-images.jianshu.io/upload_images/48233-78b765315e490f5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="enter image description here"></p>
-<p><strong>2）设置域。可以简单理解成，把不支持https协议的接口设置成http的接口。</strong><br>具体方法：<br>1）、在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。<br>2）、然后给它添加一个NSExceptionDomains，类型为字典类型；<br>3）、把需要的支持的域添加給NSExceptionDomains。其中域作为Key，类型为字典类型。<br>4）、每个域下面需要设置3个属性：NSIncludesSubdomains、NSExceptionRequiresForwardSecrecy、NSExceptionAllowsInsecureHTTPLoads。<br>均为Boolean类型，值分别为YES、NO、YES。<br><img src="http://upload-images.jianshu.io/upload_images/48233-53c3512991615182.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="enter image description here"></p>
+<p>解决方案：<br><strong>（1）暂时退回到http协议。</strong><br>具体方法：<br>在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。<br>然后给它添加一个Key：NSAllowsArbitraryLoads，类型为Boolean类型，值为YES；<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/1.png" alt="enter image description here"></p>
+<p><strong>2）设置域。可以简单理解成，把不支持https协议的接口设置成http的接口。</strong><br>具体方法：<br>1）、在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。<br>2）、然后给它添加一个NSExceptionDomains，类型为字典类型；<br>3）、把需要的支持的域添加給NSExceptionDomains。其中域作为Key，类型为字典类型。<br>4）、每个域下面需要设置3个属性：NSIncludesSubdomains、NSExceptionRequiresForwardSecrecy、NSExceptionAllowsInsecureHTTPLoads。<br>均为Boolean类型，值分别为YES、NO、YES。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/2.png" alt="enter image description here"></p>
 <p>细节提示:在iOS9中如果使用到网络图片，也要注意网络图片是否是HTTP的哦，如果是，也要把图片的域设置哦！</p>
 <p>各平台设置域</p>
 <p><strong>新浪微博</strong><br>weibo.com<br>weibo.cn<br>sina.com.cn</p>
@@ -150,16 +150,16 @@
 <p><strong>Dropbox</strong><br>无需配置</p>
 <p><strong>Flickr</strong><br>无需配置</p>
 <p><strong>2、大部分社交平台SDK不支持bitcode。</strong><br>问题描述：iOS 9新建项目默认需要支持bitcode，而不支持bitcode的SDK会导致无法编译运行。</p>
-<p>解决方案：<br>（1）、暂时关闭对bitcode的支持（建议），方法如下图<br>（2）、移除不支持bitcode的平台SDK。<br><img src="http://upload-images.jianshu.io/upload_images/48233-d8fa5a67d6db6789.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="enter image description here"></p>
+<p>解决方案：<br>（1）、暂时关闭对bitcode的支持（建议），方法如下图<br>（2）、移除不支持bitcode的平台SDK。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/3.png" alt="enter image description here"></p>
 <p><strong>3、添加Scheme白名单。</strong></p>
 <p>问题描述：在iOS 9下涉及到平台客户端跳转，系统会自动到项目info.plist下检测是否设置平台Scheme。对于需要配置的平台，如果没有配置，就无法正常跳转平台客户端。因此要支持客户端的分享和授权等，需要配置Scheme名单。</p>
-<p>具体方法：<br>1）、在项目的info.plist中添加一LSApplicationQueriesSchemes，类型为Array。<br>2）、然后给它添加一个需要支持的项目，类型为字符串类型；<br><img src="http://upload-images.jianshu.io/upload_images/48233-092d7ec225e27252.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="enter image description here"></p>
+<p>具体方法：<br>1）、在项目的info.plist中添加一LSApplicationQueriesSchemes，类型为Array。<br>2）、然后给它添加一个需要支持的项目，类型为字符串类型；<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/4.png" alt="enter image description here"></p>
 <p>新浪微博<br>sinaweibo,<br>sinaweibohd,<br>sinaweibosso,<br>sinaweibohdsso,<br>weibosdk,<br>weibosdk2.5<br>[后两个若导入新浪SDK则需要]<br>腾讯微博<br>TencentWeibo,<br>tencentweiboSdkv2<br>[控制台会提示这两个,但是腾讯微博SDK已经弃用，可以忽略不配置]<br>豆瓣<br>无需配置<br>开心网<br>无需配置<br>微信<br>wechat,<br>weixin<br>易信<br>yixin,<br>yixinopenapi<br>支付宝<br>alipay,<br>alipayshare<br>QQ<br>mqqOpensdkSSoLogin,<br>mqqopensdkapiV2,<br>mqqopensdkapiV3,<br>wtloginmqq2,<br>mqq,<br>mqqapi<br>QZONE<br>mqzoneopensdk,<br>mqzoneopensdkapi,<br>mqzoneopensdkapi19,<br>mqzoneopensdkapiV2,<br>mqqOpensdkSSoLogin,<br>mqqopensdkapiV2,<br>mqqopensdkapiV3,<br>wtloginmqq2,<br>mqqapi,<br>mqqwpa，<br>mqzone，<br>mqq<br>[注:若同时使用QQ和QZONE,则直接添加本格即可]<br>Google+<br>googlechrome,<br>googlechrome-x-callback,<br>hasgplus4,<br>com.google.gppconsent,<br>com.google.gppconsent.2.2.0,<br>com.google.gppconsent.2.3.0,<br>com.google.gppconsent.2.4.0,<br>com.google.gppconsent.2.4.1<br>人人网<br>renrenapi,<br>renrenios,<br>renreniphone,<br>renren,<br>以及在使用人人SDK时所需配置的URL Scheme,例如:rm226427com.mob.demoShareSDK<br>Facebook<br>fbauth2<br>Twitter<br>无需配置<br>Pocket<br>pocket-oauth-v1<br>Pinterest<br>pinit<br>Instagram<br>instagram<br>WhatsApp<br>whatsapp<br>Line<br>line<br>KakaoTalk<br>kakaolink<br>KaokaoStory<br>storylink<br>LinkedIn<br>无需配置<br>Tumblr<br>无需配置<br>非平台类，如短信，复制，邮件等<br>无需配置</p>
 <p>必看注意:<br><strong>1.在iOS9中，如果没有添加上述白名单，系统会打印类似如下提示:</strong><br>.-canOpenURL: failed for URL: “sinaweibohdsso://xxx” – error: “This app is not allowed to query for scheme sinaweibohdsso”(如下图)<br>如没有添加相关白名单，有可能导致分享失败，例如不会跳转微信，不会跳转QQ等。</p>
 <p><strong>2.添加完上述所需的名单,系统依然会打印类似信息：</strong><br>.-canOpenURL: failed for URL: “sinaweibohdsso://xxx” – error: “null”<br>这是系统打印的信息，目前是无法阻止其打印，即无法消除的</p>
-<p><strong>3.上述白名单，是技术人员通过不断的测试收集整理所得，如果各位开发者朋友发现上表格有所遗漏，请根据系统信息添加相关白名单即可。</strong><br>如果没有设置白名单的话，系统的打印信息如图所示:<br><img src="http://upload-images.jianshu.io/upload_images/48233-266f955bf2e396b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="enter image description here"></p>
-<p>添加完后，系统是依然会打印的，不过error会变成null:<br><img src="http://upload-images.jianshu.io/upload_images/48233-8ae6702723d5e328.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="enter image description here"></p>
-<p><strong>4、其他：</strong><br>在iOS9下，新浪微博SDK里面使用的JSONKit在部分机型可能导致崩溃。崩溃信息如下图。<br>解决：暂时移除新浪微博SDK，等待新浪微博SDK的更新。<br>影响：移除新浪微博SDK后，除了依赖SDK实现的跳到客户端的分享和关注官网微博等失效。其他主要功能如分享、SSO、获取用户资料等不受影响。<br><img src="http://upload-images.jianshu.io/upload_images/48233-d39104cc5f98a847.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="enter image description here"></p>
+<p><strong>3.上述白名单，是技术人员通过不断的测试收集整理所得，如果各位开发者朋友发现上表格有所遗漏，请根据系统信息添加相关白名单即可。</strong><br>如果没有设置白名单的话，系统的打印信息如图所示:<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/5.png" alt="enter image description here"></p>
+<p>添加完后，系统是依然会打印的，不过error会变成null:<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/6.png" alt="enter image description here"></p>
+<p><strong>4、其他：</strong><br>在iOS9下，新浪微博SDK里面使用的JSONKit在部分机型可能导致崩溃。崩溃信息如下图。<br>解决：暂时移除新浪微博SDK，等待新浪微博SDK的更新。<br>影响：移除新浪微博SDK后，除了依赖SDK实现的跳到客户端的分享和关注官网微博等失效。其他主要功能如分享、SSO、获取用户资料等不受影响。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/7.png" alt="enter image description here"></p>
 <p><strong>5.关于lib库文件</strong></p>
 <p>Update your library with bit code, or you’ll get warnings like:</p>
 <p>(null): URGENT: all bitcode will be dropped because’/Users/myname/Library/MobileDocuments/com~apple~CloudDocs/foldername/appname/GoogleMobileAds.framework/GoogleMobileAds(GADSlot+AdEvents.o)’was built without bitcode. You must rebuild it with bitcode enabled(Xcode setting ENABLE_BITCODE), obtain an updated library from thevendor, or disable bitcode for this target. Note: This will be anerror in the future.</p>
@@ -168,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/10/Xcode6 update to Xcode7/" data-id="cis168jn60001w7s6fjs3jf27" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/10/Xcode6 update to Xcode7/" data-id="cis8awi9s0001wls6ccd52edw" class="article-share-link">Share</a>
       
       
     </footer>
