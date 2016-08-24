@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>NavigationBar底部分割线隐藏 | 耿功发的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="@(NavigationBar)[分割线|隐藏]
+
+原文首发简书地址：@耿功发的博客 
+
+问题描述有时我们需要实现如下场景，(1)在同一个界面中 显示与隐藏NavigationBar底部分割线(2)当离开这个ViewController的时候，仍然需要显示底部分割线。效果图如下所示：
+
+定义变量1UIImageView *navBarHairlineImageView;
+创建findHairlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NavigationBar底部分割线隐藏">
+<meta property="og:url" content="http://yoursite.com/2016/08/24/NavigationBar bottom separator/index.html">
+<meta property="og:site_name" content="耿功发的博客">
+<meta property="og:description" content="@(NavigationBar)[分割线|隐藏]
+
+原文首发简书地址：@耿功发的博客 
+
+问题描述有时我们需要实现如下场景，(1)在同一个界面中 显示与隐藏NavigationBar底部分割线(2)当离开这个ViewController的时候，仍然需要显示底部分割线。效果图如下所示：
+
+定义变量1UIImageView *navBarHairlineImageView;
+创建findHairlin">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/9.jpg">
+<meta property="og:updated_time" content="2016-08-24T03:19:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NavigationBar底部分割线隐藏">
+<meta name="twitter:description" content="@(NavigationBar)[分割线|隐藏]
+
+原文首发简书地址：@耿功发的博客 
+
+问题描述有时我们需要实现如下场景，(1)在同一个界面中 显示与隐藏NavigationBar底部分割线(2)当离开这个ViewController的时候，仍然需要显示底部分割线。效果图如下所示：
+
+定义变量1UIImageView *navBarHairlineImageView;
+创建findHairlin">
+<meta name="twitter:image" content="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="耿功发的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">耿功发的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">iOS Developer</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-NavigationBar bottom separator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/24/NavigationBar bottom separator/" class="article-date">
+  <time datetime="2016-08-24T03:18:30.000Z" itemprop="datePublished">2016-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NavigationBar底部分割线隐藏
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@(NavigationBar)[分割线|隐藏]</p>
+<blockquote>
+<p>原文首发简书地址：<a href="http://www.jianshu.com/p/5fffa30d7210" target="_blank" rel="external">@耿功发的博客 </a></p>
+</blockquote>
+<p><strong>问题描述</strong><br>有时我们需要实现如下场景，<br>(1)在同一个界面中 显示与隐藏NavigationBar底部分割线<br>(2)当离开这个ViewController的时候，仍然需要显示底部分割线。<br>效果图如下所示：<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg" alt="pic1"></p>
+<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/9.jpg" alt="pic2"></p>
+<h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIImageView *navBarHairlineImageView;</div></pre></td></tr></table></figure>
+<h4 id="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"><a href="#创建findHairlineImageViewUnder方法，并在viewDidLoad中调用" class="headerlink" title="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"></a>创建findHairlineImageViewUnder方法，并在viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (UIImageView *)findHairlineImageViewUnder:(UIView*)view &#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>([view isKindOfClass:UIImageView.<span class="keyword">class</span>] &amp;&amp; view.bounds.size.height&lt;=<span class="number">1.0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> (UIImageView*)view;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(UIView *subview <span class="keyword">in</span> view.subviews) &#123;</div><div class="line">        UIImageView *imageView = [self findHairlineImageViewUnder:subview];</div><div class="line">        <span class="keyword">if</span>(imageView) &#123;</div><div class="line">            <span class="keyword">return</span> imageView;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">   <span class="keyword">return</span> nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="viewDidLoad中调用"><a href="#viewDidLoad中调用" class="headerlink" title="viewDidLoad中调用"></a>viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];</div></pre></td></tr></table></figure>
+<h4 id="在viewWillAppear方法中隐藏该分割线"><a href="#在viewWillAppear方法中隐藏该分割线" class="headerlink" title="在viewWillAppear方法中隐藏该分割线"></a>在viewWillAppear方法中隐藏该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=YES;</div></pre></td></tr></table></figure>
+<h4 id="在viewWillDisappear方法中显示该分割线"><a href="#在viewWillDisappear方法中显示该分割线" class="headerlink" title="在viewWillDisappear方法中显示该分割线"></a>在viewWillDisappear方法中显示该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=NO;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/24/NavigationBar bottom separator/" data-id="cis8c0r2p0001c8s6zrvh0d6g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/10/Xcode6 update to Xcode7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Xcode6升级到Xcode7 适配问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/24/NavigationBar bottom separator/">NavigationBar底部分割线隐藏</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/10/Xcode6 update to Xcode7/">Xcode6升级到Xcode7 适配问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/10/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 耿功发<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
