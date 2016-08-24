@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS使用Jenkins+Xcode+fir 搭建持续集成环境 | 耿功发的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="@(持续集成)[Jenkins|fir]
+
+原文首发简书地址：@耿功发的博客 
+
+前言今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。如有问题欢迎留言评论！！！
+第一步：安装Jenkins★方法一：直接去官网下载安装包
+&amp;gt; 下载地址：http://jenkins-ci.org/
+下载后直接点击进入安装安装完成后在Terminal中输入命令：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS使用Jenkins+Xcode+fir 搭建持续集成环境">
+<meta property="og:url" content="http://yoursite.com/2016/08/24/Jenkins+Xcode+fir/index.html">
+<meta property="og:site_name" content="耿功发的博客">
+<meta property="og:description" content="@(持续集成)[Jenkins|fir]
+
+原文首发简书地址：@耿功发的博客 
+
+前言今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。如有问题欢迎留言评论！！！
+第一步：安装Jenkins★方法一：直接去官网下载安装包
+&amp;gt; 下载地址：http://jenkins-ci.org/
+下载后直接点击进入安装安装完成后在Terminal中输入命令：">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/10.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/11.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/12.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/13.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/14.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/15.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/16.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/17.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/18.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/19.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/20.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/21.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/22.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/23.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/24.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/25.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/26.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/27.jpg">
+<meta property="og:updated_time" content="2016-08-24T06:43:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS使用Jenkins+Xcode+fir 搭建持续集成环境">
+<meta name="twitter:description" content="@(持续集成)[Jenkins|fir]
+
+原文首发简书地址：@耿功发的博客 
+
+前言今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。如有问题欢迎留言评论！！！
+第一步：安装Jenkins★方法一：直接去官网下载安装包
+&amp;gt; 下载地址：http://jenkins-ci.org/
+下载后直接点击进入安装安装完成后在Terminal中输入命令：">
+<meta name="twitter:image" content="http://7xr98q.com1.z0.glb.clouddn.com/10.png">
+  
+    <link rel="alternate" href="/atom.xml" title="耿功发的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">耿功发的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">iOS Developer</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Jenkins+Xcode+fir" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/24/Jenkins+Xcode+fir/" class="article-date">
+  <time datetime="2016-08-24T03:25:24.000Z" itemprop="datePublished">2016-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS使用Jenkins+Xcode+fir 搭建持续集成环境
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@(持续集成)[Jenkins|fir]</p>
+<blockquote>
+<p>原文首发简书地址：<a href="http://www.jianshu.com/p/13e34671788f" target="_blank" rel="external">@耿功发的博客 </a></p>
+</blockquote>
+<p><strong>前言</strong><br>今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。<br>如有问题欢迎留言评论！！！</p>
+<h3 id="第一步：安装Jenkins"><a href="#第一步：安装Jenkins" class="headerlink" title="第一步：安装Jenkins"></a>第一步：安装Jenkins</h3><p>★方法一：直接去官网下载安装包</p>
+<pre><code>&gt; 下载地址：http://jenkins-ci.org/
+</code></pre><p>下载后直接点击进入安装<img src="http://7xr98q.com1.z0.glb.clouddn.com/10.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/11.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/12.png" alt="enter image description here"><br>安装完成后在Terminal中输入命令：</p>
+<pre><code>&gt; open /Applications/Jenkins/jenkins.war
+</code></pre><p>打开Jenkins</p>
+<p>★方法二：使用命令行安装<br>安装 home-brew（<a href="http://blog.csdn.net/crazyzhang1990/article/details/46007939" target="_blank" rel="external">安装指导</a>）</p>
+<pre><code>&gt; ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre><p>安装 Jenkins</p>
+<pre><code>&gt; $ brew install jenkins
+</code></pre><p>启动 Jenkins</p>
+<pre><code>&gt; $ jenkins
+</code></pre><p>在浏览器输入地址:</p>
+<blockquote>
+<p><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></p>
+</blockquote>
+<p>使用安装包安装后会自动打开，如果端口冲突那么请修改端口</p>
+<pre><code>&gt; defaults write/Library/Preferences/org.jenkins-ci httpPort xxxx
+</code></pre><p>注意：xxxx为你要修改的端口号</p>
+<h3 id="第二步：启动Jenkins后使用浏览器访问Jenkins"><a href="#第二步：启动Jenkins后使用浏览器访问Jenkins" class="headerlink" title="第二步：启动Jenkins后使用浏览器访问Jenkins"></a>第二步：启动Jenkins后使用浏览器访问Jenkins</h3><blockquote>
+<p><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></p>
+</blockquote>
+<p>访问成功后显示如下<img src="http://7xr98q.com1.z0.glb.clouddn.com/13.png" alt="enter image description here"></p>
+<h3 id="第三步：安装插件"><a href="#第三步：安装插件" class="headerlink" title="第三步：安装插件"></a>第三步：安装插件</h3><h5 id="在系统管理-gt-插件管理中添加如下四个插件"><a href="#在系统管理-gt-插件管理中添加如下四个插件" class="headerlink" title="在系统管理 -&gt; 插件管理中添加如下四个插件"></a>在系统管理 -&gt; 插件管理中添加如下四个插件</h5><ul>
+<li>Xcode integration</li>
+<li>GIT plugin</li>
+<li>Post-Build Script Plug-in</li>
+<li>GitHub plugin</li>
+</ul>
+<p>左边菜单栏找到插件管理<img src="http://7xr98q.com1.z0.glb.clouddn.com/14.png" alt="enter image description here"></p>
+<h3 id="第四步：新建项目"><a href="#第四步：新建项目" class="headerlink" title="第四步：新建项目"></a>第四步：新建项目</h3><h5 id="（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”"><a href="#（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”" class="headerlink" title="（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”"></a>（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”<img src="http://7xr98q.com1.z0.glb.clouddn.com/15.png" alt="enter image description here"></h5><h5 id="（2）基本信息"><a href="#（2）基本信息" class="headerlink" title="（2）基本信息"></a>（2）基本信息<img src="http://7xr98q.com1.z0.glb.clouddn.com/16.png" alt="enter image description here"></h5><h5 id="（3）源码管理信息"><a href="#（3）源码管理信息" class="headerlink" title="（3）源码管理信息"></a>（3）源码管理信息</h5><p>如果你是用的是Git，那就请选择Git,然后输入你的仓库地址</p>
+<pre><code>&gt; 我这里的仓库地址是公司项目。
+</code></pre><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/17.jpg" alt="enter image description here"></p>
+<h5 id="（4）自动构建时机"><a href="#（4）自动构建时机" class="headerlink" title="（4）自动构建时机"></a>（4）自动构建时机</h5><p>这里就是告诉jenkins什么时候自动构建,这里我同时设置了每周一到周五在每天的8点到9点之间执行一次,当然也可以不设置。<img src="http://7xr98q.com1.z0.glb.clouddn.com/18.png" alt="enter image description here"></p>
+<h5 id="（5）构建"><a href="#（5）构建" class="headerlink" title="（5）构建"></a>（5）构建</h5><p>添加构建步骤 -&gt; Xcode基本信息</p>
+<ul>
+<li>这里Target请于Xcode项目中Target的名字对应</li>
+<li>Clean before build设置为YES</li>
+<li>Configuration我选择了Release（在Release的时候Archive）</li>
+<li>.ipa filename pattern 随便起个.ipa的名字</li>
+<li>Output directory为.ipa的输出路径，我这里设置为 ${WORKSPACE}/build/<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/19.jpg" alt="enter image description here"><br>添加构建步骤 -&gt; Xcode证书信息</li>
+</ul>
+<p>我这里是在上传至Git的项目里已经配置过证书和Provisioning Profiles。</p>
+<ul>
+<li><p>打开Unlock Keychain</p>
+</li>
+<li><p>Keychain path 设置为 ${HOME}/Library/Keychains/login.keychain</p>
+</li>
+<li><p>Keychain password 为你钥匙串的密码<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/20.png" alt="enter image description here"></p>
+<h4 id="login-keychain的路径在哪？"><a href="#login-keychain的路径在哪？" class="headerlink" title="login.keychain的路径在哪？"></a>login.keychain的路径在哪？</h4><blockquote>
+<p>点击”系统管理”中的”系统设置”，Xcode Build中的Keychains<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/21.png" alt="enter image description here"><br>注意！注意！注意！<br>如果项目使用了cocoapods,需要配置Advanced Xcode build options,设置</p>
+</blockquote>
+</li>
+<li><p>1 Schema</p>
+</li>
+<li><p>2 SDK iphoneos</p>
+</li>
+<li><p>3 Workspace File(不用加.xcworkspace)</p>
+</li>
+<li><p>4 Build output directory 也设为${WORKSPACE}/build/<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/22.jpg" alt="enter image description here"></p>
+<h5 id="（6）构建后操作"><a href="#（6）构建后操作" class="headerlink" title="（6）构建后操作"></a>（6）构建后操作</h5><p>添加构建后操作步骤</p>
+</li>
+</ul>
+<p>1.你可以选择上传到fir<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/23.jpg" alt="enter image description here"><br>2.你也可以选择命令行</p>
+<ul>
+<li>Execute a set of scripts</li>
+<li>Add build step</li>
+<li>Execute shell</li>
+<li><p>在Commas中输入</p>
+<blockquote>
+<p>fir p${WORKSPACE}/build/TestJenkins.ipa -T#API Token#</p>
+</blockquote>
+</li>
+</ul>
+<p>其中${WORKSPACE}/build/为4.5中.ipa的输出路径，#API Token#为fir.im的API Token。新版fir.im获取方式见下面。</p>
+<p>请注意，在使用该命令前请先确认安装fir-cli，安装命令如下。</p>
+<pre><code>&gt; sudo gem install fir-cli --no-ri --no-rdoc
+</code></pre><p>上面的命令来自 fir.im 的工具 fir-cli，这是他们的官方使用说明<a href="https://github.com/FIRHQ/fir-cli/blob/master/README.md" target="_blank" rel="external">官方工具 fir-cli 使用说明</a><br><img src="http://7xr98q.com1.z0.glb.clouddn.com/24.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/25.png" alt="enter image description here"><br>完成，点击保存。</p>
+<h5 id="（7）点击立即构建"><a href="#（7）点击立即构建" class="headerlink" title="（7）点击立即构建"></a>（7）点击立即构建</h5><pre><code>&gt; 构建成功标志位置为蓝色，失败为红色。
+</code></pre><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/26.jpg" alt="enter image description here"></p>
+<h3 id="上传应用到-fir-im"><a href="#上传应用到-fir-im" class="headerlink" title="上传应用到 fir.im"></a>上传应用到 fir.im</h3><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/27.jpg" alt="enter image description here"></p>
+<pre><code>&gt; 最后：如有问题请给我发邮件：genggongfa@163.com
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/24/Jenkins+Xcode+fir/" data-id="cis8c863m0000cgs606n38kjk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/24/NavigationBar bottom separator/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">NavigationBar底部分割线隐藏</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/24/Jenkins+Xcode+fir/">iOS使用Jenkins+Xcode+fir 搭建持续集成环境</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/NavigationBar bottom separator/">NavigationBar底部分割线隐藏</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/10/Xcode6 update to Xcode7/">Xcode6升级到Xcode7 适配问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/10/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 耿功发<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
