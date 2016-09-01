@@ -6,22 +6,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="耿功发的博客">
-    <title>耿功发的博客</title>
+    <title>iOS使用Jenkins+Xcode+fir 搭建持续集成环境 - 耿功发的博客</title>
     <meta name="author" content="耿功发">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="明日复明日、明日何其多">
+    <meta name="description" content="原文首发简书地址：@耿功发的博客 
+
+前言今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。如有问题欢迎留言评论！！！
+第一步：安装Jenkins★方法一：直接去官网下载安装包
+&amp;gt; 下载地址：http://jenkins-ci.org/
+下载后直接点击进入安装安装完成后在Terminal中输入命令：
+&amp;gt; open /Applicatio">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="耿功发的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:title" content="iOS使用Jenkins+Xcode+fir 搭建持续集成环境">
+<meta property="og:url" content="http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/index.html">
 <meta property="og:site_name" content="耿功发的博客">
-<meta property="og:description" content="明日复明日、明日何其多">
+<meta property="og:description" content="原文首发简书地址：@耿功发的博客 
+
+前言今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。如有问题欢迎留言评论！！！
+第一步：安装Jenkins★方法一：直接去官网下载安装包
+&amp;gt; 下载地址：http://jenkins-ci.org/
+下载后直接点击进入安装安装完成后在Terminal中输入命令：
+&amp;gt; open /Applicatio">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/10.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/11.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/12.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/13.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/14.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/15.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/16.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/17.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/18.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/19.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/20.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/21.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/22.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/23.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/24.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/25.png">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/26.jpg">
+<meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/27.jpg">
+<meta property="og:updated_time" content="2016-09-01T10:37:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="耿功发的博客">
-<meta name="twitter:description" content="明日复明日、明日何其多">
+<meta name="twitter:title" content="iOS使用Jenkins+Xcode+fir 搭建持续集成环境">
+<meta name="twitter:description" content="原文首发简书地址：@耿功发的博客 
+
+前言今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。如有问题欢迎留言评论！！！
+第一步：安装Jenkins★方法一：直接去官网下载安装包
+&amp;gt; 下载地址：http://jenkins-ci.org/
+下载后直接点击进入安装安装完成后在Terminal中输入命令：
+&amp;gt; open /Applicatio">
+<meta name="twitter:image" content="http://7xr98q.com1.z0.glb.clouddn.com/10.png">
     
     
         
@@ -50,7 +88,7 @@
         
     
 
-<header id="header" data-behavior="2">
+<header id="header" data-behavior="5">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">耿功发的博客</a>
@@ -74,7 +112,7 @@
         
     
 
-<nav id="sidebar" data-behavior="2">
+<nav id="sidebar" data-behavior="5">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -182,25 +220,21 @@
 </nav>
 
             
-            <div id="main" data-behavior="2"
+            <div id="main" data-behavior="5"
                  class="
                         hasCoverMetaIn
                         ">
-                <section class="postShorten-group main-content-wrap">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/02/03/Jenkins+Xcode+fir/">
-                            iOS使用Jenkins+Xcode+fir 搭建持续集成环境
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            iOS使用Jenkins+Xcode+fir 搭建持续集成环境
+        </h1>
+    
+    <div class="post-meta">
     <time itemprop="datePublished" datetime="2016-02-03T11:29:30+08:00">
 	
 		    2月 03, 2016
@@ -215,10 +249,11 @@
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <blockquote>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <blockquote>
 <p>原文首发简书地址：<a href="http://www.jianshu.com/p/13e34671788f" target="_blank" rel="external">@耿功发的博客 </a></p>
 </blockquote>
 <p><strong>前言</strong><br>今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。<br>如有问题欢迎留言评论！！！</p>
@@ -304,184 +339,78 @@
 <h3 id="上传应用到-fir-im"><a href="#上传应用到-fir-im" class="headerlink" title="上传应用到 fir.im"></a>上传应用到 fir.im</h3><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/27.jpg" alt="enter image description here"></p>
 <pre><code>&gt; 最后：如有问题请给我发邮件：genggongfa@163.com
 </code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2016/02/03/Jenkins+Xcode+fir/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2015/11/24/NavigationBar bottom separator/">
-                            NavigationBar底部分割线隐藏
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2015-11-24T23:21:30+08:00">
-	
-		    11月 24, 2015
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/用户界面/">用户界面</a>
-
-
-    
-</div>
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/持续集成/">持续集成</a>
 
             </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>@(NavigationBar)[分割线|隐藏]</p>
-<blockquote>
-<p>原文首发简书地址：<a href="http://www.jianshu.com/p/5fffa30d7210" target="_blank" rel="external">@耿功发的博客 </a></p>
-</blockquote>
-<p><strong>问题描述</strong><br>有时我们需要实现如下场景，<br>(1)在同一个界面中 显示与隐藏NavigationBar底部分割线<br>(2)当离开这个ViewController的时候，仍然需要显示底部分割线。<br>效果图如下所示：<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg" alt="pic1"></p>
-<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/9.jpg" alt="pic2"></p>
-<h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIImageView *navBarHairlineImageView;</div></pre></td></tr></table></figure>
-<h4 id="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"><a href="#创建findHairlineImageViewUnder方法，并在viewDidLoad中调用" class="headerlink" title="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"></a>创建findHairlineImageViewUnder方法，并在viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (UIImageView *)findHairlineImageViewUnder:(UIView*)view &#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>([view isKindOfClass:UIImageView.<span class="keyword">class</span>] &amp;&amp; view.bounds.size.height&lt;=<span class="number">1.0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> (UIImageView*)view;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(UIView *subview <span class="keyword">in</span> view.subviews) &#123;</div><div class="line">        UIImageView *imageView = [self findHairlineImageViewUnder:subview];</div><div class="line">        <span class="keyword">if</span>(imageView) &#123;</div><div class="line">            <span class="keyword">return</span> imageView;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">   <span class="keyword">return</span> nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="viewDidLoad中调用"><a href="#viewDidLoad中调用" class="headerlink" title="viewDidLoad中调用"></a>viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];</div></pre></td></tr></table></figure>
-<h4 id="在viewWillAppear方法中隐藏该分割线"><a href="#在viewWillAppear方法中隐藏该分割线" class="headerlink" title="在viewWillAppear方法中隐藏该分割线"></a>在viewWillAppear方法中隐藏该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=YES;</div></pre></td></tr></table></figure>
-<h4 id="在viewWillDisappear方法中显示该分割线"><a href="#在viewWillDisappear方法中显示该分割线" class="headerlink" title="在viewWillDisappear方法中显示该分割线"></a>在viewWillDisappear方法中显示该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=NO;</div></pre></td></tr></table></figure>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2015/11/24/NavigationBar bottom separator/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/24/NavigationBar bottom separator/" data-tooltip="NavigationBar底部分割线隐藏">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
             
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2015/09/21/Xcode6 update to Xcode7/">
-                            Xcode6升级到Xcode7 适配问题
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2015-09-21T18:37:30+08:00">
-	
-		    9月 21, 2015
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/适配/">适配</a>
-
-
-    
-</div>
-
-            </div>
+                <a class="post-action-btn btn btn--default" href="#">
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>@(Xcode)[升级|适配|Xcode7]</p>
-<blockquote>
-<p>原文首发简书地址：<a href="http://www.jianshu.com/p/e66927954c96" target="_blank" rel="external">@耿功发的博客 </a></p>
-</blockquote>
-<p><strong>1、大部分社交平台接口不支持https协议。</strong></p>
-<p>问题描述：在iOS9下，系统默认会拦截对http协议接口的访问，因此无法获取http协议接口的数据。对ShareSDK来说，具体表现可能是，无法授权、分享、获取用户信息等。</p>
-<p>还可能造成我们的编辑界面里传http之类的网络图片的时候，我们的编辑界面不会显示图片截图，解决的办法或者全面关闭https,允许使用http请求；或者把图片的域添加；又或者选择使用https的图片</p>
-<p>解决方案：<br><strong>（1）暂时退回到http协议。</strong><br>具体方法：<br>在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。<br>然后给它添加一个Key：NSAllowsArbitraryLoads，类型为Boolean类型，值为YES；<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/1.png" alt="enter image description here"></p>
-<p><strong>2）设置域。可以简单理解成，把不支持https协议的接口设置成http的接口。</strong><br>具体方法：<br>1）、在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。<br>2）、然后给它添加一个NSExceptionDomains，类型为字典类型；<br>3）、把需要的支持的域添加給NSExceptionDomains。其中域作为Key，类型为字典类型。<br>4）、每个域下面需要设置3个属性：NSIncludesSubdomains、NSExceptionRequiresForwardSecrecy、NSExceptionAllowsInsecureHTTPLoads。<br>均为Boolean类型，值分别为YES、NO、YES。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/2.png" alt="enter image description here"></p>
-<p>细节提示:在iOS9中如果使用到网络图片，也要注意网络图片是否是HTTP的哦，如果是，也要把图片的域设置哦！</p>
-<p>各平台设置域</p>
-<p><strong>新浪微博</strong><br>weibo.com<br>weibo.cn<br>sina.com.cn</p>
-<p><strong>腾讯微博</strong><br>qq.com</p>
-<p><strong>微信</strong><br>qq.com<br>QQ/QZone<br>qq.com</p>
-<p><strong>易信</strong><br>无需配置</p>
-<p><strong>豆瓣</strong><br>无需配置</p>
-<p><strong>人人</strong><br>renren.com</p>
-<p><strong>开心网</strong><br>kaixin001.com<br>kaixin001.com.cn</p>
-<p><strong>有道</strong><br>youdao.com</p>
-<p><strong>Facebook</strong><br>facebook.com</p>
-<p><strong>fbcdn.net</strong><br>akamaihd.net</p>
-<p><strong>Twitter</strong><br>twitter.com</p>
-<p><strong>Google+</strong><br>无需配置</p>
-<p><strong>Instagram</strong><br>instagram.com<br>instagramstatic-a.akamaihd.net</p>
-<p><strong>Tumblr</strong><br>tumblr.com</p>
-<p><strong>Instapaper</strong><br>instapaper.com</p>
-<p><strong>Pinterest</strong><br>无需配置</p>
-<p><strong>明道</strong><br>无需配置</p>
-<p><strong>Evernote印象笔记</strong><br>无需配置</p>
-<p><strong>VK</strong><br>无需配置</p>
-<p><strong>pocket</strong><br>无需配置</p>
-<p><strong>LinkedIn</strong><br>无需配置</p>
-<p><strong>Dropbox</strong><br>无需配置</p>
-<p><strong>Flickr</strong><br>无需配置</p>
-<p><strong>2、大部分社交平台SDK不支持bitcode。</strong><br>问题描述：iOS 9新建项目默认需要支持bitcode，而不支持bitcode的SDK会导致无法编译运行。</p>
-<p>解决方案：<br>（1）、暂时关闭对bitcode的支持（建议），方法如下图<br>（2）、移除不支持bitcode的平台SDK。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/3.png" alt="enter image description here"></p>
-<p><strong>3、添加Scheme白名单。</strong></p>
-<p>问题描述：在iOS 9下涉及到平台客户端跳转，系统会自动到项目info.plist下检测是否设置平台Scheme。对于需要配置的平台，如果没有配置，就无法正常跳转平台客户端。因此要支持客户端的分享和授权等，需要配置Scheme名单。</p>
-<p>具体方法：<br>1）、在项目的info.plist中添加一LSApplicationQueriesSchemes，类型为Array。<br>2）、然后给它添加一个需要支持的项目，类型为字符串类型；<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/4.png" alt="enter image description here"></p>
-<p>新浪微博<br>sinaweibo,<br>sinaweibohd,<br>sinaweibosso,<br>sinaweibohdsso,<br>weibosdk,<br>weibosdk2.5<br>[后两个若导入新浪SDK则需要]<br>腾讯微博<br>TencentWeibo,<br>tencentweiboSdkv2<br>[控制台会提示这两个,但是腾讯微博SDK已经弃用，可以忽略不配置]<br>豆瓣<br>无需配置<br>开心网<br>无需配置<br>微信<br>wechat,<br>weixin<br>易信<br>yixin,<br>yixinopenapi<br>支付宝<br>alipay,<br>alipayshare<br>QQ<br>mqqOpensdkSSoLogin,<br>mqqopensdkapiV2,<br>mqqopensdkapiV3,<br>wtloginmqq2,<br>mqq,<br>mqqapi<br>QZONE<br>mqzoneopensdk,<br>mqzoneopensdkapi,<br>mqzoneopensdkapi19,<br>mqzoneopensdkapiV2,<br>mqqOpensdkSSoLogin,<br>mqqopensdkapiV2,<br>mqqopensdkapiV3,<br>wtloginmqq2,<br>mqqapi,<br>mqqwpa，<br>mqzone，<br>mqq<br>[注:若同时使用QQ和QZONE,则直接添加本格即可]<br>Google+<br>googlechrome,<br>googlechrome-x-callback,<br>hasgplus4,<br>com.google.gppconsent,<br>com.google.gppconsent.2.2.0,<br>com.google.gppconsent.2.3.0,<br>com.google.gppconsent.2.4.0,<br>com.google.gppconsent.2.4.1<br>人人网<br>renrenapi,<br>renrenios,<br>renreniphone,<br>renren,<br>以及在使用人人SDK时所需配置的URL Scheme,例如:rm226427com.mob.demoShareSDK<br>Facebook<br>fbauth2<br>Twitter<br>无需配置<br>Pocket<br>pocket-oauth-v1<br>Pinterest<br>pinit<br>Instagram<br>instagram<br>WhatsApp<br>whatsapp<br>Line<br>line<br>KakaoTalk<br>kakaolink<br>KaokaoStory<br>storylink<br>LinkedIn<br>无需配置<br>Tumblr<br>无需配置<br>非平台类，如短信，复制，邮件等<br>无需配置</p>
-<p>必看注意:<br><strong>1.在iOS9中，如果没有添加上述白名单，系统会打印类似如下提示:</strong><br>.-canOpenURL: failed for URL: “sinaweibohdsso://xxx” – error: “This app is not allowed to query for scheme sinaweibohdsso”(如下图)<br>如没有添加相关白名单，有可能导致分享失败，例如不会跳转微信，不会跳转QQ等。</p>
-<p><strong>2.添加完上述所需的名单,系统依然会打印类似信息：</strong><br>.-canOpenURL: failed for URL: “sinaweibohdsso://xxx” – error: “null”<br>这是系统打印的信息，目前是无法阻止其打印，即无法消除的</p>
-<p><strong>3.上述白名单，是技术人员通过不断的测试收集整理所得，如果各位开发者朋友发现上表格有所遗漏，请根据系统信息添加相关白名单即可。</strong><br>如果没有设置白名单的话，系统的打印信息如图所示:<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/5.png" alt="enter image description here"></p>
-<p>添加完后，系统是依然会打印的，不过error会变成null:<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/6.png" alt="enter image description here"></p>
-<p><strong>4、其他：</strong><br>在iOS9下，新浪微博SDK里面使用的JSONKit在部分机型可能导致崩溃。崩溃信息如下图。<br>解决：暂时移除新浪微博SDK，等待新浪微博SDK的更新。<br>影响：移除新浪微博SDK后，除了依赖SDK实现的跳到客户端的分享和关注官网微博等失效。其他主要功能如分享、SSO、获取用户资料等不受影响。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/7.png" alt="enter image description here"></p>
-<p><strong>5.关于lib库文件</strong></p>
-<p>Update your library with bit code, or you’ll get warnings like:</p>
-<p>(null): URGENT: all bitcode will be dropped because’/Users/myname/Library/MobileDocuments/com~apple~CloudDocs/foldername/appname/GoogleMobileAds.framework/GoogleMobileAds(GADSlot+AdEvents.o)’was built without bitcode. You must rebuild it with bitcode enabled(Xcode setting ENABLE_BITCODE), obtain an updated library from thevendor, or disable bitcode for this target. Note: This will be anerror in the future.</p>
-<p>Say NO to Enable Bitcode in your target Build Settings</p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2015/09/21/Xcode6 update to Xcode7/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
-        
-        
-        <li class="pagination-number">第 1 页 共 1 页</li>
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            
+        
+    </div>
+</article>
+
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -491,6 +420,84 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/24/NavigationBar bottom separator/" data-tooltip="NavigationBar底部分割线隐藏">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
             
         </div>
         
@@ -624,6 +631,8 @@
         <!--SCRIPTS-->
 <script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
 <!--SCRIPTS END-->
+
+    
 
 
 

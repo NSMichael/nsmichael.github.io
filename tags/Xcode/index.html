@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="耿功发的博客">
-    <title>耿功发的博客</title>
+    <title>标签: Xcode - 耿功发的博客</title>
     <meta name="author" content="耿功发">
     
     
@@ -16,7 +16,7 @@
     <meta name="description" content="明日复明日、明日何其多">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="耿功发的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Xcode/index.html">
 <meta property="og:site_name" content="耿功发的博客">
 <meta property="og:description" content="明日复明日、明日何其多">
 <meta name="twitter:card" content="summary">
@@ -186,196 +186,8 @@
                  class="
                         hasCoverMetaIn
                         ">
-                <section class="postShorten-group main-content-wrap">
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/02/03/Jenkins+Xcode+fir/">
-                            iOS使用Jenkins+Xcode+fir 搭建持续集成环境
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-02-03T11:29:30+08:00">
-	
-		    2月 03, 2016
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/打包与审核/">打包与审核</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <blockquote>
-<p>原文首发简书地址：<a href="http://www.jianshu.com/p/13e34671788f" target="_blank" rel="external">@耿功发的博客 </a></p>
-</blockquote>
-<p><strong>前言</strong><br>今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。<br>如有问题欢迎留言评论！！！</p>
-<h3 id="第一步：安装Jenkins"><a href="#第一步：安装Jenkins" class="headerlink" title="第一步：安装Jenkins"></a>第一步：安装Jenkins</h3><p>★方法一：直接去官网下载安装包</p>
-<pre><code>&gt; 下载地址：http://jenkins-ci.org/
-</code></pre><p>下载后直接点击进入安装<img src="http://7xr98q.com1.z0.glb.clouddn.com/10.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/11.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/12.png" alt="enter image description here"><br>安装完成后在Terminal中输入命令：</p>
-<pre><code>&gt; open /Applications/Jenkins/jenkins.war
-</code></pre><p>打开Jenkins</p>
-<p>★方法二：使用命令行安装<br>安装 home-brew（<a href="http://blog.csdn.net/crazyzhang1990/article/details/46007939" target="_blank" rel="external">安装指导</a>）</p>
-<pre><code>&gt; ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre><p>安装 Jenkins</p>
-<pre><code>&gt; $ brew install jenkins
-</code></pre><p>启动 Jenkins</p>
-<pre><code>&gt; $ jenkins
-</code></pre><p>在浏览器输入地址:</p>
-<blockquote>
-<p><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></p>
-</blockquote>
-<p>使用安装包安装后会自动打开，如果端口冲突那么请修改端口</p>
-<pre><code>&gt; defaults write/Library/Preferences/org.jenkins-ci httpPort xxxx
-</code></pre><p>注意：xxxx为你要修改的端口号</p>
-<h3 id="第二步：启动Jenkins后使用浏览器访问Jenkins"><a href="#第二步：启动Jenkins后使用浏览器访问Jenkins" class="headerlink" title="第二步：启动Jenkins后使用浏览器访问Jenkins"></a>第二步：启动Jenkins后使用浏览器访问Jenkins</h3><blockquote>
-<p><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></p>
-</blockquote>
-<p>访问成功后显示如下<img src="http://7xr98q.com1.z0.glb.clouddn.com/13.png" alt="enter image description here"></p>
-<h3 id="第三步：安装插件"><a href="#第三步：安装插件" class="headerlink" title="第三步：安装插件"></a>第三步：安装插件</h3><h5 id="在系统管理-gt-插件管理中添加如下四个插件"><a href="#在系统管理-gt-插件管理中添加如下四个插件" class="headerlink" title="在系统管理 -&gt; 插件管理中添加如下四个插件"></a>在系统管理 -&gt; 插件管理中添加如下四个插件</h5><ul>
-<li>Xcode integration</li>
-<li>GIT plugin</li>
-<li>Post-Build Script Plug-in</li>
-<li>GitHub plugin</li>
-</ul>
-<p>左边菜单栏找到插件管理<img src="http://7xr98q.com1.z0.glb.clouddn.com/14.png" alt="enter image description here"></p>
-<h3 id="第四步：新建项目"><a href="#第四步：新建项目" class="headerlink" title="第四步：新建项目"></a>第四步：新建项目</h3><h5 id="（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”"><a href="#（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”" class="headerlink" title="（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”"></a>（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”<img src="http://7xr98q.com1.z0.glb.clouddn.com/15.png" alt="enter image description here"></h5><h5 id="（2）基本信息"><a href="#（2）基本信息" class="headerlink" title="（2）基本信息"></a>（2）基本信息<img src="http://7xr98q.com1.z0.glb.clouddn.com/16.png" alt="enter image description here"></h5><h5 id="（3）源码管理信息"><a href="#（3）源码管理信息" class="headerlink" title="（3）源码管理信息"></a>（3）源码管理信息</h5><p>如果你是用的是Git，那就请选择Git,然后输入你的仓库地址</p>
-<pre><code>&gt; 我这里的仓库地址是公司项目。
-</code></pre><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/17.jpg" alt="enter image description here"></p>
-<h5 id="（4）自动构建时机"><a href="#（4）自动构建时机" class="headerlink" title="（4）自动构建时机"></a>（4）自动构建时机</h5><p>这里就是告诉jenkins什么时候自动构建,这里我同时设置了每周一到周五在每天的8点到9点之间执行一次,当然也可以不设置。<img src="http://7xr98q.com1.z0.glb.clouddn.com/18.png" alt="enter image description here"></p>
-<h5 id="（5）构建"><a href="#（5）构建" class="headerlink" title="（5）构建"></a>（5）构建</h5><p>添加构建步骤 -&gt; Xcode基本信息</p>
-<ul>
-<li>这里Target请于Xcode项目中Target的名字对应</li>
-<li>Clean before build设置为YES</li>
-<li>Configuration我选择了Release（在Release的时候Archive）</li>
-<li>.ipa filename pattern 随便起个.ipa的名字</li>
-<li>Output directory为.ipa的输出路径，我这里设置为 ${WORKSPACE}/build/<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/19.jpg" alt="enter image description here"><br>添加构建步骤 -&gt; Xcode证书信息</li>
-</ul>
-<p>我这里是在上传至Git的项目里已经配置过证书和Provisioning Profiles。</p>
-<ul>
-<li><p>打开Unlock Keychain</p>
-</li>
-<li><p>Keychain path 设置为 ${HOME}/Library/Keychains/login.keychain</p>
-</li>
-<li><p>Keychain password 为你钥匙串的密码<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/20.png" alt="enter image description here"></p>
-<h4 id="login-keychain的路径在哪？"><a href="#login-keychain的路径在哪？" class="headerlink" title="login.keychain的路径在哪？"></a>login.keychain的路径在哪？</h4><blockquote>
-<p>点击”系统管理”中的”系统设置”，Xcode Build中的Keychains<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/21.png" alt="enter image description here"><br>注意！注意！注意！<br>如果项目使用了cocoapods,需要配置Advanced Xcode build options,设置</p>
-</blockquote>
-</li>
-<li><p>1 Schema</p>
-</li>
-<li><p>2 SDK iphoneos</p>
-</li>
-<li><p>3 Workspace File(不用加.xcworkspace)</p>
-</li>
-<li><p>4 Build output directory 也设为${WORKSPACE}/build/<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/22.jpg" alt="enter image description here"></p>
-<h5 id="（6）构建后操作"><a href="#（6）构建后操作" class="headerlink" title="（6）构建后操作"></a>（6）构建后操作</h5><p>添加构建后操作步骤</p>
-</li>
-</ul>
-<p>1.你可以选择上传到fir<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/23.jpg" alt="enter image description here"><br>2.你也可以选择命令行</p>
-<ul>
-<li>Execute a set of scripts</li>
-<li>Add build step</li>
-<li>Execute shell</li>
-<li><p>在Commas中输入</p>
-<blockquote>
-<p>fir p${WORKSPACE}/build/TestJenkins.ipa -T#API Token#</p>
-</blockquote>
-</li>
-</ul>
-<p>其中${WORKSPACE}/build/为4.5中.ipa的输出路径，#API Token#为fir.im的API Token。新版fir.im获取方式见下面。</p>
-<p>请注意，在使用该命令前请先确认安装fir-cli，安装命令如下。</p>
-<pre><code>&gt; sudo gem install fir-cli --no-ri --no-rdoc
-</code></pre><p>上面的命令来自 fir.im 的工具 fir-cli，这是他们的官方使用说明<a href="https://github.com/FIRHQ/fir-cli/blob/master/README.md" target="_blank" rel="external">官方工具 fir-cli 使用说明</a><br><img src="http://7xr98q.com1.z0.glb.clouddn.com/24.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/25.png" alt="enter image description here"><br>完成，点击保存。</p>
-<h5 id="（7）点击立即构建"><a href="#（7）点击立即构建" class="headerlink" title="（7）点击立即构建"></a>（7）点击立即构建</h5><pre><code>&gt; 构建成功标志位置为蓝色，失败为红色。
-</code></pre><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/26.jpg" alt="enter image description here"></p>
-<h3 id="上传应用到-fir-im"><a href="#上传应用到-fir-im" class="headerlink" title="上传应用到 fir.im"></a>上传应用到 fir.im</h3><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/27.jpg" alt="enter image description here"></p>
-<pre><code>&gt; 最后：如有问题请给我发邮件：genggongfa@163.com
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2016/02/03/Jenkins+Xcode+fir/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2015/11/24/NavigationBar bottom separator/">
-                            NavigationBar底部分割线隐藏
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2015-11-24T23:21:30+08:00">
-	
-		    11月 24, 2015
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/用户界面/">用户界面</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>@(NavigationBar)[分割线|隐藏]</p>
-<blockquote>
-<p>原文首发简书地址：<a href="http://www.jianshu.com/p/5fffa30d7210" target="_blank" rel="external">@耿功发的博客 </a></p>
-</blockquote>
-<p><strong>问题描述</strong><br>有时我们需要实现如下场景，<br>(1)在同一个界面中 显示与隐藏NavigationBar底部分割线<br>(2)当离开这个ViewController的时候，仍然需要显示底部分割线。<br>效果图如下所示：<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg" alt="pic1"></p>
-<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/9.jpg" alt="pic2"></p>
-<h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIImageView *navBarHairlineImageView;</div></pre></td></tr></table></figure>
-<h4 id="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"><a href="#创建findHairlineImageViewUnder方法，并在viewDidLoad中调用" class="headerlink" title="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"></a>创建findHairlineImageViewUnder方法，并在viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (UIImageView *)findHairlineImageViewUnder:(UIView*)view &#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>([view isKindOfClass:UIImageView.<span class="keyword">class</span>] &amp;&amp; view.bounds.size.height&lt;=<span class="number">1.0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> (UIImageView*)view;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(UIView *subview <span class="keyword">in</span> view.subviews) &#123;</div><div class="line">        UIImageView *imageView = [self findHairlineImageViewUnder:subview];</div><div class="line">        <span class="keyword">if</span>(imageView) &#123;</div><div class="line">            <span class="keyword">return</span> imageView;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">   <span class="keyword">return</span> nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="viewDidLoad中调用"><a href="#viewDidLoad中调用" class="headerlink" title="viewDidLoad中调用"></a>viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];</div></pre></td></tr></table></figure>
-<h4 id="在viewWillAppear方法中隐藏该分割线"><a href="#在viewWillAppear方法中隐藏该分割线" class="headerlink" title="在viewWillAppear方法中隐藏该分割线"></a>在viewWillAppear方法中隐藏该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=YES;</div></pre></td></tr></table></figure>
-<h4 id="在viewWillDisappear方法中显示该分割线"><a href="#在viewWillDisappear方法中显示该分割线" class="headerlink" title="在viewWillDisappear方法中显示该分割线"></a>在viewWillDisappear方法中显示该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=NO;</div></pre></td></tr></table></figure>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2015/11/24/NavigationBar bottom separator/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
+                
+    <section class="postShorten-group main-content-wrap">
     
     
     <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">

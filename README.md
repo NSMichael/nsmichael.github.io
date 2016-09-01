@@ -1,1 +1,0 @@
-# nsmichael.github.io

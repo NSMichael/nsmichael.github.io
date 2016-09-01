@@ -6,23 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="耿功发的博客">
-    <title> - 耿功发的博客</title>
+    <title>归档: 2015/11 - 耿功发的博客</title>
     <meta name="author" content="耿功发">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="404">
+    <meta name="description" content="明日复明日、明日何其多">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="耿功发的博客">
-<meta property="og:url" content="http://yoursite.com/404.html">
+<meta property="og:url" content="http://yoursite.com/archives/2015/11/index.html">
 <meta property="og:site_name" content="耿功发的博客">
-<meta property="og:description" content="404">
-<meta property="og:updated_time" content="2016-08-10T03:26:46.000Z">
+<meta property="og:description" content="明日复明日、明日何其多">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="耿功发的博客">
-<meta name="twitter:description" content="404">
+<meta name="twitter:description" content="明日复明日、明日何其多">
     
     
         
@@ -188,117 +187,74 @@
                         hasCoverMetaIn
                         ">
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    <section class="postShorten-group main-content-wrap">
     
     
-        <div class="post-header main-content-wrap text-left">
-    
-        <h1 class="post-title" itemprop="headline">
-            (无标题)
-        </h1>
-    
-    <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-08-10T11:26:46+08:00">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2015/11/24/NavigationBar bottom separator/">
+                            NavigationBar底部分割线隐藏
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2015-11-24T23:21:30+08:00">
 	
-		    8月 10, 2016
+		    11月 24, 2015
     	
     </time>
     
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/用户界面/">用户界面</a>
+
+
+    
 </div>
 
-</div>
-    
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            <html>
-    <head>   
-        <meta charset="UTF-8">
-        <title>404</title>
-    </head>
-    <body>
-    <br><!--
-    <!DOCTYPE HTML>
-    <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>公益404 | 不如</title>
-    </head>
-    <body>
-    #404 Not found By Bruce
-    <h1>404 Page Not Found</h1>
-    --><br><script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script><br><!--
-    公益404介接入地址
-    益云公益404 http://yibo.iyiyun.com/Index/web404
-    腾讯公益404 http://www.qq.com/404
-    失蹤兒童少年資料管理中心404 http://404page.missingkids.org.tw
-    -->
-    <br>
-    </body>
-    </html>
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>@(NavigationBar)[分割线|隐藏]</p>
+<blockquote>
+<p>原文首发简书地址：<a href="http://www.jianshu.com/p/5fffa30d7210" target="_blank" rel="external">@耿功发的博客 </a></p>
+</blockquote>
+<p><strong>问题描述</strong><br>有时我们需要实现如下场景，<br>(1)在同一个界面中 显示与隐藏NavigationBar底部分割线<br>(2)当离开这个ViewController的时候，仍然需要显示底部分割线。<br>效果图如下所示：<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg" alt="pic1"></p>
+<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/9.jpg" alt="pic2"></p>
+<h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIImageView *navBarHairlineImageView;</div></pre></td></tr></table></figure>
+<h4 id="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"><a href="#创建findHairlineImageViewUnder方法，并在viewDidLoad中调用" class="headerlink" title="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"></a>创建findHairlineImageViewUnder方法，并在viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (UIImageView *)findHairlineImageViewUnder:(UIView*)view &#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>([view isKindOfClass:UIImageView.<span class="keyword">class</span>] &amp;&amp; view.bounds.size.height&lt;=<span class="number">1.0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> (UIImageView*)view;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(UIView *subview <span class="keyword">in</span> view.subviews) &#123;</div><div class="line">        UIImageView *imageView = [self findHairlineImageViewUnder:subview];</div><div class="line">        <span class="keyword">if</span>(imageView) &#123;</div><div class="line">            <span class="keyword">return</span> imageView;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">   <span class="keyword">return</span> nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="viewDidLoad中调用"><a href="#viewDidLoad中调用" class="headerlink" title="viewDidLoad中调用"></a>viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];</div></pre></td></tr></table></figure>
+<h4 id="在viewWillAppear方法中隐藏该分割线"><a href="#在viewWillAppear方法中隐藏该分割线" class="headerlink" title="在viewWillAppear方法中隐藏该分割线"></a>在viewWillAppear方法中隐藏该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=YES;</div></pre></td></tr></table></figure>
+<h4 id="在viewWillDisappear方法中显示该分割线"><a href="#在viewWillDisappear方法中显示该分割线" class="headerlink" title="在viewWillDisappear方法中显示该分割线"></a>在viewWillDisappear方法中显示该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=NO;</div></pre></td></tr></table></figure>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2015/11/24/NavigationBar bottom separator/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
             
         </div>
-    </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
         
-        <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--disabled">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--disabled">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/404.html">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/404.html">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/404.html">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
         
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
+        
+        <li class="pagination-number">第 1 页 共 1 页</li>
     </ul>
 </div>
 
-
-        
-            
-        
-    </div>
-</article>
+</section>
 
 
 
@@ -442,8 +398,6 @@
         <!--SCRIPTS-->
 <script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
 <!--SCRIPTS END-->
-
-    
 
 
 
