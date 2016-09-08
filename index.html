@@ -218,32 +218,27 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <blockquote>
-<p>原文首发简书地址：<a href="http://www.jianshu.com/p/13e34671788f" target="_blank" rel="external">@耿功发的博客 </a></p>
-</blockquote>
+                    <p>原文首发简书地址：<a href="http://www.jianshu.com/p/13e34671788f" target="_blank" rel="external">@耿功发的博客 </a></p>
 <p><strong>前言</strong><br>今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。<br>如有问题欢迎留言评论！！！</p>
-<h3 id="第一步：安装Jenkins"><a href="#第一步：安装Jenkins" class="headerlink" title="第一步：安装Jenkins"></a>第一步：安装Jenkins</h3><p>★方法一：直接去官网下载安装包</p>
-<pre><code>&gt; 下载地址：http://jenkins-ci.org/
+<h3 id="第一步：安装Jenkins"><a href="#第一步：安装Jenkins" class="headerlink" title="第一步：安装Jenkins"></a>第一步：安装Jenkins</h3><hr>
+<p>方法一：直接去官网下载安装包</p>
+<pre><code>下载地址：http://jenkins-ci.org/
 </code></pre><p>下载后直接点击进入安装<img src="http://7xr98q.com1.z0.glb.clouddn.com/10.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/11.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/12.png" alt="enter image description here"><br>安装完成后在Terminal中输入命令：</p>
-<pre><code>&gt; open /Applications/Jenkins/jenkins.war
+<pre><code>open /Applications/Jenkins/jenkins.war
 </code></pre><p>打开Jenkins</p>
-<p>★方法二：使用命令行安装<br>安装 home-brew（<a href="http://blog.csdn.net/crazyzhang1990/article/details/46007939" target="_blank" rel="external">安装指导</a>）</p>
-<pre><code>&gt; ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+<p>方法二：使用命令行安装<br>安装 home-brew（<a href="http://blog.csdn.net/crazyzhang1990/article/details/46007939" target="_blank" rel="external">安装指导</a>）</p>
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre><p>安装 Jenkins</p>
-<pre><code>&gt; $ brew install jenkins
+<pre><code>$ brew install jenkins
 </code></pre><p>启动 Jenkins</p>
-<pre><code>&gt; $ jenkins
+<pre><code>$ jenkins
 </code></pre><p>在浏览器输入地址:</p>
-<blockquote>
-<p><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></p>
-</blockquote>
-<p>使用安装包安装后会自动打开，如果端口冲突那么请修改端口</p>
-<pre><code>&gt; defaults write/Library/Preferences/org.jenkins-ci httpPort xxxx
+<pre><code>[http://localhost:8080/](http://localhost:8080/)
+</code></pre><p>使用安装包安装后会自动打开，如果端口冲突那么请修改端口</p>
+<pre><code>defaults write/Library/Preferences/org.jenkins-ci httpPort xxxx
 </code></pre><p>注意：xxxx为你要修改的端口号</p>
-<h3 id="第二步：启动Jenkins后使用浏览器访问Jenkins"><a href="#第二步：启动Jenkins后使用浏览器访问Jenkins" class="headerlink" title="第二步：启动Jenkins后使用浏览器访问Jenkins"></a>第二步：启动Jenkins后使用浏览器访问Jenkins</h3><blockquote>
-<p><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></p>
-</blockquote>
-<p>访问成功后显示如下<img src="http://7xr98q.com1.z0.glb.clouddn.com/13.png" alt="enter image description here"></p>
+<h3 id="第二步：启动Jenkins后使用浏览器访问Jenkins"><a href="#第二步：启动Jenkins后使用浏览器访问Jenkins" class="headerlink" title="第二步：启动Jenkins后使用浏览器访问Jenkins"></a>第二步：启动Jenkins后使用浏览器访问Jenkins</h3><pre><code>http://localhost:8080/
+</code></pre><p>访问成功后显示如下<img src="http://7xr98q.com1.z0.glb.clouddn.com/13.png" alt="enter image description here"></p>
 <h3 id="第三步：安装插件"><a href="#第三步：安装插件" class="headerlink" title="第三步：安装插件"></a>第三步：安装插件</h3><h5 id="在系统管理-gt-插件管理中添加如下四个插件"><a href="#在系统管理-gt-插件管理中添加如下四个插件" class="headerlink" title="在系统管理 -&gt; 插件管理中添加如下四个插件"></a>在系统管理 -&gt; 插件管理中添加如下四个插件</h5><ul>
 <li>Xcode integration</li>
 <li>GIT plugin</li>
@@ -270,40 +265,41 @@
 <li><p>Keychain path 设置为 ${HOME}/Library/Keychains/login.keychain</p>
 </li>
 <li><p>Keychain password 为你钥匙串的密码<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/20.png" alt="enter image description here"></p>
-<h4 id="login-keychain的路径在哪？"><a href="#login-keychain的路径在哪？" class="headerlink" title="login.keychain的路径在哪？"></a>login.keychain的路径在哪？</h4><blockquote>
-<p>点击”系统管理”中的”系统设置”，Xcode Build中的Keychains<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/21.png" alt="enter image description here"><br>注意！注意！注意！<br>如果项目使用了cocoapods,需要配置Advanced Xcode build options,设置</p>
-</blockquote>
+<h4 id="login-keychain的路径在哪？"><a href="#login-keychain的路径在哪？" class="headerlink" title="login.keychain的路径在哪？"></a>login.keychain的路径在哪？</h4><p>  点击”系统管理”中的”系统设置”，Xcode Build中的Keychains</p>
 </li>
+</ul>
+<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/21.png" alt="enter image description here"></p>
+<p>注意！注意！注意！<br>如果项目使用了cocoapods,需要配置Advanced Xcode build options,设置</p>
+<ul>
 <li><p>1 Schema</p>
 </li>
 <li><p>2 SDK iphoneos</p>
 </li>
 <li><p>3 Workspace File(不用加.xcworkspace)</p>
 </li>
-<li><p>4 Build output directory 也设为${WORKSPACE}/build/<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/22.jpg" alt="enter image description here"></p>
-<h5 id="（6）构建后操作"><a href="#（6）构建后操作" class="headerlink" title="（6）构建后操作"></a>（6）构建后操作</h5><p>添加构建后操作步骤</p>
+<li><p>4 Build output directory 也设为${WORKSPACE}/build/</p>
 </li>
 </ul>
+<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/22.jpg" alt="enter image description here"></p>
+<h5 id="（6）构建后操作"><a href="#（6）构建后操作" class="headerlink" title="（6）构建后操作"></a>（6）构建后操作</h5><p>添加构建后操作步骤</p>
 <p>1.你可以选择上传到fir<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/23.jpg" alt="enter image description here"><br>2.你也可以选择命令行</p>
 <ul>
 <li>Execute a set of scripts</li>
 <li>Add build step</li>
 <li>Execute shell</li>
 <li><p>在Commas中输入</p>
-<blockquote>
-<p>fir p${WORKSPACE}/build/TestJenkins.ipa -T#API Token#</p>
-</blockquote>
+<p>  fir p${WORKSPACE}/build/TestJenkins.ipa -T#API Token#</p>
 </li>
 </ul>
 <p>其中${WORKSPACE}/build/为4.5中.ipa的输出路径，#API Token#为fir.im的API Token。新版fir.im获取方式见下面。</p>
 <p>请注意，在使用该命令前请先确认安装fir-cli，安装命令如下。</p>
-<pre><code>&gt; sudo gem install fir-cli --no-ri --no-rdoc
+<pre><code>sudo gem install fir-cli --no-ri --no-rdoc
 </code></pre><p>上面的命令来自 fir.im 的工具 fir-cli，这是他们的官方使用说明<a href="https://github.com/FIRHQ/fir-cli/blob/master/README.md" target="_blank" rel="external">官方工具 fir-cli 使用说明</a><br><img src="http://7xr98q.com1.z0.glb.clouddn.com/24.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/25.png" alt="enter image description here"><br>完成，点击保存。</p>
-<h5 id="（7）点击立即构建"><a href="#（7）点击立即构建" class="headerlink" title="（7）点击立即构建"></a>（7）点击立即构建</h5><pre><code>&gt; 构建成功标志位置为蓝色，失败为红色。
-</code></pre><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/26.jpg" alt="enter image description here"></p>
+<h5 id="（7）点击立即构建"><a href="#（7）点击立即构建" class="headerlink" title="（7）点击立即构建"></a>（7）点击立即构建</h5><p>构建成功标志位置为蓝色，失败为红色。</p>
+<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/26.jpg" alt="enter image description here"></p>
 <h3 id="上传应用到-fir-im"><a href="#上传应用到-fir-im" class="headerlink" title="上传应用到 fir.im"></a>上传应用到 fir.im</h3><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/27.jpg" alt="enter image description here"></p>
-<pre><code>&gt; 最后：如有问题请给我发邮件：genggongfa@163.com
-</code></pre>
+<p>最后：如有问题请给我发邮件：genggongfa@163.com</p>
+
                     
                         
                     
