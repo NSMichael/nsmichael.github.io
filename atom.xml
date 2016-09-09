@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-09T02:56:09.000Z</updated>
+  <updated>2016-09-09T08:51:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,91 +16,127 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>iOS使用Jenkins+Xcode+fir 搭建持续集成环境</title>
-    <link href="http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/"/>
-    <id>http://yoursite.com/2016/02/03/Jenkins+Xcode+fir/</id>
-    <published>2016-02-03T03:29:30.000Z</published>
-    <updated>2016-09-09T02:56:09.000Z</updated>
+    <title>iOS App 加急审核</title>
+    <link href="http://yoursite.com/2016/03/18/iOS-App-Review/"/>
+    <id>http://yoursite.com/2016/03/18/iOS-App-Review/</id>
+    <published>2016-03-18T03:09:30.000Z</published>
+    <updated>2016-09-09T08:51:08.000Z</updated>
     
-    <content type="html"><![CDATA[<p>原文首发简书地址：<a href="http://www.jianshu.com/p/13e34671788f" target="_blank" rel="external">@耿功发的博客 </a></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今天用Jenkins+Xcode+fir 搭建持续集成环境，把过程记录一下，方便iOS开发的朋友。<br>如有问题欢迎留言评论！！！</p>
-<h3 id="第一步：安装Jenkins"><a href="#第一步：安装Jenkins" class="headerlink" title="第一步：安装Jenkins"></a>第一步：安装Jenkins</h3><hr>
-<p>方法一：直接去官网下载安装包</p>
-<pre><code>下载地址：http://jenkins-ci.org/
-</code></pre><p>下载后直接点击进入安装<img src="http://7xr98q.com1.z0.glb.clouddn.com/10.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/11.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/12.png" alt="enter image description here"><br>安装完成后在Terminal中输入命令：</p>
-<pre><code>open /Applications/Jenkins/jenkins.war
-</code></pre><p>打开Jenkins</p>
-<p>方法二：使用命令行安装<br>安装 home-brew（<a href="http://blog.csdn.net/crazyzhang1990/article/details/46007939" target="_blank" rel="external">安装指导</a>）</p>
-<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre><p>安装 Jenkins</p>
-<pre><code>$ brew install jenkins
-</code></pre><p>启动 Jenkins</p>
-<pre><code>$ jenkins
-</code></pre><p>在浏览器输入地址:</p>
-<pre><code>http://localhost:8080/
-</code></pre><p>使用安装包安装后会自动打开，如果端口冲突那么请修改端口</p>
-<pre><code>defaults write/Library/Preferences/org.jenkins-ci httpPort xxxx
-</code></pre><p>注意：xxxx为你要修改的端口号</p>
-<h3 id="第二步：启动Jenkins后使用浏览器访问Jenkins"><a href="#第二步：启动Jenkins后使用浏览器访问Jenkins" class="headerlink" title="第二步：启动Jenkins后使用浏览器访问Jenkins"></a>第二步：启动Jenkins后使用浏览器访问Jenkins</h3><pre><code>http://localhost:8080/
-</code></pre><p>访问成功后显示如下<img src="http://7xr98q.com1.z0.glb.clouddn.com/13.png" alt="enter image description here"></p>
-<h3 id="第三步：安装插件"><a href="#第三步：安装插件" class="headerlink" title="第三步：安装插件"></a>第三步：安装插件</h3><h5 id="在系统管理-gt-插件管理中添加如下四个插件"><a href="#在系统管理-gt-插件管理中添加如下四个插件" class="headerlink" title="在系统管理 -&gt; 插件管理中添加如下四个插件"></a>在系统管理 -&gt; 插件管理中添加如下四个插件</h5><ul>
+    <content type="html"><![CDATA[<p>&#x539F;&#x6587;&#x9996;&#x53D1;&#x7B80;&#x4E66;&#x5730;&#x5740;&#xFF1A;<a href="http://www.jianshu.com/p/50c254552c21" target="_blank" rel="external">@&#x803F;&#x529F;&#x53D1;&#x7684;&#x535A;&#x5BA2; </a></p>
+<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x4EA7;&#x54C1;&#x51FA;&#x73B0;&#x91CD;&#x5927;BUG&#xFF0C;&#x6216;&#x8005;&#x4F60;&#x60F3;&#x60F3;&#x5FEB;&#x901F;&#x7684;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x65B0;&#x7248;&#x672C;&#xFF0C;&#x90A3;&#x4E48;&#x82F9;&#x679C;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7A97;&#x53E3;&#x2014;&#x2014;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x3002;&#xFF08;&#x6CE8;&#x610F;&#xFF09;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E00;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#x8D26;&#x53F7;&#x4E00;&#x5E74;&#x53EA;&#x6709;&#x4E09;&#x6B21;&#x673A;&#x4F1A;&#xFF0C;&#x614E;&#x7528;&#x3002;</p>
+<h3 id="&#x4E00;-App-Store&#x5E94;&#x7528;&#x5BA1;&#x6838;&#x89C4;&#x5219;"><a href="#&#x4E00;-App-Store&#x5E94;&#x7528;&#x5BA1;&#x6838;&#x89C4;&#x5219;" class="headerlink" title="&#x4E00; App Store&#x5E94;&#x7528;&#x5BA1;&#x6838;&#x89C4;&#x5219;"></a>&#x4E00; App Store&#x5E94;&#x7528;&#x5BA1;&#x6838;&#x89C4;&#x5219;</h3><h4 id="1-&#x5BA1;&#x6838;&#x65F6;&#x95F4;&#x89C4;&#x5F8B;"><a href="#1-&#x5BA1;&#x6838;&#x65F6;&#x95F4;&#x89C4;&#x5F8B;" class="headerlink" title="1 &#x5BA1;&#x6838;&#x65F6;&#x95F4;&#x89C4;&#x5F8B;"></a>1 &#x5BA1;&#x6838;&#x65F6;&#x95F4;&#x89C4;&#x5F8B;</h4><p>&#x5E94;&#x7528;&#x63D0;&#x4EA4;&#x5230;App Store&#x7684;&#x5BA1;&#x6838;&#x5468;&#x671F;&#x5927;&#x6982;&#x662F;7-14&#x5929;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x5BA1;&#x6838;&#xFF08;&#x4E1A;&#x5185;&#x5C06;&#x5728;&#x67D0;&#x5E94;&#x7528;&#x5546;&#x5E97;&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x79F0;&#x4E3A;&#x201C;&#x9996;&#x53D1;&#x201D;&#xFF0C;&#x540E;&#x7EED;&#x7684;&#x79F0;&#x4E3A;&#x201C;&#x66F4;&#x65B0;&#x201D;&#xFF09;&#x65F6;&#x95F4;&#x4F1A;&#x76F8;&#x5BF9;&#x8F83;&#x957F;&#xFF0C;&#x8FD0;&#x6C14;&#x4E0D;&#x4F73;&#x7684;&#x4E5F;&#x53EF;&#x80FD;&#x957F;&#x8FBE;&#x4E00;&#x6708;&#xFF0C;&#x8FD9;&#x6548;&#x7387;&#x5B9E;&#x5728;&#x8BA9;&#x4EBA;&#x5F88;&#x591A;&#x5C0F;&#x4F19;&#x4F34;&#x7740;&#x6025;&#x3002;&#x7248;&#x672C;&#x88AB;&#x62D2;&#x7EDD;&#x91CD;&#x65B0;&#x63D0;&#x4EA4;&#x540E;&#x5BA1;&#x6838;&#x65F6;&#x95F4;&#x5927;&#x6982;&#x5728;3&#xFF0D;10&#x5929;&#xFF0C;&#x6240;&#x4EE5;&#x5927;&#x5BB6;&#x5728;&#x7248;&#x672C;&#x63D0;&#x5BA1;&#x65F6;&#x9700;&#x9884;&#x7559;&#x51FA; 15&#xFF0D;25&#x5929;&#x4F1A;&#x6BD4;&#x8F83;&#x7A33;&#x59A5;&#x3002;</p>
+<h4 id="2-&#x5BA1;&#x6838;NG&#x7684;&#x7ECF;&#x9A8C;&#x6C47;&#x603B;"><a href="#2-&#x5BA1;&#x6838;NG&#x7684;&#x7ECF;&#x9A8C;&#x6C47;&#x603B;" class="headerlink" title="2 &#x5BA1;&#x6838;NG&#x7684;&#x7ECF;&#x9A8C;&#x6C47;&#x603B;"></a>2 &#x5BA1;&#x6838;NG&#x7684;&#x7ECF;&#x9A8C;&#x6C47;&#x603B;</h4><p>&#x5F88;&#x591A;iOS&#x5F00;&#x53D1;&#x56E2;&#x961F;&#x5728;&#x4E0A;&#x67B6;&#x8FC7;&#x7A0B;&#x603B;&#x4F1A;&#x9047;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1A;&#x4E00;&#x6B21;&#x53C8;&#x4E00;&#x6B21;&#x88AB;&#x82F9;&#x679C;&#x5BA1;&#x6838;&#x62D2;&#x7EDD;&#xFF0C;&#x6BCF;&#x6B21;&#x91CD;&#x65B0;&#x7533;&#x8BF7;&#x82B1;&#x8D39;&#x4E00;&#x5468;&#x751A;&#x81F3;&#x66F4;&#x4E45;&#x65F6;&#x95F4;&#xFF0C;&#x7ECF;&#x5E38;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x4E0A;&#x4F20;&#x6210;&#x529F;&#x81F3;&#x5C11;&#x82B1;&#x8D39;&#x6570;&#x6708;&#x65F6;&#x95F4;&#x751A;&#x81F3;&#x5C0F;&#x534A;&#x5E74;&#xFF0C;&#x4E25;&#x91CD;&#x5F71;&#x54CD;&#x4EA7;&#x54C1;&#x5E02;&#x573A;&#x63A8;&#x5E7F;&#x8BA1;&#x5212;&#x3002;&#x5927;&#x5BB6;&#x5728;&#x5F00;&#x53D1;&#x7684;&#x8FC7;&#x7A0B;&#x4E00;&#x5B9A;&#x8981;&#x4E25;&#x683C;&#x719F;&#x6089;App Store&#x7684;&#x5BA1;&#x6838;&#x6307;&#x5357;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x8DDF;&#x5927;&#x5BB6;&#x6C47;&#x603B;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x5BA1;&#x6838;NG&#x7ECF;&#x9A8C;&#x3002;<br>&#xFF08;1&#xFF09;&#x5954;&#x6E83;&#x7684;&#x7A0B;&#x5E8F;&#x6216;&#x8005;&#x5B58;&#x5728;&#x91CD;&#x5927;BUG&#xFF1A;&#x4EA7;&#x54C1;&#x63D0;&#x5BA1;&#x524D;&#x4E00;&#x5B9A;&#x8981;&#x7ECF;&#x8FC7;&#x53CD;&#x590D;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;APP&#x9891;&#x7E41;&#x5954;&#x6E83;&#x6216;&#x8005;&#x95EA;&#x9000;&#xFF0C;&#x8981;&#x901A;&#x8FC7;&#x7684;&#x6982;&#x7387;&#x57FA;&#x672C;&#x4E3A;&#x96F6;&#xFF0C;&#x5728;&#x82F9;&#x679C;&#x4E1B;&#x6797;&#x6CD5;&#x5219;&#x4E2D;&#xFF0C;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x81F3;&#x4E0A;&#x3002;<br>&#xFF08;2&#xFF09;&#x8BF1;&#x5BFC;&#x7528;&#x6237;&#x8BC4;&#x8BBA;&#xFF1A;&#x5047;&#x5982;APP&#x4E2D;&#x51FA;&#x73B0;&#x201C;&#x7ED9;&#x4E2A;&#x597D;&#x8BC4;&#x201D;&#x3001;&#x201C;&#x4E94;&#x661F;&#x597D;&#x8BC4;&#x201D;&#x3001;&#x201C;&#x597D;&#x8BC4;&#x5956;&#x52B1;&#x201D;&#x7B49;&#x8BF1;&#x5BFC;&#x6027;&#x8BC4;&#x8BBA;&#xFF0C;&#x57FA;&#x672C;&#x662F;&#x5BA1;&#x6838;NG&#x7684;&#x3002;<br>&#xFF08;3&#xFF09;&#x5B9A;&#x4F4D;&#x529F;&#x80FD;&#xFF1A;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x5B9A;&#x4F4D;&#xFF0C;&#x9700;&#x8981;&#x589E;&#x52A0;&#x63D0;&#x793A;&#x5E76;&#x544A;&#x77E5;&#x7528;&#x6237;&#x5E72;&#x4EC0;&#x4E48;&#x7528;&#xFF0C;&#x5E76;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x62D2;&#x7EDD;&#x3002;<br>&#xFF08;4&#xFF09;UI&#x548C;&#x63CF;&#x8FF0;&#xFF1A;UI&#x4E2D;&#x5207;&#x52FF;&#x51FA;&#x73B0;&#x4E0E;&#x82F9;&#x679C;&#x76F8;&#x4F3C;&#x7684;logo&#xFF0C;&#x63CF;&#x8FF0;&#x4E2D;&#x5207;&#x8BB0;&#x51FA;&#x73B0;&#x201C;&#x82F9;&#x679C;&#x5B98;&#x65B9;&#x201D; &#x3001;&#x201C;AppStore&#x201D; &#x3001;&#x201C;Apple Pay&#x201D;&#x7B49;&#x4E0E;&#x82F9;&#x679C;&#x6302;&#x94A9;&#x7684;&#x5173;&#x952E;&#x8BCD;&#xFF0C;&#x8981;&#x77E5;&#x9053;&#x82F9;&#x679C;&#x4E2D;&#x56FD;&#x533A;&#x5BA1;&#x6838;&#x540C;&#x80DE;&#x662F;&#x61C2;&#x4E2D;&#x6587;&#x7684;&#xFF0C;&#x8FD8;&#x6709;&#x82F9;&#x679C;&#x7684;&#x7248;&#x6743;&#x610F;&#x8BC6;&#x7279;&#x522B;&#x5F3A;&#xFF0C;&#x5207;&#x52FF;&#x89E6;&#x78B0;&#x5BFC;&#x706B;&#x7EBF;&#x3002;<br>&#xFF08;5&#xFF09;UCG&#x5185;&#x5BB9;&#xFF1A; &#x7528;&#x6237;&#x4EA7;&#x751F;&#x5185;&#x5BB9;&#x7684;&#x9700;&#x8981;&#x6709;&#x4E3E;&#x62A5;&#x529F;&#x80FD;&#xFF1B;&#x6709;&#x7528;&#x6237;&#x4EA7;&#x751F;&#x5185;&#x5BB9;&#x7684;&#x8FD9;&#x91CC;&#x8FD8;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5E74;&#x9F84;&#x9650;&#x5236;&#x7B49;&#x7EA7;&#x662F;&#x5426;&#x8FC7;&#x4F4E;&#xFF1B;&#x97F3;&#x89C6;&#x9891;&#x7C7B;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x7248;&#x6743;&#x8BF4;&#x660E;&#x3002;</p>
+<h3 id="&#x4E8C;-&#x5229;&#x7528;App-Store&#x73B0;&#x6709;&#x89C4;&#x5219;"><a href="#&#x4E8C;-&#x5229;&#x7528;App-Store&#x73B0;&#x6709;&#x89C4;&#x5219;" class="headerlink" title="&#x4E8C; &#x5229;&#x7528;App Store&#x73B0;&#x6709;&#x89C4;&#x5219;"></a>&#x4E8C; &#x5229;&#x7528;App Store&#x73B0;&#x6709;&#x89C4;&#x5219;</h3><p>&#x4E4B;&#x524D;&#x8C08;ASO&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5728;&#x4E0D;&#x65AD;&#x5F3A;&#x8C03;&#x5229;&#x7528;&#x82F9;&#x679C;&#x73B0;&#x6709;&#x89C4;&#x5219;&#x7684;&#x91CD;&#x8981;&#x6027;&#x3002;&#x5728;&#x82F9;&#x679C;&#x5546;&#x5E97;&#x91CC;&#x73A9;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x7814;&#x7A76;&#x6E05;&#x695A;&#x82F9;&#x679C;&#x5546;&#x5E97;&#x7684;&#x89C4;&#x77E9;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x4EA7;&#x54C1;&#x51FA;&#x73B0;&#x91CD;&#x5927;BUG&#xFF0C;&#x90A3;&#x4E48;&#x82F9;&#x679C;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7A97;&#x53E3;&#x2014;&#x2014;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x3002;<br>&#x4E3A;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x8005;&#x53CA;&#x65F6;&#x66F4;&#x8FED;&#x5B58;&#x5728;&#x91CD;&#x5927;BUG&#x7684;APP&#xFF0C;App Store&#x63D0;&#x4F9B;&#x4E86;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x901A;&#x9053;&#xFF0C;&#x6BCF;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#x90FD;&#x53EF;&#x4E3A;&#x81EA;&#x5DF1;&#x63D0;&#x4EA4;&#x7684;&#x5E94;&#x7528;&#x7533;&#x8BF7;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#xFF0C;&#x4E00;&#x65E6;&#x7533;&#x8BF7;&#x6210;&#x529F;&#xFF0C;&#x5E94;&#x7528;&#x5F88;&#x5FEB;&#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x5BA1;&#x6838;&#x3002;</p>
+<h4 id="1-&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x6548;&#x679C;"><a href="#1-&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x6548;&#x679C;" class="headerlink" title="1 &#x52A0;&#x6025;&#x5BA1;&#x6838;&#x6548;&#x679C;"></a>1 &#x52A0;&#x6025;&#x5BA1;&#x6838;&#x6548;&#x679C;</h4><p>&#x82F9;&#x679C;&#x63D0;&#x4F9B;&#x4E13;&#x95E8;&#x4E3A;&#x52A0;&#x6025;&#x5BA1;&#x6838;APP&#x7684;&#x6392;&#x961F;&#x5E8F;&#x5217;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4EA4;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x90AE;&#x4EF6;&#x540E;&#xFF0C;&#x4E00;&#x65E6;&#x52A0;&#x6025;&#x6210;&#x529F;&#xFF0C;&#x57FA;&#x672C;&#x662F;24&#x5C0F;&#x65F6;&#x5185;&#x5C31;&#x4F1A;&#x51FA;&#x5BA1;&#x6838;&#x7ED3;&#x679C;&#x3002;<br>&#x53EA;&#x8981;&#x4F60;&#x7684;APP&#x7533;&#x8BF7;&#x52A0;&#x6025;&#x6210;&#x529F;&#xFF0C;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C31;&#x7B97;&#x4F60;&#x7684;APP&#x5728;&#x5BA1;&#x6838;&#x65F6;&#x88AB;&#x62D2;&#x7EDD;&#xFF0C;&#x4F60;&#x518D;&#x6B21;&#x63D0;&#x4EA4;&#x5BA1;&#x6838;&#x4F9D;&#x7136;&#x662F;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x72B6;&#x6001;&#xFF0C;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x4E00;&#x76F4;&#x4F34;&#x968F;&#x5230;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x8FC7;&#x5BA1;&#x4E3A;&#x6B62;&#x3002;</p>
+<h4 id="2-&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x64CD;&#x4F5C;"><a href="#2-&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x64CD;&#x4F5C;" class="headerlink" title="2 &#x52A0;&#x6025;&#x5BA1;&#x6838;&#x64CD;&#x4F5C;"></a>2 &#x52A0;&#x6025;&#x5BA1;&#x6838;&#x64CD;&#x4F5C;</h4><p>&#xFF08;1&#xFF09;&#x767B;&#x5165;&#x82F9;&#x679C;&#x5F00;&#x53D1;&#x8005;&#x540E;&#x53F0;&#xFF1B;<br>&#xFF08;2&#xFF09;&#x70B9;&#x51FB;&#x540E;&#x53F0;&#x9996;&#x9875;&#x4E0B;&#x9762;&#x7684;Contact Us&#xFF08;&#x4E2D;&#x6587;&#xFF1A;&#x8054;&#x7CFB;&#x6211;&#x4EEC;&#xFF09;&#xFF1B;<br>&#xFF08;3&#xFF09;Contact Us&#x4F1A;&#x5F39;&#x51FA;&#x4F9D;&#x4E0A;&#x800C;&#x4E0B;&#x7684;&#x4E09;&#x4E2A;&#x9009;&#x8005;&#x5BF9;&#x8BDD;&#x6846;&#xFF0C;&#x4F9D;&#x6B21;&#x9009;&#x62E9;App Review/App Store Review/Request Expedited Review&#xFF0C;&#x6700;&#x540E;&#x70B9;&#x51FB;&#x5BF9;&#x8BDD;&#x6846;&#x4E0B;&#x9762;Request an Expedited App Review&#xFF0C;&#x4FBF;&#x53EF;&#x6210;&#x529F;&#x8FDB;&#x5165;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x9875;&#x9762;&#x3002;</p>
+<h4 id="3-&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x73B0;&#x72B6;"><a href="#3-&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x73B0;&#x72B6;" class="headerlink" title="3 &#x52A0;&#x6025;&#x5BA1;&#x6838;&#x73B0;&#x72B6;"></a>3 &#x52A0;&#x6025;&#x5BA1;&#x6838;&#x73B0;&#x72B6;</h4><p>&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x5DF2;&#x5386;&#x7ECF;&#x4E86;&#x5F88;&#x957F;&#x4E00;&#x6BB5;&#x5386;&#x53F2;&#xFF0C;&#x4F46;&#x5C31;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x53D8;&#x6210;&#x4E00;&#x6761;&#x4EA7;&#x4E1A;&#x94FE;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x8BF4;&#x8FD8;&#x4E0D;&#x5230;&#x4E00;&#x5E74;&#x5149;&#x666F;&#x3002;&#x4E2D;&#x56FD;&#x4EBA;&#x7684;&#x806A;&#x660E;&#x5728;&#x8FD9;&#x6761;&#x4EA7;&#x4E1A;&#x94FE;&#x4E0A;&#x5F97;&#x5230;&#x5F88;&#x597D;&#x7684;&#x8BE0;&#x91CA;&#xFF0C;&#x4E0D;&#x4F46;&#x4E1A;&#x52A1;&#x94FA;&#x53CA;&#x6574;&#x4E2A;&#x82F9;&#x679C;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x5730;&#x533A;&#xFF0C;&#x4E5F;&#x8FDB;&#x4E00;&#x6B65;&#x6E17;&#x900F;&#x6D77;&#x5916;&#x5E02;&#x573A;&#x3002;<br>&#x5728;&#x5168;&#x6C11;&#x6709;&#x4E8B;&#x6CA1;&#x4E8B;&#x52A0;&#x4E2A;&#x6025;&#x7684;&#x5927;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x52A0;&#x6025;&#x5BA1;&#x6838;&#x901A;&#x9053;&#x88AB;&#x8FC7;&#x5EA6;&#x73A9;&#x574F;&#x3002;&#x82F9;&#x679C;&#x4E5F;&#x53D1;&#x73B0;&#x4E00;&#x4E9B;&#x53D1;&#x5F00;&#x8005;&#x8D26;&#x53F7;&#x9891;&#x7E41;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x901A;&#x9053;&#x4E3A;&#x7701;&#x53BB;&#x5FC5;&#x8981;&#x7684;&#x5BA1;&#x6838;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#xFF0C;&#x4E8E;&#x662F;&#x5728;&#x4E03;&#x6708;&#x4E2D;&#x65EC;&#x5BF9;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x4E86;&#x4E25;&#x683C;&#x5316;&#x66F4;&#x6539;&#xFF0C;&#x5305;&#x62EC;&#x5BF9;&#x5F00;&#x53D1;&#x8005;&#x8D26;&#x53F7;&#x52A0;&#x901F;&#x7684;&#x6B21;&#x6570;&#xFF0F;APP&#x52A0;&#x901F;&#x7684;&#x9891;&#x6B21;&#xFF0F;IP&#x7B49;&#x65B9;&#x9762;&#x7684;&#x8003;&#x91CF;&#x3002;<br>&#x4E2A;&#x4EBA;&#x5F88;&#x5E0C;&#x671B;App Store&#x7684;&#x89C4;&#x5219;&#x80FD;&#x6709;&#x6548;&#x7684;&#x4E3A;&#x4EBA;&#x6240;&#x7528;&#xFF0C;&#x4F46;&#x5229;&#x7528;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x65F6;&#x5207;&#x8BB0;&#x628A;&#x63E1;&#x4E00;&#x4E2A;&#x201C;&#x5EA6;&#x201D;&#xFF0C;&#x4E0D;&#x8981;&#x4E00;&#x5473;&#x7684;&#x53BB;&#x6311;&#x6218;App Store&#x7684;&#x6743;&#x5A01;&#x548C;&#x667A;&#x5546;&#x3002;</p>
+<hr>
+<p>&#x6B65;&#x9AA4;&#x7834;&#x89E3;</p>
+<h4 id="step1-iTunes-Connect-&#x4E0B;&#x9762;&#x6709;&#x4E2A;&#x8054;&#x7CFB;&#x6211;&#x4EEC;"><a href="#step1-iTunes-Connect-&#x4E0B;&#x9762;&#x6709;&#x4E2A;&#x8054;&#x7CFB;&#x6211;&#x4EEC;" class="headerlink" title="step1:iTunes Connect &#x4E0B;&#x9762;&#x6709;&#x4E2A;&#x8054;&#x7CFB;&#x6211;&#x4EEC;"></a>step1:iTunes Connect &#x4E0B;&#x9762;&#x6709;&#x4E2A;&#x8054;&#x7CFB;&#x6211;&#x4EEC;</h4><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/iOS-App-Review-1.jpg" alt=""></p>
+<h4 id="step2-&#x9009;&#x62E9;-gt-1-gt-2-gt-3-Request-an-Expedited-App-Review"><a href="#step2-&#x9009;&#x62E9;-gt-1-gt-2-gt-3-Request-an-Expedited-App-Review" class="headerlink" title="step2:&#x9009;&#x62E9;&gt;1&gt;2&gt;3 Request an Expedited App Review"></a>step2:&#x9009;&#x62E9;&gt;1&gt;2&gt;3 Request an Expedited App Review</h4><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/iOS-App-Review-2.jpg" alt=""></p>
+<h4 id="step3-&#x9009;&#x62E9;request-an-expedited-app-review"><a href="#step3-&#x9009;&#x62E9;request-an-expedited-app-review" class="headerlink" title="step3:&#x9009;&#x62E9;request an expedited app review"></a>step3:&#x9009;&#x62E9;request an expedited app review</h4><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/iOS-App-Review-3.jpg" alt=""></p>
+<h4 id="step4-&#x586B;&#x5199;&#x8054;&#x7CFB;&#x4EBA;&#x7535;&#x8BDD;"><a href="#step4-&#x586B;&#x5199;&#x8054;&#x7CFB;&#x4EBA;&#x7535;&#x8BDD;" class="headerlink" title="step4:&#x586B;&#x5199;&#x8054;&#x7CFB;&#x4EBA;&#x7535;&#x8BDD;"></a>step4:&#x586B;&#x5199;&#x8054;&#x7CFB;&#x4EBA;&#x7535;&#x8BDD;</h4><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/iOS-App-Review-4.jpg" alt=""></p>
+<h4 id="step5-&#x586B;&#x5199;APP&#x540D;&#x79F0;-&#x5728;app-store&#x7684;ID-&#x7248;&#x672C;&#x4FE1;&#x606F;"><a href="#step5-&#x586B;&#x5199;APP&#x540D;&#x79F0;-&#x5728;app-store&#x7684;ID-&#x7248;&#x672C;&#x4FE1;&#x606F;" class="headerlink" title="step5:&#x586B;&#x5199;APP&#x540D;&#x79F0; &#x5728;app store&#x7684;ID &#x7248;&#x672C;&#x4FE1;&#x606F;"></a>step5:&#x586B;&#x5199;APP&#x540D;&#x79F0; &#x5728;app store&#x7684;ID &#x7248;&#x672C;&#x4FE1;&#x606F;</h4><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/iOS-App-Review-5.jpg" alt=""></p>
+<h4 id="step6-&#x9009;&#x62E9;&#x539F;&#x56E0;&#xFF0C;&#x8BF4;&#x660E;&#x7406;&#x7531;&#xFF0C;&#x53EF;&#x4EE5;&#x586B;&#x5199;&#x4E2D;&#x6587;"><a href="#step6-&#x9009;&#x62E9;&#x539F;&#x56E0;&#xFF0C;&#x8BF4;&#x660E;&#x7406;&#x7531;&#xFF0C;&#x53EF;&#x4EE5;&#x586B;&#x5199;&#x4E2D;&#x6587;" class="headerlink" title="step6:&#x9009;&#x62E9;&#x539F;&#x56E0;&#xFF0C;&#x8BF4;&#x660E;&#x7406;&#x7531;&#xFF0C;&#x53EF;&#x4EE5;&#x586B;&#x5199;&#x4E2D;&#x6587;"></a>step6:&#x9009;&#x62E9;&#x539F;&#x56E0;&#xFF0C;&#x8BF4;&#x660E;&#x7406;&#x7531;&#xFF0C;&#x53EF;&#x4EE5;&#x586B;&#x5199;&#x4E2D;&#x6587;</h4><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/iOS-App-Review-6.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x539F;&amp;#x6587;&amp;#x9996;&amp;#x53D1;&amp;#x7B80;&amp;#x4E66;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;&lt;a href=&quot;http://www.jianshu.com/p/50c254552c21&quot; target=&quot;_blank&quot; r
+    
+    </summary>
+    
+      <category term="打包与审核" scheme="http://yoursite.com/categories/%E6%89%93%E5%8C%85%E4%B8%8E%E5%AE%A1%E6%A0%B8/"/>
+    
+    
+      <category term="Review" scheme="http://yoursite.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS使用Jenkins+Xcode+fir 搭建持续集成环境</title>
+    <link href="http://yoursite.com/2016/02/03/Jenkins-Xcode-fir/"/>
+    <id>http://yoursite.com/2016/02/03/Jenkins-Xcode-fir/</id>
+    <published>2016-02-03T03:29:30.000Z</published>
+    <updated>2016-09-09T06:37:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x539F;&#x6587;&#x9996;&#x53D1;&#x7B80;&#x4E66;&#x5730;&#x5740;&#xFF1A;<a href="http://www.jianshu.com/p/13e34671788f" target="_blank" rel="external">@&#x803F;&#x529F;&#x53D1;&#x7684;&#x535A;&#x5BA2; </a></p>
+<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><p>&#x4ECA;&#x5929;&#x7528;Jenkins+Xcode+fir &#x642D;&#x5EFA;&#x6301;&#x7EED;&#x96C6;&#x6210;&#x73AF;&#x5883;&#xFF0C;&#x628A;&#x8FC7;&#x7A0B;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#xFF0C;&#x65B9;&#x4FBF;iOS&#x5F00;&#x53D1;&#x7684;&#x670B;&#x53CB;&#x3002;<br>&#x5982;&#x6709;&#x95EE;&#x9898;&#x6B22;&#x8FCE;&#x7559;&#x8A00;&#x8BC4;&#x8BBA;&#xFF01;&#xFF01;&#xFF01;</p>
+<h3 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;Jenkins"><a href="#&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;Jenkins" class="headerlink" title="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;Jenkins"></a>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;Jenkins</h3><hr>
+<p>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x76F4;&#x63A5;&#x53BB;&#x5B98;&#x7F51;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</p>
+<p>&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="http://jenkins-ci.org/" target="_blank" rel="external">http://jenkins-ci.org/</a></p>
+<p>&#x4E0B;&#x8F7D;&#x540E;&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x8FDB;&#x5165;&#x5B89;&#x88C5;<img src="/2016/02/03/Jenkins-Xcode-fir/1.png" alt=""><img src="/2016/02/03/Jenkins-Xcode-fir/2.png" alt=""><img src="/2016/02/03/Jenkins-Xcode-fir/3.png" alt=""><br>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x5728;Terminal&#x4E2D;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;</p>
+<p>open /Applications/Jenkins/jenkins.war</p>
+<p>&#x6253;&#x5F00;Jenkins</p>
+<p>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x5B89;&#x88C5;<br>&#x5B89;&#x88C5; home-brew&#xFF08;<a href="http://blog.csdn.net/crazyzhang1990/article/details/46007939" target="_blank" rel="external">&#x5B89;&#x88C5;&#x6307;&#x5BFC;</a>&#xFF09;</p>
+<p>ruby -e &#x201C;$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="external">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)&#x201D;</p>
+<p>&#x5B89;&#x88C5; Jenkins</p>
+<p>$ brew install jenkins</p>
+<p>&#x542F;&#x52A8; Jenkins</p>
+<p>$ jenkins</p>
+<p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165;&#x5730;&#x5740;:</p>
+<p><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></p>
+<p>&#x4F7F;&#x7528;&#x5B89;&#x88C5;&#x5305;&#x5B89;&#x88C5;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#xFF0C;&#x5982;&#x679C;&#x7AEF;&#x53E3;&#x51B2;&#x7A81;&#x90A3;&#x4E48;&#x8BF7;&#x4FEE;&#x6539;&#x7AEF;&#x53E3;</p>
+<p>defaults write/Library/Preferences/org.jenkins-ci httpPort xxxx</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;xxxx&#x4E3A;&#x4F60;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x7AEF;&#x53E3;&#x53F7;</p>
+<h3 id="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x542F;&#x52A8;Jenkins&#x540E;&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;Jenkins"><a href="#&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x542F;&#x52A8;Jenkins&#x540E;&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;Jenkins" class="headerlink" title="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x542F;&#x52A8;Jenkins&#x540E;&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;Jenkins"></a>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x542F;&#x52A8;Jenkins&#x540E;&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;Jenkins</h3><p><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></p>
+<p>&#x8BBF;&#x95EE;&#x6210;&#x529F;&#x540E;&#x663E;&#x793A;&#x5982;&#x4E0B;<img src="/2016/02/03/Jenkins-Xcode-fir/4.png" alt=""></p>
+<h3 id="&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;&#x63D2;&#x4EF6;"><a href="#&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;&#x63D2;&#x4EF6;" class="headerlink" title="&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;&#x63D2;&#x4EF6;"></a>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;&#x63D2;&#x4EF6;</h3><h5 id="&#x5728;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;-gt-&#x63D2;&#x4EF6;&#x7BA1;&#x7406;&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x56DB;&#x4E2A;&#x63D2;&#x4EF6;"><a href="#&#x5728;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;-gt-&#x63D2;&#x4EF6;&#x7BA1;&#x7406;&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x56DB;&#x4E2A;&#x63D2;&#x4EF6;" class="headerlink" title="&#x5728;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406; -&gt; &#x63D2;&#x4EF6;&#x7BA1;&#x7406;&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x56DB;&#x4E2A;&#x63D2;&#x4EF6;"></a>&#x5728;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406; -&gt; &#x63D2;&#x4EF6;&#x7BA1;&#x7406;&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x56DB;&#x4E2A;&#x63D2;&#x4EF6;</h5><ul>
 <li>Xcode integration</li>
 <li>GIT plugin</li>
 <li>Post-Build Script Plug-in</li>
 <li>GitHub plugin</li>
 </ul>
-<p>左边菜单栏找到插件管理<img src="http://7xr98q.com1.z0.glb.clouddn.com/14.png" alt="enter image description here"></p>
-<h3 id="第四步：新建项目"><a href="#第四步：新建项目" class="headerlink" title="第四步：新建项目"></a>第四步：新建项目</h3><h5 id="（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”"><a href="#（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”" class="headerlink" title="（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”"></a>（1）点击左侧工具栏”新建”，选择第一项”构建一个自由风格的软件项目”<img src="http://7xr98q.com1.z0.glb.clouddn.com/15.png" alt="enter image description here"></h5><h5 id="（2）基本信息"><a href="#（2）基本信息" class="headerlink" title="（2）基本信息"></a>（2）基本信息<img src="http://7xr98q.com1.z0.glb.clouddn.com/16.png" alt="enter image description here"></h5><h5 id="（3）源码管理信息"><a href="#（3）源码管理信息" class="headerlink" title="（3）源码管理信息"></a>（3）源码管理信息</h5><p>如果你是用的是Git，那就请选择Git,然后输入你的仓库地址<br>我这里的仓库地址是公司项目。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/17.jpg" alt="enter image description here"></p>
-<h5 id="（4）自动构建时机"><a href="#（4）自动构建时机" class="headerlink" title="（4）自动构建时机"></a>（4）自动构建时机</h5><p>这里就是告诉jenkins什么时候自动构建,这里我同时设置了每周一到周五在每天的8点到9点之间执行一次,当然也可以不设置。<img src="http://7xr98q.com1.z0.glb.clouddn.com/18.png" alt="enter image description here"></p>
-<h5 id="（5）构建"><a href="#（5）构建" class="headerlink" title="（5）构建"></a>（5）构建</h5><p>添加构建步骤 -&gt; Xcode基本信息</p>
+<p>&#x5DE6;&#x8FB9;&#x83DC;&#x5355;&#x680F;&#x627E;&#x5230;&#x63D2;&#x4EF6;&#x7BA1;&#x7406;<img src="/2016/02/03/Jenkins-Xcode-fir/5.png" alt=""></p>
+<h3 id="&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x65B0;&#x5EFA;&#x9879;&#x76EE;"><a href="#&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x65B0;&#x5EFA;&#x9879;&#x76EE;" class="headerlink" title="&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x65B0;&#x5EFA;&#x9879;&#x76EE;"></a>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x65B0;&#x5EFA;&#x9879;&#x76EE;</h3><h5 id="&#xFF08;1&#xFF09;&#x70B9;&#x51FB;&#x5DE6;&#x4FA7;&#x5DE5;&#x5177;&#x680F;&#x201D;&#x65B0;&#x5EFA;&#x201D;&#xFF0C;&#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x9879;&#x201D;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x98CE;&#x683C;&#x7684;&#x8F6F;&#x4EF6;&#x9879;&#x76EE;&#x201D;"><a href="#&#xFF08;1&#xFF09;&#x70B9;&#x51FB;&#x5DE6;&#x4FA7;&#x5DE5;&#x5177;&#x680F;&#x201D;&#x65B0;&#x5EFA;&#x201D;&#xFF0C;&#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x9879;&#x201D;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x98CE;&#x683C;&#x7684;&#x8F6F;&#x4EF6;&#x9879;&#x76EE;&#x201D;" class="headerlink" title="&#xFF08;1&#xFF09;&#x70B9;&#x51FB;&#x5DE6;&#x4FA7;&#x5DE5;&#x5177;&#x680F;&#x201D;&#x65B0;&#x5EFA;&#x201D;&#xFF0C;&#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x9879;&#x201D;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x98CE;&#x683C;&#x7684;&#x8F6F;&#x4EF6;&#x9879;&#x76EE;&#x201D;"></a>&#xFF08;1&#xFF09;&#x70B9;&#x51FB;&#x5DE6;&#x4FA7;&#x5DE5;&#x5177;&#x680F;&#x201D;&#x65B0;&#x5EFA;&#x201D;&#xFF0C;&#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x9879;&#x201D;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x98CE;&#x683C;&#x7684;&#x8F6F;&#x4EF6;&#x9879;&#x76EE;&#x201D;<img src="/2016/02/03/Jenkins-Xcode-fir/6.png" alt=""></h5><h5 id="&#xFF08;2&#xFF09;&#x57FA;&#x672C;&#x4FE1;&#x606F;"><a href="#&#xFF08;2&#xFF09;&#x57FA;&#x672C;&#x4FE1;&#x606F;" class="headerlink" title="&#xFF08;2&#xFF09;&#x57FA;&#x672C;&#x4FE1;&#x606F;"></a>&#xFF08;2&#xFF09;&#x57FA;&#x672C;&#x4FE1;&#x606F;<img src="/2016/02/03/Jenkins-Xcode-fir/7.png" alt=""></h5><h5 id="&#xFF08;3&#xFF09;&#x6E90;&#x7801;&#x7BA1;&#x7406;&#x4FE1;&#x606F;"><a href="#&#xFF08;3&#xFF09;&#x6E90;&#x7801;&#x7BA1;&#x7406;&#x4FE1;&#x606F;" class="headerlink" title="&#xFF08;3&#xFF09;&#x6E90;&#x7801;&#x7BA1;&#x7406;&#x4FE1;&#x606F;"></a>&#xFF08;3&#xFF09;&#x6E90;&#x7801;&#x7BA1;&#x7406;&#x4FE1;&#x606F;</h5><p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x7528;&#x7684;&#x662F;Git&#xFF0C;&#x90A3;&#x5C31;&#x8BF7;&#x9009;&#x62E9;Git,&#x7136;&#x540E;&#x8F93;&#x5165;&#x4F60;&#x7684;&#x4ED3;&#x5E93;&#x5730;&#x5740;<br>&#x6211;&#x8FD9;&#x91CC;&#x7684;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#x662F;&#x516C;&#x53F8;&#x9879;&#x76EE;&#x3002;<br><img src="/2016/02/03/Jenkins-Xcode-fir/8.jpg" alt=""></p>
+<h5 id="&#xFF08;4&#xFF09;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#x65F6;&#x673A;"><a href="#&#xFF08;4&#xFF09;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#x65F6;&#x673A;" class="headerlink" title="&#xFF08;4&#xFF09;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#x65F6;&#x673A;"></a>&#xFF08;4&#xFF09;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#x65F6;&#x673A;</h5><p>&#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x544A;&#x8BC9;jenkins&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x81EA;&#x52A8;&#x6784;&#x5EFA;,&#x8FD9;&#x91CC;&#x6211;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x4E86;&#x6BCF;&#x5468;&#x4E00;&#x5230;&#x5468;&#x4E94;&#x5728;&#x6BCF;&#x5929;&#x7684;8&#x70B9;&#x5230;9&#x70B9;&#x4E4B;&#x95F4;&#x6267;&#x884C;&#x4E00;&#x6B21;,&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;&#x3002;<img src="/2016/02/03/Jenkins-Xcode-fir/9.png" alt=""></p>
+<h5 id="&#xFF08;5&#xFF09;&#x6784;&#x5EFA;"><a href="#&#xFF08;5&#xFF09;&#x6784;&#x5EFA;" class="headerlink" title="&#xFF08;5&#xFF09;&#x6784;&#x5EFA;"></a>&#xFF08;5&#xFF09;&#x6784;&#x5EFA;</h5><p>&#x6DFB;&#x52A0;&#x6784;&#x5EFA;&#x6B65;&#x9AA4; -&gt; Xcode&#x57FA;&#x672C;&#x4FE1;&#x606F;</p>
 <ul>
-<li>这里Target请于Xcode项目中Target的名字对应</li>
-<li>Clean before build设置为YES</li>
-<li>Configuration我选择了Release（在Release的时候Archive）</li>
-<li>.ipa filename pattern 随便起个.ipa的名字</li>
-<li>Output directory为.ipa的输出路径，我这里设置为 ${WORKSPACE}/build/<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/19.jpg" alt="enter image description here"><br>添加构建步骤 -&gt; Xcode证书信息</li>
+<li>&#x8FD9;&#x91CC;Target&#x8BF7;&#x4E8E;Xcode&#x9879;&#x76EE;&#x4E2D;Target&#x7684;&#x540D;&#x5B57;&#x5BF9;&#x5E94;</li>
+<li>Clean before build&#x8BBE;&#x7F6E;&#x4E3A;YES</li>
+<li>Configuration&#x6211;&#x9009;&#x62E9;&#x4E86;Release&#xFF08;&#x5728;Release&#x7684;&#x65F6;&#x5019;Archive&#xFF09;</li>
+<li>.ipa filename pattern &#x968F;&#x4FBF;&#x8D77;&#x4E2A;.ipa&#x7684;&#x540D;&#x5B57;</li>
+<li>Output directory&#x4E3A;.ipa&#x7684;&#x8F93;&#x51FA;&#x8DEF;&#x5F84;&#xFF0C;&#x6211;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x4E3A; ${WORKSPACE}/build/<br><img src="/2016/02/03/Jenkins-Xcode-fir/10.jpg" alt=""><br>&#x6DFB;&#x52A0;&#x6784;&#x5EFA;&#x6B65;&#x9AA4; -&gt; Xcode&#x8BC1;&#x4E66;&#x4FE1;&#x606F;</li>
 </ul>
-<p>我这里是在上传至Git的项目里已经配置过证书和Provisioning Profiles。</p>
+<p>&#x6211;&#x8FD9;&#x91CC;&#x662F;&#x5728;&#x4E0A;&#x4F20;&#x81F3;Git&#x7684;&#x9879;&#x76EE;&#x91CC;&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x8FC7;&#x8BC1;&#x4E66;&#x548C;Provisioning Profiles&#x3002;</p>
 <ul>
-<li>打开Unlock Keychain</li>
-<li>Keychain path 设置为 ${HOME}/Library/Keychains/login.keychain</li>
-<li>Keychain password 为你钥匙串的密码</li>
+<li>&#x6253;&#x5F00;Unlock Keychain</li>
+<li>Keychain path &#x8BBE;&#x7F6E;&#x4E3A; ${HOME}/Library/Keychains/login.keychain</li>
+<li>Keychain password &#x4E3A;&#x4F60;&#x94A5;&#x5319;&#x4E32;&#x7684;&#x5BC6;&#x7801;</li>
 </ul>
-<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/20.png" alt="enter image description here"></p>
-<h4 id="login-keychain的路径在哪？"><a href="#login-keychain的路径在哪？" class="headerlink" title="login.keychain的路径在哪？"></a>login.keychain的路径在哪？</h4><pre><code>点击&quot;系统管理&quot;中的&quot;系统设置&quot;，Xcode Build中的Keychains
-</code></pre><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/21.png" alt="enter image description here"></p>
-<p>注意！注意！注意！<br>如果项目使用了cocoapods,需要配置Advanced Xcode build options,设置</p>
+<p><img src="/2016/02/03/Jenkins-Xcode-fir/11.png" alt=""></p>
+<h4 id="login-keychain&#x7684;&#x8DEF;&#x5F84;&#x5728;&#x54EA;&#xFF1F;"><a href="#login-keychain&#x7684;&#x8DEF;&#x5F84;&#x5728;&#x54EA;&#xFF1F;" class="headerlink" title="login.keychain&#x7684;&#x8DEF;&#x5F84;&#x5728;&#x54EA;&#xFF1F;"></a>login.keychain&#x7684;&#x8DEF;&#x5F84;&#x5728;&#x54EA;&#xFF1F;</h4><p>&#x70B9;&#x51FB;&#x201D;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x201D;&#x4E2D;&#x7684;&#x201D;&#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;&#x201D;&#xFF0C;Xcode Build&#x4E2D;&#x7684;Keychains</p>
+<p><img src="/2016/02/03/Jenkins-Xcode-fir/12.png" alt=""></p>
+<p>&#x6CE8;&#x610F;&#xFF01;&#x6CE8;&#x610F;&#xFF01;&#x6CE8;&#x610F;&#xFF01;<br>&#x5982;&#x679C;&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x4E86;cocoapods,&#x9700;&#x8981;&#x914D;&#x7F6E;Advanced Xcode build options,&#x8BBE;&#x7F6E;</p>
 <ul>
 <li>1 Schema</li>
 <li>2 SDK iphoneos</li>
-<li>3 Workspace File(不用加.xcworkspace)</li>
-<li>4 Build output directory 也设为${WORKSPACE}/build/</li>
+<li>3 Workspace File(&#x4E0D;&#x7528;&#x52A0;.xcworkspace)</li>
+<li>4 Build output directory &#x4E5F;&#x8BBE;&#x4E3A;${WORKSPACE}/build/</li>
 </ul>
-<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/22.jpg" alt="enter image description here"></p>
-<h5 id="（6）构建后操作"><a href="#（6）构建后操作" class="headerlink" title="（6）构建后操作"></a>（6）构建后操作</h5><p>添加构建后操作步骤</p>
-<p>1.你可以选择上传到fir<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/23.jpg" alt="enter image description here"><br>2.你也可以选择命令行</p>
+<p><img src="/2016/02/03/Jenkins-Xcode-fir/13.jpg" alt=""></p>
+<h5 id="&#xFF08;6&#xFF09;&#x6784;&#x5EFA;&#x540E;&#x64CD;&#x4F5C;"><a href="#&#xFF08;6&#xFF09;&#x6784;&#x5EFA;&#x540E;&#x64CD;&#x4F5C;" class="headerlink" title="&#xFF08;6&#xFF09;&#x6784;&#x5EFA;&#x540E;&#x64CD;&#x4F5C;"></a>&#xFF08;6&#xFF09;&#x6784;&#x5EFA;&#x540E;&#x64CD;&#x4F5C;</h5><p>&#x6DFB;&#x52A0;&#x6784;&#x5EFA;&#x540E;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</p>
+<p>1.&#x4F60;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4E0A;&#x4F20;&#x5230;fir<br><img src="/2016/02/03/Jenkins-Xcode-fir/14.jpg" alt=""><br>2.&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x547D;&#x4EE4;&#x884C;</p>
 <ul>
 <li>Execute a set of scripts</li>
 <li>Add build step</li>
 <li>Execute shell</li>
-<li><p>在Commas中输入</p>
-<p>  fir p${WORKSPACE}/build/TestJenkins.ipa -T#API Token#</p>
-</li>
+<li>&#x5728;Commas&#x4E2D;&#x8F93;&#x5165;</li>
 </ul>
-<p>其中${WORKSPACE}/build/为4.5中.ipa的输出路径，#API Token#为fir.im的API Token。新版fir.im获取方式见下面。</p>
-<p>请注意，在使用该命令前请先确认安装fir-cli，安装命令如下。</p>
-<pre><code>sudo gem install fir-cli --no-ri --no-rdoc
-</code></pre><p>上面的命令来自 fir.im 的工具 fir-cli，这是他们的官方使用说明<a href="https://github.com/FIRHQ/fir-cli/blob/master/README.md" target="_blank" rel="external">官方工具 fir-cli 使用说明</a><br><img src="http://7xr98q.com1.z0.glb.clouddn.com/24.png" alt="enter image description here"><img src="http://7xr98q.com1.z0.glb.clouddn.com/25.png" alt="enter image description here"><br>完成，点击保存。</p>
-<h5 id="（7）点击立即构建"><a href="#（7）点击立即构建" class="headerlink" title="（7）点击立即构建"></a>（7）点击立即构建</h5><p>构建成功标志位置为蓝色，失败为红色。</p>
-<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/26.jpg" alt="enter image description here"></p>
-<h3 id="上传应用到-fir-im"><a href="#上传应用到-fir-im" class="headerlink" title="上传应用到 fir.im"></a>上传应用到 fir.im</h3><p><img src="http://7xr98q.com1.z0.glb.clouddn.com/27.jpg" alt="enter image description here"></p>
-<p>最后：如有问题请给我发邮件：genggongfa@163.com</p>
+<p>fir p${WORKSPACE}/build/TestJenkins.ipa -T#API Token#</p>
+<p>&#x5176;&#x4E2D;${WORKSPACE}/build/&#x4E3A;4.5&#x4E2D;.ipa&#x7684;&#x8F93;&#x51FA;&#x8DEF;&#x5F84;&#xFF0C;#API Token#&#x4E3A;fir.im&#x7684;API Token&#x3002;&#x65B0;&#x7248;fir.im&#x83B7;&#x53D6;&#x65B9;&#x5F0F;&#x89C1;&#x4E0B;&#x9762;&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x8BE5;&#x547D;&#x4EE4;&#x524D;&#x8BF7;&#x5148;&#x786E;&#x8BA4;&#x5B89;&#x88C5;fir-cli&#xFF0C;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#x5982;&#x4E0B;&#x3002;</p>
+<p>sudo gem install fir-cli &#x2013;no-ri &#x2013;no-rdoc</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x6765;&#x81EA; fir.im &#x7684;&#x5DE5;&#x5177; fir-cli&#xFF0C;&#x8FD9;&#x662F;&#x4ED6;&#x4EEC;&#x7684;&#x5B98;&#x65B9;&#x4F7F;&#x7528;&#x8BF4;&#x660E;<a href="https://github.com/FIRHQ/fir-cli/blob/master/README.md" target="_blank" rel="external">&#x5B98;&#x65B9;&#x5DE5;&#x5177; fir-cli &#x4F7F;&#x7528;&#x8BF4;&#x660E;</a><br><img src="/2016/02/03/Jenkins-Xcode-fir/15.png" alt=""><img src="/2016/02/03/Jenkins-Xcode-fir/16.png" alt=""><br>&#x5B8C;&#x6210;&#xFF0C;&#x70B9;&#x51FB;&#x4FDD;&#x5B58;&#x3002;</p>
+<h5 id="&#xFF08;7&#xFF09;&#x70B9;&#x51FB;&#x7ACB;&#x5373;&#x6784;&#x5EFA;"><a href="#&#xFF08;7&#xFF09;&#x70B9;&#x51FB;&#x7ACB;&#x5373;&#x6784;&#x5EFA;" class="headerlink" title="&#xFF08;7&#xFF09;&#x70B9;&#x51FB;&#x7ACB;&#x5373;&#x6784;&#x5EFA;"></a>&#xFF08;7&#xFF09;&#x70B9;&#x51FB;&#x7ACB;&#x5373;&#x6784;&#x5EFA;</h5><p>&#x6784;&#x5EFA;&#x6210;&#x529F;&#x6807;&#x5FD7;&#x4F4D;&#x7F6E;&#x4E3A;&#x84DD;&#x8272;&#xFF0C;&#x5931;&#x8D25;&#x4E3A;&#x7EA2;&#x8272;&#x3002;</p>
+<p><img src="/2016/02/03/Jenkins-Xcode-fir/17.jpg" alt=""></p>
+<h3 id="&#x4E0A;&#x4F20;&#x5E94;&#x7528;&#x5230;-fir-im"><a href="#&#x4E0A;&#x4F20;&#x5E94;&#x7528;&#x5230;-fir-im" class="headerlink" title="&#x4E0A;&#x4F20;&#x5E94;&#x7528;&#x5230; fir.im"></a>&#x4E0A;&#x4F20;&#x5E94;&#x7528;&#x5230; fir.im</h3><p><img src="/2016/02/03/Jenkins-Xcode-fir/18.jpg" alt=""></p>
+<p>&#x6700;&#x540E;&#xFF1A;&#x5982;&#x6709;&#x95EE;&#x9898;&#x8BF7;&#x7ED9;&#x6211;&#x53D1;&#x90AE;&#x4EF6;&#xFF1A;genggongfa@163.com</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;原文首发简书地址：&lt;a href=&quot;http://www.jianshu.com/p/13e34671788f&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@耿功发的博客 &lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=
+      &lt;p&gt;&amp;#x539F;&amp;#x6587;&amp;#x9996;&amp;#x53D1;&amp;#x7B80;&amp;#x4E66;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;&lt;a href=&quot;http://www.jianshu.com/p/13e34671788f&quot; target=&quot;_blank&quot; r
     
     </summary>
     
@@ -113,24 +149,23 @@
   
   <entry>
     <title>NavigationBar底部分割线隐藏</title>
-    <link href="http://yoursite.com/2015/11/24/NavigationBar%20bottom%20separator/"/>
-    <id>http://yoursite.com/2015/11/24/NavigationBar bottom separator/</id>
+    <link href="http://yoursite.com/2015/11/24/NavigationBar-bottom-separator/"/>
+    <id>http://yoursite.com/2015/11/24/NavigationBar-bottom-separator/</id>
     <published>2015-11-24T15:21:30.000Z</published>
-    <updated>2016-09-09T02:58:14.000Z</updated>
+    <updated>2016-09-09T06:39:43.000Z</updated>
     
-    <content type="html"><![CDATA[<p>原文首发简书地址：<a href="http://www.jianshu.com/p/5fffa30d7210" target="_blank" rel="external">@耿功发的博客 </a></p>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>有时我们需要实现如下场景，<br>(1)在同一个界面中 显示与隐藏NavigationBar底部分割线<br>(2)当离开这个ViewController的时候，仍然需要显示底部分割线。<br>效果图如下所示：<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg" alt="pic1"></p>
-<p><img src="http://7xr98q.com1.z0.glb.clouddn.com/9.jpg" alt="pic2"></p>
-<h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIImageView *navBarHairlineImageView;</div></pre></td></tr></table></figure>
-<h4 id="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"><a href="#创建findHairlineImageViewUnder方法，并在viewDidLoad中调用" class="headerlink" title="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"></a>创建findHairlineImageViewUnder方法，并在viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (UIImageView *)findHairlineImageViewUnder:(UIView*)view &#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>([view isKindOfClass:UIImageView.<span class="keyword">class</span>] &amp;&amp; view.bounds.size.height&lt;=<span class="number">1.0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> (UIImageView*)view;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(UIView *subview <span class="keyword">in</span> view.subviews) &#123;</div><div class="line">        UIImageView *imageView = [self findHairlineImageViewUnder:subview];</div><div class="line">        <span class="keyword">if</span>(imageView) &#123;</div><div class="line">            <span class="keyword">return</span> imageView;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">   <span class="keyword">return</span> nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="viewDidLoad中调用"><a href="#viewDidLoad中调用" class="headerlink" title="viewDidLoad中调用"></a>viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];</div></pre></td></tr></table></figure>
-<h4 id="在viewWillAppear方法中隐藏该分割线"><a href="#在viewWillAppear方法中隐藏该分割线" class="headerlink" title="在viewWillAppear方法中隐藏该分割线"></a>在viewWillAppear方法中隐藏该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=YES;</div></pre></td></tr></table></figure>
-<h4 id="在viewWillDisappear方法中显示该分割线"><a href="#在viewWillDisappear方法中显示该分割线" class="headerlink" title="在viewWillDisappear方法中显示该分割线"></a>在viewWillDisappear方法中显示该分割线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=NO;</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>&#x539F;&#x6587;&#x9996;&#x53D1;&#x7B80;&#x4E66;&#x5730;&#x5740;&#xFF1A;<a href="http://www.jianshu.com/p/5fffa30d7210" target="_blank" rel="external">@&#x803F;&#x529F;&#x53D1;&#x7684;&#x535A;&#x5BA2; </a></p>
+<h3 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="headerlink" title="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h3><p>&#x6709;&#x65F6;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x573A;&#x666F;&#xFF0C;<br>(1)&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x754C;&#x9762;&#x4E2D; &#x663E;&#x793A;&#x4E0E;&#x9690;&#x85CF;NavigationBar&#x5E95;&#x90E8;&#x5206;&#x5272;&#x7EBF;<br>(2)&#x5F53;&#x79BB;&#x5F00;&#x8FD9;&#x4E2A;ViewController&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x663E;&#x793A;&#x5E95;&#x90E8;&#x5206;&#x5272;&#x7EBF;&#x3002;<br>&#x6548;&#x679C;&#x56FE;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;<br><img src="/2015/11/24/NavigationBar-bottom-separator/1.jpg" alt="pic1"></p>
+<p><img src="/2015/11/24/NavigationBar-bottom-separator/2.jpg" alt="pic2"></p>
+<h4 id="&#x5B9A;&#x4E49;&#x53D8;&#x91CF;"><a href="#&#x5B9A;&#x4E49;&#x53D8;&#x91CF;" class="headerlink" title="&#x5B9A;&#x4E49;&#x53D8;&#x91CF;"></a>&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIImageView *navBarHairlineImageView;</div></pre></td></tr></table></figure>
+<h4 id="&#x521B;&#x5EFA;findHairlineImageViewUnder&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5728;viewDidLoad&#x4E2D;&#x8C03;&#x7528;"><a href="#&#x521B;&#x5EFA;findHairlineImageViewUnder&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5728;viewDidLoad&#x4E2D;&#x8C03;&#x7528;" class="headerlink" title="&#x521B;&#x5EFA;findHairlineImageViewUnder&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5728;viewDidLoad&#x4E2D;&#x8C03;&#x7528;"></a>&#x521B;&#x5EFA;findHairlineImageViewUnder&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5728;viewDidLoad&#x4E2D;&#x8C03;&#x7528;</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (UIImageView *)findHairlineImageViewUnder:(UIView*)view {</div><div class="line"></div><div class="line">    <span class="keyword">if</span>([view isKindOfClass:UIImageView.<span class="keyword">class</span>] &amp;&amp; view.bounds.size.height&lt;=<span class="number">1.0</span>) {</div><div class="line">        <span class="keyword">return</span> (UIImageView*)view;</div><div class="line">    }</div><div class="line">    <span class="keyword">for</span>(UIView *subview <span class="keyword">in</span> view.subviews) {</div><div class="line">        UIImageView *imageView = [self findHairlineImageViewUnder:subview];</div><div class="line">        <span class="keyword">if</span>(imageView) {</div><div class="line">            <span class="keyword">return</span> imageView;</div><div class="line">    }</div><div class="line">}</div><div class="line">   <span class="keyword">return</span> nil;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h4 id="viewDidLoad&#x4E2D;&#x8C03;&#x7528;"><a href="#viewDidLoad&#x4E2D;&#x8C03;&#x7528;" class="headerlink" title="viewDidLoad&#x4E2D;&#x8C03;&#x7528;"></a>viewDidLoad&#x4E2D;&#x8C03;&#x7528;</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];</div></pre></td></tr></table></figure>
+<h4 id="&#x5728;viewWillAppear&#x65B9;&#x6CD5;&#x4E2D;&#x9690;&#x85CF;&#x8BE5;&#x5206;&#x5272;&#x7EBF;"><a href="#&#x5728;viewWillAppear&#x65B9;&#x6CD5;&#x4E2D;&#x9690;&#x85CF;&#x8BE5;&#x5206;&#x5272;&#x7EBF;" class="headerlink" title="&#x5728;viewWillAppear&#x65B9;&#x6CD5;&#x4E2D;&#x9690;&#x85CF;&#x8BE5;&#x5206;&#x5272;&#x7EBF;"></a>&#x5728;viewWillAppear&#x65B9;&#x6CD5;&#x4E2D;&#x9690;&#x85CF;&#x8BE5;&#x5206;&#x5272;&#x7EBF;</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=YES;</div></pre></td></tr></table></figure>
+<h4 id="&#x5728;viewWillDisappear&#x65B9;&#x6CD5;&#x4E2D;&#x663E;&#x793A;&#x8BE5;&#x5206;&#x5272;&#x7EBF;"><a href="#&#x5728;viewWillDisappear&#x65B9;&#x6CD5;&#x4E2D;&#x663E;&#x793A;&#x8BE5;&#x5206;&#x5272;&#x7EBF;" class="headerlink" title="&#x5728;viewWillDisappear&#x65B9;&#x6CD5;&#x4E2D;&#x663E;&#x793A;&#x8BE5;&#x5206;&#x5272;&#x7EBF;"></a>&#x5728;viewWillDisappear&#x65B9;&#x6CD5;&#x4E2D;&#x663E;&#x793A;&#x8BE5;&#x5206;&#x5272;&#x7EBF;</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navBarHairlineImageView.hidden=NO;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;原文首发简书地址：&lt;a href=&quot;http://www.jianshu.com/p/5fffa30d7210&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@耿功发的博客 &lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; cl
+      &lt;p&gt;&amp;#x539F;&amp;#x6587;&amp;#x9996;&amp;#x53D1;&amp;#x7B80;&amp;#x4E66;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;&lt;a href=&quot;http://www.jianshu.com/p/5fffa30d7210&quot; target=&quot;_blank&quot; r
     
     </summary>
     
@@ -143,63 +178,62 @@
   
   <entry>
     <title>Xcode6升级到Xcode7 适配问题</title>
-    <link href="http://yoursite.com/2015/09/21/Xcode6%20update%20to%20Xcode7/"/>
-    <id>http://yoursite.com/2015/09/21/Xcode6 update to Xcode7/</id>
+    <link href="http://yoursite.com/2015/09/21/Xcode6-update-to-Xcode7/"/>
+    <id>http://yoursite.com/2015/09/21/Xcode6-update-to-Xcode7/</id>
     <published>2015-09-21T10:37:30.000Z</published>
-    <updated>2016-09-09T02:58:53.000Z</updated>
+    <updated>2016-09-09T06:45:02.000Z</updated>
     
-    <content type="html"><![CDATA[<p>原文首发简书地址：<a href="http://www.jianshu.com/p/e66927954c96" target="_blank" rel="external">@耿功发的博客 </a></p>
-<p><strong>1、大部分社交平台接口不支持https协议。</strong></p>
-<p>问题描述：在iOS9下，系统默认会拦截对http协议接口的访问，因此无法获取http协议接口的数据。对ShareSDK来说，具体表现可能是，无法授权、分享、获取用户信息等。</p>
-<p>还可能造成我们的编辑界面里传http之类的网络图片的时候，我们的编辑界面不会显示图片截图，解决的办法或者全面关闭https,允许使用http请求；或者把图片的域添加；又或者选择使用https的图片</p>
-<p>解决方案：<br><strong>（1）暂时退回到http协议。</strong><br>具体方法：<br>在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。<br>然后给它添加一个Key：NSAllowsArbitraryLoads，类型为Boolean类型，值为YES；<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/1.png" alt="enter image description here"></p>
-<p><strong>2）设置域。可以简单理解成，把不支持https协议的接口设置成http的接口。</strong><br>具体方法：<br>1）、在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。<br>2）、然后给它添加一个NSExceptionDomains，类型为字典类型；<br>3）、把需要的支持的域添加給NSExceptionDomains。其中域作为Key，类型为字典类型。<br>4）、每个域下面需要设置3个属性：NSIncludesSubdomains、NSExceptionRequiresForwardSecrecy、NSExceptionAllowsInsecureHTTPLoads。<br>均为Boolean类型，值分别为YES、NO、YES。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/2.png" alt="enter image description here"></p>
-<p>细节提示:在iOS9中如果使用到网络图片，也要注意网络图片是否是HTTP的哦，如果是，也要把图片的域设置哦！</p>
-<p>各平台设置域</p>
-<p><strong>新浪微博</strong><br>weibo.com<br>weibo.cn<br>sina.com.cn</p>
-<p><strong>腾讯微博</strong><br>qq.com</p>
-<p><strong>微信</strong><br>qq.com<br>QQ/QZone<br>qq.com</p>
-<p><strong>易信</strong><br>无需配置</p>
-<p><strong>豆瓣</strong><br>无需配置</p>
-<p><strong>人人</strong><br>renren.com</p>
-<p><strong>开心网</strong><br>kaixin001.com<br>kaixin001.com.cn</p>
-<p><strong>有道</strong><br>youdao.com</p>
+    <content type="html"><![CDATA[<p>&#x539F;&#x6587;&#x9996;&#x53D1;&#x7B80;&#x4E66;&#x5730;&#x5740;&#xFF1A;<a href="http://www.jianshu.com/p/e66927954c96" target="_blank" rel="external">@&#x803F;&#x529F;&#x53D1;&#x7684;&#x535A;&#x5BA2; </a></p>
+<p><strong>1&#x3001;&#x5927;&#x90E8;&#x5206;&#x793E;&#x4EA4;&#x5E73;&#x53F0;&#x63A5;&#x53E3;&#x4E0D;&#x652F;&#x6301;https&#x534F;&#x8BAE;&#x3002;</strong></p>
+<p>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;&#x5728;iOS9&#x4E0B;&#xFF0C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x4F1A;&#x62E6;&#x622A;&#x5BF9;http&#x534F;&#x8BAE;&#x63A5;&#x53E3;&#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x56E0;&#x6B64;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;http&#x534F;&#x8BAE;&#x63A5;&#x53E3;&#x7684;&#x6570;&#x636E;&#x3002;&#x5BF9;ShareSDK&#x6765;&#x8BF4;&#xFF0C;&#x5177;&#x4F53;&#x8868;&#x73B0;&#x53EF;&#x80FD;&#x662F;&#xFF0C;&#x65E0;&#x6CD5;&#x6388;&#x6743;&#x3001;&#x5206;&#x4EAB;&#x3001;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x7B49;&#x3002;</p>
+<p>&#x8FD8;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x6211;&#x4EEC;&#x7684;&#x7F16;&#x8F91;&#x754C;&#x9762;&#x91CC;&#x4F20;http&#x4E4B;&#x7C7B;&#x7684;&#x7F51;&#x7EDC;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x7F16;&#x8F91;&#x754C;&#x9762;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#x56FE;&#x7247;&#x622A;&#x56FE;&#xFF0C;&#x89E3;&#x51B3;&#x7684;&#x529E;&#x6CD5;&#x6216;&#x8005;&#x5168;&#x9762;&#x5173;&#x95ED;https,&#x5141;&#x8BB8;&#x4F7F;&#x7528;http&#x8BF7;&#x6C42;&#xFF1B;&#x6216;&#x8005;&#x628A;&#x56FE;&#x7247;&#x7684;&#x57DF;&#x6DFB;&#x52A0;&#xFF1B;&#x53C8;&#x6216;&#x8005;&#x9009;&#x62E9;&#x4F7F;&#x7528;https&#x7684;&#x56FE;&#x7247;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;<br><strong>&#xFF08;1&#xFF09;&#x6682;&#x65F6;&#x9000;&#x56DE;&#x5230;http&#x534F;&#x8BAE;&#x3002;</strong><br>&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#xFF1A;<br>&#x5728;&#x9879;&#x76EE;&#x7684;info.plist&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;Key&#xFF1A;NSAppTransportSecurity&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#x3002;<br>&#x7136;&#x540E;&#x7ED9;&#x5B83;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;Key&#xFF1A;NSAllowsArbitraryLoads&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;Boolean&#x7C7B;&#x578B;&#xFF0C;&#x503C;&#x4E3A;YES&#xFF1B;<br><img src="/2015/09/21/Xcode6-update-to-Xcode7/1.png" alt=""></p>
+<p><strong>2&#xFF09;&#x8BBE;&#x7F6E;&#x57DF;&#x3002;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7406;&#x89E3;&#x6210;&#xFF0C;&#x628A;&#x4E0D;&#x652F;&#x6301;https&#x534F;&#x8BAE;&#x7684;&#x63A5;&#x53E3;&#x8BBE;&#x7F6E;&#x6210;http&#x7684;&#x63A5;&#x53E3;&#x3002;</strong><br>&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#xFF1A;<br>1&#xFF09;&#x3001;&#x5728;&#x9879;&#x76EE;&#x7684;info.plist&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;Key&#xFF1A;NSAppTransportSecurity&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#x3002;<br>2&#xFF09;&#x3001;&#x7136;&#x540E;&#x7ED9;&#x5B83;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;NSExceptionDomains&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#xFF1B;<br>3&#xFF09;&#x3001;&#x628A;&#x9700;&#x8981;&#x7684;&#x652F;&#x6301;&#x7684;&#x57DF;&#x6DFB;&#x52A0;&#x7D66;NSExceptionDomains&#x3002;&#x5176;&#x4E2D;&#x57DF;&#x4F5C;&#x4E3A;Key&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#x3002;<br>4&#xFF09;&#x3001;&#x6BCF;&#x4E2A;&#x57DF;&#x4E0B;&#x9762;&#x9700;&#x8981;&#x8BBE;&#x7F6E;3&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;NSIncludesSubdomains&#x3001;NSExceptionRequiresForwardSecrecy&#x3001;NSExceptionAllowsInsecureHTTPLoads&#x3002;<br>&#x5747;&#x4E3A;Boolean&#x7C7B;&#x578B;&#xFF0C;&#x503C;&#x5206;&#x522B;&#x4E3A;YES&#x3001;NO&#x3001;YES&#x3002;<br><img src="/2015/09/21/Xcode6-update-to-Xcode7/2.png" alt=""></p>
+<p>&#x7EC6;&#x8282;&#x63D0;&#x793A;:&#x5728;iOS9&#x4E2D;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5230;&#x7F51;&#x7EDC;&#x56FE;&#x7247;&#xFF0C;&#x4E5F;&#x8981;&#x6CE8;&#x610F;&#x7F51;&#x7EDC;&#x56FE;&#x7247;&#x662F;&#x5426;&#x662F;HTTP&#x7684;&#x54E6;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x4E5F;&#x8981;&#x628A;&#x56FE;&#x7247;&#x7684;&#x57DF;&#x8BBE;&#x7F6E;&#x54E6;&#xFF01;</p>
+<p>&#x5404;&#x5E73;&#x53F0;&#x8BBE;&#x7F6E;&#x57DF;</p>
+<p><strong>&#x65B0;&#x6D6A;&#x5FAE;&#x535A;</strong><br>weibo.com<br>weibo.cn<br>sina.com.cn</p>
+<p><strong>&#x817E;&#x8BAF;&#x5FAE;&#x535A;</strong><br>qq.com</p>
+<p><strong>&#x5FAE;&#x4FE1;</strong><br>qq.com<br>QQ/QZone<br>qq.com</p>
+<p><strong>&#x6613;&#x4FE1;</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>&#x8C46;&#x74E3;</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>&#x4EBA;&#x4EBA;</strong><br>renren.com</p>
+<p><strong>&#x5F00;&#x5FC3;&#x7F51;</strong><br>kaixin001.com<br>kaixin001.com.cn</p>
+<p><strong>&#x6709;&#x9053;</strong><br>youdao.com</p>
 <p><strong>Facebook</strong><br>facebook.com</p>
 <p><strong>fbcdn.net</strong><br>akamaihd.net</p>
 <p><strong>Twitter</strong><br>twitter.com</p>
-<p><strong>Google+</strong><br>无需配置</p>
+<p><strong>Google+</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
 <p><strong>Instagram</strong><br>instagram.com<br>instagramstatic-a.akamaihd.net</p>
 <p><strong>Tumblr</strong><br>tumblr.com</p>
 <p><strong>Instapaper</strong><br>instapaper.com</p>
-<p><strong>Pinterest</strong><br>无需配置</p>
-<p><strong>明道</strong><br>无需配置</p>
-<p><strong>Evernote印象笔记</strong><br>无需配置</p>
-<p><strong>VK</strong><br>无需配置</p>
-<p><strong>pocket</strong><br>无需配置</p>
-<p><strong>LinkedIn</strong><br>无需配置</p>
-<p><strong>Dropbox</strong><br>无需配置</p>
-<p><strong>Flickr</strong><br>无需配置</p>
-<p><strong>2、大部分社交平台SDK不支持bitcode。</strong><br>问题描述：iOS 9新建项目默认需要支持bitcode，而不支持bitcode的SDK会导致无法编译运行。</p>
-<p>解决方案：<br>（1）、暂时关闭对bitcode的支持（建议），方法如下图<br>（2）、移除不支持bitcode的平台SDK。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/3.png" alt="enter image description here"></p>
-<p><strong>3、添加Scheme白名单。</strong></p>
-<p>问题描述：在iOS 9下涉及到平台客户端跳转，系统会自动到项目info.plist下检测是否设置平台Scheme。对于需要配置的平台，如果没有配置，就无法正常跳转平台客户端。因此要支持客户端的分享和授权等，需要配置Scheme名单。</p>
-<p>具体方法：<br>1）、在项目的info.plist中添加一LSApplicationQueriesSchemes，类型为Array。<br>2）、然后给它添加一个需要支持的项目，类型为字符串类型；<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/4.png" alt="enter image description here"></p>
-<p>新浪微博<br>sinaweibo,<br>sinaweibohd,<br>sinaweibosso,<br>sinaweibohdsso,<br>weibosdk,<br>weibosdk2.5<br>[后两个若导入新浪SDK则需要]<br>腾讯微博<br>TencentWeibo,<br>tencentweiboSdkv2<br>[控制台会提示这两个,但是腾讯微博SDK已经弃用，可以忽略不配置]<br>豆瓣<br>无需配置<br>开心网<br>无需配置<br>微信<br>wechat,<br>weixin<br>易信<br>yixin,<br>yixinopenapi<br>支付宝<br>alipay,<br>alipayshare<br>QQ<br>mqqOpensdkSSoLogin,<br>mqqopensdkapiV2,<br>mqqopensdkapiV3,<br>wtloginmqq2,<br>mqq,<br>mqqapi<br>QZONE<br>mqzoneopensdk,<br>mqzoneopensdkapi,<br>mqzoneopensdkapi19,<br>mqzoneopensdkapiV2,<br>mqqOpensdkSSoLogin,<br>mqqopensdkapiV2,<br>mqqopensdkapiV3,<br>wtloginmqq2,<br>mqqapi,<br>mqqwpa，<br>mqzone，<br>mqq<br>[注:若同时使用QQ和QZONE,则直接添加本格即可]<br>Google+<br>googlechrome,<br>googlechrome-x-callback,<br>hasgplus4,<br>com.google.gppconsent,<br>com.google.gppconsent.2.2.0,<br>com.google.gppconsent.2.3.0,<br>com.google.gppconsent.2.4.0,<br>com.google.gppconsent.2.4.1<br>人人网<br>renrenapi,<br>renrenios,<br>renreniphone,<br>renren,<br>以及在使用人人SDK时所需配置的URL Scheme,例如:rm226427com.mob.demoShareSDK<br>Facebook<br>fbauth2<br>Twitter<br>无需配置<br>Pocket<br>pocket-oauth-v1<br>Pinterest<br>pinit<br>Instagram<br>instagram<br>WhatsApp<br>whatsapp<br>Line<br>line<br>KakaoTalk<br>kakaolink<br>KaokaoStory<br>storylink<br>LinkedIn<br>无需配置<br>Tumblr<br>无需配置<br>非平台类，如短信，复制，邮件等<br>无需配置</p>
-<p>必看注意:<br><strong>1.在iOS9中，如果没有添加上述白名单，系统会打印类似如下提示:</strong><br>.-canOpenURL: failed for URL: “sinaweibohdsso://xxx” – error: “This app is not allowed to query for scheme sinaweibohdsso”(如下图)<br>如没有添加相关白名单，有可能导致分享失败，例如不会跳转微信，不会跳转QQ等。</p>
-<p><strong>2.添加完上述所需的名单,系统依然会打印类似信息：</strong><br>.-canOpenURL: failed for URL: “sinaweibohdsso://xxx” – error: “null”<br>这是系统打印的信息，目前是无法阻止其打印，即无法消除的</p>
-<p><strong>3.上述白名单，是技术人员通过不断的测试收集整理所得，如果各位开发者朋友发现上表格有所遗漏，请根据系统信息添加相关白名单即可。</strong><br>如果没有设置白名单的话，系统的打印信息如图所示:<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/5.png" alt="enter image description here"></p>
-<p>添加完后，系统是依然会打印的，不过error会变成null:<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/6.png" alt="enter image description here"></p>
-<p><strong>4、其他：</strong><br>在iOS9下，新浪微博SDK里面使用的JSONKit在部分机型可能导致崩溃。崩溃信息如下图。<br>解决：暂时移除新浪微博SDK，等待新浪微博SDK的更新。<br>影响：移除新浪微博SDK后，除了依赖SDK实现的跳到客户端的分享和关注官网微博等失效。其他主要功能如分享、SSO、获取用户资料等不受影响。<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/7.png" alt="enter image description here"></p>
-<p><strong>5.关于lib库文件</strong></p>
-<p>Update your library with bit code, or you’ll get warnings like:</p>
-<p>(null): URGENT: all bitcode will be dropped because’/Users/myname/Library/MobileDocuments/com~apple~CloudDocs/foldername/appname/GoogleMobileAds.framework/GoogleMobileAds(GADSlot+AdEvents.o)’was built without bitcode. You must rebuild it with bitcode enabled(Xcode setting ENABLE_BITCODE), obtain an updated library from thevendor, or disable bitcode for this target. Note: This will be anerror in the future.</p>
+<p><strong>Pinterest</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>&#x660E;&#x9053;</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>Evernote&#x5370;&#x8C61;&#x7B14;&#x8BB0;</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>VK</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>pocket</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>LinkedIn</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>Dropbox</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>Flickr</strong><br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p><strong>2&#x3001;&#x5927;&#x90E8;&#x5206;&#x793E;&#x4EA4;&#x5E73;&#x53F0;SDK&#x4E0D;&#x652F;&#x6301;bitcode&#x3002;</strong><br>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;iOS 9&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#x9ED8;&#x8BA4;&#x9700;&#x8981;&#x652F;&#x6301;bitcode&#xFF0C;&#x800C;&#x4E0D;&#x652F;&#x6301;bitcode&#x7684;SDK&#x4F1A;&#x5BFC;&#x81F4;&#x65E0;&#x6CD5;&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;<br>&#xFF08;1&#xFF09;&#x3001;&#x6682;&#x65F6;&#x5173;&#x95ED;&#x5BF9;bitcode&#x7684;&#x652F;&#x6301;&#xFF08;&#x5EFA;&#x8BAE;&#xFF09;&#xFF0C;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#x56FE;<br>&#xFF08;2&#xFF09;&#x3001;&#x79FB;&#x9664;&#x4E0D;&#x652F;&#x6301;bitcode&#x7684;&#x5E73;&#x53F0;SDK&#x3002;<br><img src="/2015/09/21/Xcode6-update-to-Xcode7/3.png" alt=""></p>
+<p><strong>3&#x3001;&#x6DFB;&#x52A0;Scheme&#x767D;&#x540D;&#x5355;&#x3002;</strong></p>
+<p>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;&#x5728;iOS 9&#x4E0B;&#x6D89;&#x53CA;&#x5230;&#x5E73;&#x53F0;&#x5BA2;&#x6237;&#x7AEF;&#x8DF3;&#x8F6C;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x81EA;&#x52A8;&#x5230;&#x9879;&#x76EE;info.plist&#x4E0B;&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x8BBE;&#x7F6E;&#x5E73;&#x53F0;Scheme&#x3002;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#xFF0C;&#x5C31;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x8DF3;&#x8F6C;&#x5E73;&#x53F0;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x56E0;&#x6B64;&#x8981;&#x652F;&#x6301;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x5206;&#x4EAB;&#x548C;&#x6388;&#x6743;&#x7B49;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;Scheme&#x540D;&#x5355;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#xFF1A;<br>1&#xFF09;&#x3001;&#x5728;&#x9879;&#x76EE;&#x7684;info.plist&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;LSApplicationQueriesSchemes&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;Array&#x3002;<br>2&#xFF09;&#x3001;&#x7136;&#x540E;&#x7ED9;&#x5B83;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x652F;&#x6301;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF1B;<br><img src="/2015/09/21/Xcode6-update-to-Xcode7/4.png" alt=""></p>
+<p>&#x65B0;&#x6D6A;&#x5FAE;&#x535A;<br>sinaweibo,<br>sinaweibohd,<br>sinaweibosso,<br>sinaweibohdsso,<br>weibosdk,<br>weibosdk2.5<br>[&#x540E;&#x4E24;&#x4E2A;&#x82E5;&#x5BFC;&#x5165;&#x65B0;&#x6D6A;SDK&#x5219;&#x9700;&#x8981;]<br>&#x817E;&#x8BAF;&#x5FAE;&#x535A;<br>TencentWeibo,<br>tencentweiboSdkv2<br>[&#x63A7;&#x5236;&#x53F0;&#x4F1A;&#x63D0;&#x793A;&#x8FD9;&#x4E24;&#x4E2A;,&#x4F46;&#x662F;&#x817E;&#x8BAF;&#x5FAE;&#x535A;SDK&#x5DF2;&#x7ECF;&#x5F03;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x4E0D;&#x914D;&#x7F6E;]<br>&#x8C46;&#x74E3;<br>&#x65E0;&#x9700;&#x914D;&#x7F6E;<br>&#x5F00;&#x5FC3;&#x7F51;<br>&#x65E0;&#x9700;&#x914D;&#x7F6E;<br>&#x5FAE;&#x4FE1;<br>wechat,<br>weixin<br>&#x6613;&#x4FE1;<br>yixin,<br>yixinopenapi<br>&#x652F;&#x4ED8;&#x5B9D;<br>alipay,<br>alipayshare<br>QQ<br>mqqOpensdkSSoLogin,<br>mqqopensdkapiV2,<br>mqqopensdkapiV3,<br>wtloginmqq2,<br>mqq,<br>mqqapi<br>QZONE<br>mqzoneopensdk,<br>mqzoneopensdkapi,<br>mqzoneopensdkapi19,<br>mqzoneopensdkapiV2,<br>mqqOpensdkSSoLogin,<br>mqqopensdkapiV2,<br>mqqopensdkapiV3,<br>wtloginmqq2,<br>mqqapi,<br>mqqwpa&#xFF0C;<br>mqzone&#xFF0C;<br>mqq<br>[&#x6CE8;:&#x82E5;&#x540C;&#x65F6;&#x4F7F;&#x7528;QQ&#x548C;QZONE,&#x5219;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x672C;&#x683C;&#x5373;&#x53EF;]<br>Google+<br>googlechrome,<br>googlechrome-x-callback,<br>hasgplus4,<br>com.google.gppconsent,<br>com.google.gppconsent.2.2.0,<br>com.google.gppconsent.2.3.0,<br>com.google.gppconsent.2.4.0,<br>com.google.gppconsent.2.4.1<br>&#x4EBA;&#x4EBA;&#x7F51;<br>renrenapi,<br>renrenios,<br>renreniphone,<br>renren,<br>&#x4EE5;&#x53CA;&#x5728;&#x4F7F;&#x7528;&#x4EBA;&#x4EBA;SDK&#x65F6;&#x6240;&#x9700;&#x914D;&#x7F6E;&#x7684;URL Scheme,&#x4F8B;&#x5982;:rm226427com.mob.demoShareSDK<br>Facebook<br>fbauth2<br>Twitter<br>&#x65E0;&#x9700;&#x914D;&#x7F6E;<br>Pocket<br>pocket-oauth-v1<br>Pinterest<br>pinit<br>Instagram<br>instagram<br>WhatsApp<br>whatsapp<br>Line<br>line<br>KakaoTalk<br>kakaolink<br>KaokaoStory<br>storylink<br>LinkedIn<br>&#x65E0;&#x9700;&#x914D;&#x7F6E;<br>Tumblr<br>&#x65E0;&#x9700;&#x914D;&#x7F6E;<br>&#x975E;&#x5E73;&#x53F0;&#x7C7B;&#xFF0C;&#x5982;&#x77ED;&#x4FE1;&#xFF0C;&#x590D;&#x5236;&#xFF0C;&#x90AE;&#x4EF6;&#x7B49;<br>&#x65E0;&#x9700;&#x914D;&#x7F6E;</p>
+<p>&#x5FC5;&#x770B;&#x6CE8;&#x610F;:<br><strong>1.&#x5728;iOS9&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x4E0A;&#x8FF0;&#x767D;&#x540D;&#x5355;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x6253;&#x5370;&#x7C7B;&#x4F3C;&#x5982;&#x4E0B;&#x63D0;&#x793A;:</strong><br>.-canOpenURL: failed for URL: &#x201C;sinaweibohdsso://xxx&#x201D; &#x2013; error: &#x201C;This app is not allowed to query for scheme sinaweibohdsso&#x201D;(&#x5982;&#x4E0B;&#x56FE;)<br>&#x5982;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x76F8;&#x5173;&#x767D;&#x540D;&#x5355;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5206;&#x4EAB;&#x5931;&#x8D25;&#xFF0C;&#x4F8B;&#x5982;&#x4E0D;&#x4F1A;&#x8DF3;&#x8F6C;&#x5FAE;&#x4FE1;&#xFF0C;&#x4E0D;&#x4F1A;&#x8DF3;&#x8F6C;QQ&#x7B49;&#x3002;</p>
+<p><strong>2.&#x6DFB;&#x52A0;&#x5B8C;&#x4E0A;&#x8FF0;&#x6240;&#x9700;&#x7684;&#x540D;&#x5355;,&#x7CFB;&#x7EDF;&#x4F9D;&#x7136;&#x4F1A;&#x6253;&#x5370;&#x7C7B;&#x4F3C;&#x4FE1;&#x606F;&#xFF1A;</strong><br>.-canOpenURL: failed for URL: &#x201C;sinaweibohdsso://xxx&#x201D; &#x2013; error: &#x201C;null&#x201D;<br>&#x8FD9;&#x662F;&#x7CFB;&#x7EDF;&#x6253;&#x5370;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x76EE;&#x524D;&#x662F;&#x65E0;&#x6CD5;&#x963B;&#x6B62;&#x5176;&#x6253;&#x5370;&#xFF0C;&#x5373;&#x65E0;&#x6CD5;&#x6D88;&#x9664;&#x7684;</p>
+<p><strong>3.&#x4E0A;&#x8FF0;&#x767D;&#x540D;&#x5355;&#xFF0C;&#x662F;&#x6280;&#x672F;&#x4EBA;&#x5458;&#x901A;&#x8FC7;&#x4E0D;&#x65AD;&#x7684;&#x6D4B;&#x8BD5;&#x6536;&#x96C6;&#x6574;&#x7406;&#x6240;&#x5F97;&#xFF0C;&#x5982;&#x679C;&#x5404;&#x4F4D;&#x5F00;&#x53D1;&#x8005;&#x670B;&#x53CB;&#x53D1;&#x73B0;&#x4E0A;&#x8868;&#x683C;&#x6709;&#x6240;&#x9057;&#x6F0F;&#xFF0C;&#x8BF7;&#x6839;&#x636E;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x6DFB;&#x52A0;&#x76F8;&#x5173;&#x767D;&#x540D;&#x5355;&#x5373;&#x53EF;&#x3002;</strong><br>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x767D;&#x540D;&#x5355;&#x7684;&#x8BDD;&#xFF0C;&#x7CFB;&#x7EDF;&#x7684;&#x6253;&#x5370;&#x4FE1;&#x606F;&#x5982;&#x56FE;&#x6240;&#x793A;:<br><img src="/2015/09/21/Xcode6-update-to-Xcode7/5.png" alt=""></p>
+<p>&#x6DFB;&#x52A0;&#x5B8C;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x662F;&#x4F9D;&#x7136;&#x4F1A;&#x6253;&#x5370;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;error&#x4F1A;&#x53D8;&#x6210;null:<br><img src="/2015/09/21/Xcode6-update-to-Xcode7/6.png" alt=""></p>
+<p><strong>4&#x3001;&#x5176;&#x4ED6;&#xFF1A;</strong><br>&#x5728;iOS9&#x4E0B;&#xFF0C;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;SDK&#x91CC;&#x9762;&#x4F7F;&#x7528;&#x7684;JSONKit&#x5728;&#x90E8;&#x5206;&#x673A;&#x578B;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5D29;&#x6E83;&#x3002;&#x5D29;&#x6E83;&#x4FE1;&#x606F;&#x5982;&#x4E0B;&#x56FE;&#x3002;<br>&#x89E3;&#x51B3;&#xFF1A;&#x6682;&#x65F6;&#x79FB;&#x9664;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;SDK&#xFF0C;&#x7B49;&#x5F85;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;SDK&#x7684;&#x66F4;&#x65B0;&#x3002;<br>&#x5F71;&#x54CD;&#xFF1A;&#x79FB;&#x9664;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;SDK&#x540E;&#xFF0C;&#x9664;&#x4E86;&#x4F9D;&#x8D56;SDK&#x5B9E;&#x73B0;&#x7684;&#x8DF3;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x5206;&#x4EAB;&#x548C;&#x5173;&#x6CE8;&#x5B98;&#x7F51;&#x5FAE;&#x535A;&#x7B49;&#x5931;&#x6548;&#x3002;&#x5176;&#x4ED6;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x5982;&#x5206;&#x4EAB;&#x3001;SSO&#x3001;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x8D44;&#x6599;&#x7B49;&#x4E0D;&#x53D7;&#x5F71;&#x54CD;&#x3002;<br><img src="/2015/09/21/Xcode6-update-to-Xcode7/7.png" alt=""></p>
+<p><strong>5.&#x5173;&#x4E8E;lib&#x5E93;&#x6587;&#x4EF6;</strong></p>
+<p>Update your library with bit code, or you&#x2019;ll get warnings like:</p>
+<p>(null): URGENT: all bitcode will be dropped because&#x2019;/Users/myname/Library/MobileDocuments/com~apple~CloudDocs/foldername/appname/GoogleMobileAds.framework/GoogleMobileAds(GADSlot+AdEvents.o)&#x2019;was built without bitcode. You must rebuild it with bitcode enabled(Xcode setting ENABLE_BITCODE), obtain an updated library from thevendor, or disable bitcode for this target. Note: This will be anerror in the future.</p>
 <p>Say NO to Enable Bitcode in your target Build Settings</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;原文首发简书地址：&lt;a href=&quot;http://www.jianshu.com/p/e66927954c96&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@耿功发的博客 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1、大部分社交平台接口不支持https协议
+      &lt;p&gt;&amp;#x539F;&amp;#x6587;&amp;#x9996;&amp;#x53D1;&amp;#x7B80;&amp;#x4E66;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;&lt;a href=&quot;http://www.jianshu.com/p/e66927954c96&quot; target=&quot;_blank&quot; r
     
     </summary>
     
