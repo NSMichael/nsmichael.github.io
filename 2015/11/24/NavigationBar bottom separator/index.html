@@ -13,39 +13,30 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="@(NavigationBar)[分割线|隐藏]
-
-原文首发简书地址：@耿功发的博客 
-
+    <meta name="description" content="原文首发简书地址：@耿功发的博客 
 问题描述有时我们需要实现如下场景，(1)在同一个界面中 显示与隐藏NavigationBar底部分割线(2)当离开这个ViewController的时候，仍然需要显示底部分割线。效果图如下所示：
 
 定义变量1UIImageView *navBarHairlineImageView;
-创建findHairlin">
+创建findHairlineImageViewUnder方法，并在viewDid">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="NavigationBar底部分割线隐藏">
 <meta property="og:url" content="http://yoursite.com/2015/11/24/NavigationBar bottom separator/index.html">
 <meta property="og:site_name" content="耿功发的博客">
-<meta property="og:description" content="@(NavigationBar)[分割线|隐藏]
-
-原文首发简书地址：@耿功发的博客 
-
+<meta property="og:description" content="原文首发简书地址：@耿功发的博客 
 问题描述有时我们需要实现如下场景，(1)在同一个界面中 显示与隐藏NavigationBar底部分割线(2)当离开这个ViewController的时候，仍然需要显示底部分割线。效果图如下所示：
 
 定义变量1UIImageView *navBarHairlineImageView;
-创建findHairlin">
+创建findHairlineImageViewUnder方法，并在viewDid">
 <meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg">
 <meta property="og:image" content="http://7xr98q.com1.z0.glb.clouddn.com/9.jpg">
-<meta property="og:updated_time" content="2016-09-01T10:38:03.000Z">
+<meta property="og:updated_time" content="2016-09-09T02:58:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NavigationBar底部分割线隐藏">
-<meta name="twitter:description" content="@(NavigationBar)[分割线|隐藏]
-
-原文首发简书地址：@耿功发的博客 
-
+<meta name="twitter:description" content="原文首发简书地址：@耿功发的博客 
 问题描述有时我们需要实现如下场景，(1)在同一个界面中 显示与隐藏NavigationBar底部分割线(2)当离开这个ViewController的时候，仍然需要显示底部分割线。效果图如下所示：
 
 定义变量1UIImageView *navBarHairlineImageView;
-创建findHairlin">
+创建findHairlineImageViewUnder方法，并在viewDid">
 <meta name="twitter:image" content="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg">
     
     
@@ -240,11 +231,8 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>@(NavigationBar)[分割线|隐藏]</p>
-<blockquote>
-<p>原文首发简书地址：<a href="http://www.jianshu.com/p/5fffa30d7210" target="_blank" rel="external">@耿功发的博客 </a></p>
-</blockquote>
-<p><strong>问题描述</strong><br>有时我们需要实现如下场景，<br>(1)在同一个界面中 显示与隐藏NavigationBar底部分割线<br>(2)当离开这个ViewController的时候，仍然需要显示底部分割线。<br>效果图如下所示：<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg" alt="pic1"></p>
+            <p>原文首发简书地址：<a href="http://www.jianshu.com/p/5fffa30d7210" target="_blank" rel="external">@耿功发的博客 </a></p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>有时我们需要实现如下场景，<br>(1)在同一个界面中 显示与隐藏NavigationBar底部分割线<br>(2)当离开这个ViewController的时候，仍然需要显示底部分割线。<br>效果图如下所示：<br><img src="http://7xr98q.com1.z0.glb.clouddn.com/8.jpg" alt="pic1"></p>
 <p><img src="http://7xr98q.com1.z0.glb.clouddn.com/9.jpg" alt="pic2"></p>
 <h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIImageView *navBarHairlineImageView;</div></pre></td></tr></table></figure>
 <h4 id="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"><a href="#创建findHairlineImageViewUnder方法，并在viewDidLoad中调用" class="headerlink" title="创建findHairlineImageViewUnder方法，并在viewDidLoad中调用"></a>创建findHairlineImageViewUnder方法，并在viewDidLoad中调用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (UIImageView *)findHairlineImageViewUnder:(UIView*)view &#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>([view isKindOfClass:UIImageView.<span class="keyword">class</span>] &amp;&amp; view.bounds.size.height&lt;=<span class="number">1.0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> (UIImageView*)view;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(UIView *subview <span class="keyword">in</span> view.subviews) &#123;</div><div class="line">        UIImageView *imageView = [self findHairlineImageViewUnder:subview];</div><div class="line">        <span class="keyword">if</span>(imageView) &#123;</div><div class="line">            <span class="keyword">return</span> imageView;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">   <span class="keyword">return</span> nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
