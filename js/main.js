@@ -10,7 +10,7 @@ $(document).ready(function() {
       $('.content-wrapper').addClass('animated slideInRight');
     } else {
       $('.panel-cover').css('max-width',currentWidth);
-      $('.panel-cover').animate({'max-width': '500px', 'width': '30%'}, 400, swing = 'swing', function() {} );
+      $('.panel-cover').animate({'max-width': '465px', 'width': '26%'}, 400, swing = 'swing', function() {} );
     }
   });
 
@@ -52,4 +52,21 @@ $(document).ready(function() {
 
   $("article.post-container--single a[href^=http]").attr("target", "_blank");
   $("article.post-container--single a[href^=mailto]").attr("target", "_blank");
+  
+  
+  
+  $(function(){
+		
+		$('.img-click').click(function(){
+            document.getElementById("img-content").src=$(this).attr("data");
+			$('.img-background').fadeIn(200);
+			$('.img-border').fadeIn(400);
+            
+		});
+		$('.img-background').click(function(){
+			$('.img-background').fadeOut(200);
+			$('.img-border').fadeOut(200);
+		});
+        
+	});
 });
