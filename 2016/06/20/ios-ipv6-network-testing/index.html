@@ -1,163 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    
-    <title>iOS应用支持IPv6-only网络 | 耿功发的博客</title>
-    <meta name="renderer" content="webkit">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="utf-8">
+  
+  <title>iOS应用支持IPv6-only网络 | 耿功发的博客</title>
 
-    <meta name="description" content="Nothing is impossible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="iOS应用支持IPv6-only网络 | 耿功发的博客">
-    <meta name="twitter:description" content="Nothing is impossible">
+  
+    <meta name="keywords" content="IPv6," />
+  
 
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="iOS应用支持IPv6-only网络 | 耿功发的博客">
-    <meta property="og:description" content="Nothing is impossible">
+  <meta name="description" content="&amp;#x539F;&amp;#x6587;&amp;#x9996;&amp;#x53D1;&amp;#x7B80;&amp;#x4E66;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;@&amp;#x803F;&amp;#x529F;&amp;#x53D1;&amp;#x7684;&amp;#x535A;&amp;#x5BA2; 
+&amp;#x524D;&amp;#x8A00;6&amp;#x6708;1&amp;#x65E5;&amp;#x8D77;&amp;#x82F9;&amp;#x679C;&amp;#x89C4;&amp;#x5B9A;&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS应用支持IPv6-only网络">
+<meta property="og:url" content="http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/index.html">
+<meta property="og:site_name" content="耿功发的博客">
+<meta property="og:description" content="&amp;#x539F;&amp;#x6587;&amp;#x9996;&amp;#x53D1;&amp;#x7B80;&amp;#x4E66;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;@&amp;#x803F;&amp;#x529F;&amp;#x53D1;&amp;#x7684;&amp;#x535A;&amp;#x5BA2; 
+&amp;#x524D;&amp;#x8A00;6&amp;#x6708;1&amp;#x65E5;&amp;#x8D77;&amp;#x82F9;&amp;#x679C;&amp;#x89C4;&amp;#x5B9A;&amp;#x">
+<meta property="og:image" content="http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/1.png">
+<meta property="og:image" content="http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/2.png">
+<meta property="og:image" content="http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/3.png">
+<meta property="og:image" content="http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/4.png">
+<meta property="og:image" content="http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/5.png">
+<meta property="og:updated_time" content="2016-09-09T09:05:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS应用支持IPv6-only网络">
+<meta name="twitter:description" content="&amp;#x539F;&amp;#x6587;&amp;#x9996;&amp;#x53D1;&amp;#x7B80;&amp;#x4E66;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;@&amp;#x803F;&amp;#x529F;&amp;#x53D1;&amp;#x7684;&amp;#x535A;&amp;#x5BA2; 
+&amp;#x524D;&amp;#x8A00;6&amp;#x6708;1&amp;#x65E5;&amp;#x8D77;&amp;#x82F9;&amp;#x679C;&amp;#x89C4;&amp;#x5B9A;&amp;#x">
+<meta name="twitter:image" content="http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/1.png">
 
-    
-    <meta name="author" content="耿功发">
-    
-    <link rel="stylesheet" href="/css/vno.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  
 
-    
+  
     <link rel="icon" href="/images/avatar.jpg">
-    
+  
 
-    <meta name="generator" content="hexo"/>
-    
-    <link rel="alternate" type="application/rss+xml" title="耿功发的博客" href="/atom.xml">
-    
+  <link rel="stylesheet" href="/css/styles.css">
 
-    <link rel="canonical" href="http://yoursite.com/2016/06/20/ios-ipv6-network-testing/"/>
+  
 
-    
-      
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42596364-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+
 </head>
 
-<body class="home-template no-js">
-    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
-    <span class="mobile btn-mobile-menu">
-        <i class="fa fa-list btn-mobile-menu__icon"></i>
-        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
-    </span>
-
-    
-<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-001.jpg)">
-  <div class="panel-main">
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-
-        <a href="/" title="前往 耿功发的博客 的主页"><img src="/images/avatar.jpg" width="80" alt="耿功发的博客 logo" class="panel-cover__logo logo" /></a>
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for 耿功发的博客">耿功发的博客</a></h1>
-        
-        <span class="panel-cover__subtitle panel-subtitle">iOS Developer</span>
-        
-        <hr class="panel-cover__divider" />
-        <p class="panel-cover__description">Nothing is impossible</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
-
-        <div class="navigation-wrapper">
-          <div>
-          <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
-            
-              <li class="navigation__item"><a href="/#projects">项目作品</a></li>
-            
-              <li class="navigation__item"><a href="/#about">关于我</a></li>
-            
-            </ul>
-          </nav>
-          </div>
-          <div>
-          <nav class="cover-navigation navigation--social">
-  <ul class="navigation">
-
-  <!-- Weibo-->
-  
-  <li class="navigation__item">
-    <a href="http://weibo.com/genggongfa/" title="我的微博" target="_blank">
-      <i class='social fa fa-weibo'></i>
-      <span class="label">Weibo</span>
-    </a>
-  </li> 
-
-
-  <!-- Github -->
-  
-  <li class="navigation__item">
-    <a href="https://github.com/NSMichael" title="查看我的GitHub主页" target="_blank">
-      <i class='social fa fa-github'></i>
-      <span class="label">Github</span>
-    </a>
-  </li>
-
-
-<!-- Stack Overflow -->
-        
-
-  <!-- Google Plus -->
-  
-
-<!-- Facebook -->
-
-  
-<!-- Twitter -->
-
-  
-
-  <li class="navigation__item">
-    <a href="/atom.xml" title="RSS" target="_blank">
-      <i class='social fa fa-rss'></i>
-      <span class="label">RSS</span>
-    </a>
-  </li>
-
-
-
-  </ul>
-</nav>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="panel-cover--overlay cover-purple"></div>
-  </div>
-</header>
-
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner">
-            <article class="post-container post-container--single">
-
-  <header class="post-header">
-    <div class="post-meta">
-      <time datetime="2016-06-20T03:55:30.000Z" class="post-list__meta--date date">2016-06-20</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/IPv6/">IPv6</a>
- </span>
-      <span class="page-pv">
-      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
-      </span> 
+<body>
+  <div class="post-header LEFT">
    
-    </div>
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/archives">
+      <img class="avatar" src="/images/avatar.jpg" alt="">
+    </a>
+    <ul class="list-toolbox"
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料："><span class="toc-text">参考资料：</span></a></li></ol>
+  </div>
+
+
+<a class="back-top" href="#">
+  <i class="icon-angle-up"></i>
+</a>
+
+
+<div class="content-post LEFT">
+   <article id="post-ios-ipv6-network-testing" class="article article-type-post" itemscope itemprop="blogPost">
+  <header class="article-header">
     <h1 class="post-title">iOS应用支持IPv6-only网络</h1>
+
+    <div class="article-meta">
+      <span>2016-06-20</span>
+
+      <span> | </span>
+
+      <span class="article-author">耿功发</span>
+
+      <span> | </span>
+
+      
+  <span class="article-category">
+    <a class="article-category-link" href="/categories/APP测试/">APP测试</a>
+  </span>
+
+
+    </div>
   </header>
 
-  <section class="post">
-    <p>&#x539F;&#x6587;&#x9996;&#x53D1;&#x7B80;&#x4E66;&#x5730;&#x5740;&#xFF1A;<a href="http://www.jianshu.com/p/00c2499944c5" target="_blank" rel="external">@&#x803F;&#x529F;&#x53D1;&#x7684;&#x535A;&#x5BA2; </a></p>
+  <div class="article-content">
+    
+      <p>&#x539F;&#x6587;&#x9996;&#x53D1;&#x7B80;&#x4E66;&#x5730;&#x5740;&#xFF1A;<a href="http://www.jianshu.com/p/00c2499944c5" target="_blank" rel="external">@&#x803F;&#x529F;&#x53D1;&#x7684;&#x535A;&#x5BA2; </a></p>
 <h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><p>6&#x6708;1&#x65E5;&#x8D77;&#x82F9;&#x679C;&#x89C4;&#x5B9A;&#x6240;&#x6709;&#x65B0;&#x63D0;&#x4EA4;&#x5E94;&#x7528;&#x5FC5;&#x987B;&#x652F;&#x6301;IPv6-only&#x7F51;&#x7EDC;&#xFF0C;&#x600E;&#x4E48;&#x4F7F;&#x7528;Mac&#x642D;&#x5EFA;IPv6&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#xFF0C;&#x4F60;&#x770B;&#x6211;&#x5C31;&#x591F;&#x4E86;</p>
 <p>&#x201C;&#x5728;WWDC2015&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x5BA3;&#x5E03;iOS9&#x5F00;&#x59CB;&#x5411;IPv6-only&#x7F51;&#x7EDC;&#x670D;&#x52A1;&#x8FC7;&#x6E21;&#x3002;&#x81EA;2016&#x5E74;6&#x6708;1&#x65E5;&#x8D77;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x6240;&#x6709;&#x63D0;&#x4EA4;&#x81F3;AppStore&#x7684;&#x5E94;&#x7528;&#x5FC5;&#x987B;&#x652F;&#x6301;IPv6-only&#x7F51;&#x7EDC;&#x3002;&#x7531;&#x4E8E;&#x5927;&#x90E8;&#x5206;&#x73B0;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;NSURLSession&#x548C;CFNetworkAPIs&#x517C;&#x5BB9;&#x8BE5;&#x534F;&#x8BAE;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E9B;&#x5E94;&#x7528;&#x65E0;&#x9700;&#x505A;&#x51FA;&#x8C03;&#x6574;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4F9D;&#x7136;&#x4F7F;&#x7528;IPv4API&#x7684;&#x6216;&#x8005;&#x786C;&#x4EF6;&#x7F16;&#x7801;IP&#x5730;&#x5740;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8C03;&#x6574;&#x5E94;&#x7528;&#x4EE3;&#x7801;&#x6765;&#x9002;&#x5E94;&#x65B0;&#x53D8;&#x5316;&#x3002;&#x201D;</p>
 <p>&#x68C0;&#x67E5;&#x4E0D;&#x517C;&#x5BB9;IPv6&#x7684;&#x4EE3;&#x7801;<br>Check Source Code for IPv6 DNS64/NAT64 Incompatibilities<br>Check for and eliminate IPv4-specific APIs, such as:</p>
@@ -169,78 +123,26 @@
 <p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x624B;&#x673A;&#x4E2D;&#x7684;Wi-Fi&#x4FE1;&#x606F;&#x770B;&#x5230;&#x8FDE;&#x4E0A;&#x7684;Wi-Fi&#x662F;&#x5426;&#x662F;IPv6&#xFF0C;&#x6CE8;&#x610F;&#x6B64;&#x65F6;&#x8981;&#x628A;iPhone&#x8BBE;&#x6210;&#x98DE;&#x884C;&#x6A21;&#x5F0F;&#xFF0C;&#x4EE5;&#x4FDD;&#x8BC1;&#x53EA;&#x7528;Wi-Fi&#x4E0A;&#x7F51;&#x3002;<br>&#x67E5;&#x770B;DNS&#x4E2D;&#x662F;&#x4EE5;&#xFF1A;&#x5206;&#x5272;&#x8FD8;&#x662F;.&#x5206;&#x5272;&#x3002;&#x5982;&#x679C;&#x662F;&#x201C;:&#x201D;&#x8BF4;&#x660E;&#x8FDE;&#x4E0A;&#x7684;&#x662F;IPv6&#xFF0C;&#x53CD;&#x4E4B;&#x5219;&#x662F;IPv4<br><img src="/2016/06/20/ios-ipv6-network-testing/5.png" alt="iPhone &#x7F51;&#x7EDC;&#x67E5;&#x770B;"></p>
 <h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;"></a>&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;</h3><p><a href="https://developer.apple.com/library/mac/documentation/NetworkingInternetWeb/Conceptual/NetworkingOverview/UnderstandingandPreparingfortheIPv6Transition/UnderstandingandPreparingfortheIPv6Transition.html#//apple_ref/doc/uid/TP40010220-CH213-SW1" target="_blank" rel="external">Supporting IPv6 DNS64/NAT64 Networks</a></p>
 
-  </section>
-
+    
+  </div>
 </article>
-<section class="read-more">
-           
-    
-               
-            <div class="read-more-item">
-                <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2016/10/20/GCD-Simple/" title="GCD 入门">GCD 入门</a></h2>
-                <p class="excerpt">
-                
-                &amp;#x4E32;&amp;#x884C; &amp;amp; &amp;#x5E76;&amp;#x884C;GCD&amp;#x4E2D;dispatch_queue&amp;#x5927;&amp;#x81F4;&amp;#x53EF;&amp;#x4EE5;&amp;#x5206;&amp;#x4E3A;&amp;#x4E09;&amp;#x7C7B;
 
-&amp;#x5168;&amp;#x5C40;&amp;#x7
-                &hellip;
-                </p>
-                <div class="post-list__meta"><time datetime="2016-10-20T04:16:09.000Z" class="post-list__meta--date date">2016-10-20</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/多线程/">多线程</a>
-</span><a class="btn-border-small" href="/2016/10/20/GCD-Simple/">继续阅读</a></div>
-                           
-            </div>
-        
-        
-               
-            <div class="read-more-item">
-                <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2016/03/18/iOS-App-Review/" title="iOS App 加急审核">iOS App 加急审核</a></h2>
-                <p class="excerpt">
-                
-                &amp;#x539F;&amp;#x6587;&amp;#x9996;&amp;#x53D1;&amp;#x7B80;&amp;#x4E66;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;@&amp;#x803F;&amp;#x529F;&amp;#x53D1;&amp;#x7684;&amp;#x535A;&amp;#x5BA2; 
-&amp;#x524D;&amp;#x8A00;&amp;#x5982;&amp;#x
-                &hellip;
-                </p>
-                <div class="post-list__meta"><time datetime="2016-03-18T03:09:30.000Z" class="post-list__meta--date date">2016-03-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/Review/">Review</a>
-</span><a class="btn-border-small" href="/2016/03/18/iOS-App-Review/">继续阅读</a></div>
-                       
-            </div>
-        
-     
-   
-   
+</div>
+
+
   
-</section>
-
-            
-            <footer class="footer">
-    <span class="footer__copyright">
-        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-    </span>
-    <span class="footer__copyright">
-        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
-    </span>
-    <span class="footer__copyright">
-        &copy; 2016 - 本站由 <a href="/">@耿功发</a> 创建,
-        使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">hexo-theme-new-vno</a> 主题,
-        修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
-    </span>
-</footer>
-        </div>
-    </div>
+      <div class="fexo-comments comments-post">
+  	<hr />
+    
 
     
 
-     
-    
 
 
-    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-    
-    </script>
-    
+
+  </div>
+
+  
+
 </body>
 </html>

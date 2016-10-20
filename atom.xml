@@ -4,9 +4,9 @@
   <subtitle>iOS Developer</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://www.genggongfa.com/"/>
   <updated>2016-10-20T04:35:14.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://www.genggongfa.com/</id>
   
   <author>
     <name>耿功发</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>GCD 入门</title>
-    <link href="http://yoursite.com/2016/10/20/GCD-Simple/"/>
-    <id>http://yoursite.com/2016/10/20/GCD-Simple/</id>
+    <link href="http://www.genggongfa.com/2016/10/20/GCD-Simple/"/>
+    <id>http://www.genggongfa.com/2016/10/20/GCD-Simple/</id>
     <published>2016-10-20T04:16:09.000Z</published>
     <updated>2016-10-20T04:35:14.000Z</updated>
     
@@ -60,17 +60,17 @@
     
     </summary>
     
-      <category term="开发进阶" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E8%BF%9B%E9%98%B6/"/>
+      <category term="开发进阶" scheme="http://www.genggongfa.com/categories/%E5%BC%80%E5%8F%91%E8%BF%9B%E9%98%B6/"/>
     
     
-      <category term="多线程" scheme="http://yoursite.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://www.genggongfa.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>iOS应用支持IPv6-only网络</title>
-    <link href="http://yoursite.com/2016/06/20/ios-ipv6-network-testing/"/>
-    <id>http://yoursite.com/2016/06/20/ios-ipv6-network-testing/</id>
+    <link href="http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/"/>
+    <id>http://www.genggongfa.com/2016/06/20/ios-ipv6-network-testing/</id>
     <published>2016-06-20T03:55:30.000Z</published>
     <updated>2016-09-09T09:05:54.000Z</updated>
     
@@ -93,17 +93,17 @@
     
     </summary>
     
-      <category term="APP测试" scheme="http://yoursite.com/categories/APP%E6%B5%8B%E8%AF%95/"/>
+      <category term="APP测试" scheme="http://www.genggongfa.com/categories/APP%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="IPv6" scheme="http://yoursite.com/tags/IPv6/"/>
+      <category term="IPv6" scheme="http://www.genggongfa.com/tags/IPv6/"/>
     
   </entry>
   
   <entry>
     <title>iOS App 加急审核</title>
-    <link href="http://yoursite.com/2016/03/18/iOS-App-Review/"/>
-    <id>http://yoursite.com/2016/03/18/iOS-App-Review/</id>
+    <link href="http://www.genggongfa.com/2016/03/18/iOS-App-Review/"/>
+    <id>http://www.genggongfa.com/2016/03/18/iOS-App-Review/</id>
     <published>2016-03-18T03:09:30.000Z</published>
     <updated>2016-09-09T08:51:08.000Z</updated>
     
@@ -131,17 +131,17 @@
     
     </summary>
     
-      <category term="打包与审核" scheme="http://yoursite.com/categories/%E6%89%93%E5%8C%85%E4%B8%8E%E5%AE%A1%E6%A0%B8/"/>
+      <category term="打包与审核" scheme="http://www.genggongfa.com/categories/%E6%89%93%E5%8C%85%E4%B8%8E%E5%AE%A1%E6%A0%B8/"/>
     
     
-      <category term="Review" scheme="http://yoursite.com/tags/Review/"/>
+      <category term="Review" scheme="http://www.genggongfa.com/tags/Review/"/>
     
   </entry>
   
   <entry>
     <title>iOS使用Jenkins+Xcode+fir 搭建持续集成环境</title>
-    <link href="http://yoursite.com/2016/02/03/Jenkins-Xcode-fir/"/>
-    <id>http://yoursite.com/2016/02/03/Jenkins-Xcode-fir/</id>
+    <link href="http://www.genggongfa.com/2016/02/03/Jenkins-Xcode-fir/"/>
+    <id>http://www.genggongfa.com/2016/02/03/Jenkins-Xcode-fir/</id>
     <published>2016-02-03T03:29:30.000Z</published>
     <updated>2016-09-09T06:37:19.000Z</updated>
     
@@ -225,17 +225,17 @@
     
     </summary>
     
-      <category term="打包与审核" scheme="http://yoursite.com/categories/%E6%89%93%E5%8C%85%E4%B8%8E%E5%AE%A1%E6%A0%B8/"/>
+      <category term="打包与审核" scheme="http://www.genggongfa.com/categories/%E6%89%93%E5%8C%85%E4%B8%8E%E5%AE%A1%E6%A0%B8/"/>
     
     
-      <category term="持续集成" scheme="http://yoursite.com/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+      <category term="持续集成" scheme="http://www.genggongfa.com/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
     
   </entry>
   
   <entry>
     <title>NavigationBar底部分割线隐藏</title>
-    <link href="http://yoursite.com/2015/11/24/NavigationBar-bottom-separator/"/>
-    <id>http://yoursite.com/2015/11/24/NavigationBar-bottom-separator/</id>
+    <link href="http://www.genggongfa.com/2015/11/24/NavigationBar-bottom-separator/"/>
+    <id>http://www.genggongfa.com/2015/11/24/NavigationBar-bottom-separator/</id>
     <published>2015-11-24T15:21:30.000Z</published>
     <updated>2016-09-09T06:39:43.000Z</updated>
     
@@ -254,17 +254,17 @@
     
     </summary>
     
-      <category term="用户界面" scheme="http://yoursite.com/categories/%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2/"/>
+      <category term="用户界面" scheme="http://www.genggongfa.com/categories/%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2/"/>
     
     
-      <category term="NavigationBar" scheme="http://yoursite.com/tags/NavigationBar/"/>
+      <category term="NavigationBar" scheme="http://www.genggongfa.com/tags/NavigationBar/"/>
     
   </entry>
   
   <entry>
     <title>Xcode6升级到Xcode7 适配问题</title>
-    <link href="http://yoursite.com/2015/09/21/Xcode6-update-to-Xcode7/"/>
-    <id>http://yoursite.com/2015/09/21/Xcode6-update-to-Xcode7/</id>
+    <link href="http://www.genggongfa.com/2015/09/21/Xcode6-update-to-Xcode7/"/>
+    <id>http://www.genggongfa.com/2015/09/21/Xcode6-update-to-Xcode7/</id>
     <published>2015-09-21T10:37:30.000Z</published>
     <updated>2016-09-09T06:45:02.000Z</updated>
     
@@ -322,10 +322,10 @@
     
     </summary>
     
-      <category term="适配" scheme="http://yoursite.com/categories/%E9%80%82%E9%85%8D/"/>
+      <category term="适配" scheme="http://www.genggongfa.com/categories/%E9%80%82%E9%85%8D/"/>
     
     
-      <category term="Xcode" scheme="http://yoursite.com/tags/Xcode/"/>
+      <category term="Xcode" scheme="http://www.genggongfa.com/tags/Xcode/"/>
     
   </entry>
   
