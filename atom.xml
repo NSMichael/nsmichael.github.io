@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.genggongfa.com/"/>
-  <updated>2017-03-16T03:38:15.000Z</updated>
+  <updated>2017-03-16T04:02:11.000Z</updated>
   <id>http://www.genggongfa.com/</id>
   
   <author>
@@ -14,6 +14,110 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift-Project-03 SWIFT IAD</title>
+    <link href="http://www.genggongfa.com/2017/03/16/Swift-Project-03/"/>
+    <id>http://www.genggongfa.com/2017/03/16/Swift-Project-03/</id>
+    <published>2017-03-16T03:43:00.000Z</published>
+    <updated>2017-03-16T04:02:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/16/Swift-Project-03/project_03.png" width="420" height="720"><br></div>
+
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4ECE; 2016 &#x5E74; 7 &#x6708; 1 &#x53F7;&#x5F00;&#x59CB;&#xFF0C;Apple &#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x4E86; iAd Network&#x3002;&#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x518D;&#x5199; iAd &#x76F8;&#x5173;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#x3002;&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x628A; Target &#x8BBE;&#x7F6E;&#x4E3A; 9.x &#x7CFB;&#x5217;&#x3002;&#x56E0;&#x4E3A;&#x4ECE; 10.0 &#x5F00;&#x59CB;&#x6240;&#x6709; iAd &#x76F8;&#x5173;&#x7684; API &#x90FD;&#x5DF2;&#x7ECF;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x5E9F;&#x5F03;&#x4E86;&#x3002;&#x8FD8;&#x6709;&#x5C31;&#x662F;&#x5728; Interface Builder &#x91CC;&#x9762;&#x4E5F;&#x627E;&#x4E0D;&#x5230; iAd Banner &#x4E86;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x770B;&#x5230; iAd&#xFF0C;&#x80CC;&#x666F;&#x4F7F;&#x7528;&#x4E86;&#x84DD;&#x8272;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5E95;&#x90E8;&#x7684; Ad &#x5B57;&#x6837;&#xFF0C;&#x8868;&#x793A; iAd &#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#x4E86;&#x3002;</p>
+</blockquote>
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x6DFB;&#x52A0; <code>iAd.framework</code> &#x5230;&#x9879;&#x76EE;&#x4E2D;</li>
+<li>&#x7ED9;&#x5F53;&#x524D; <code>View</code> &#x6DFB;&#x52A0; <code>Subview</code></li>
+<li>&#x4E86;&#x89E3;&#x4E86; <code>CGRect</code></li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/support/iad/" target="_blank" rel="external">iAd</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="http://codewithchris.com/iad-tutorial/" target="_blank" rel="external">iAd Tutorial &#x2013; How To Integrate iAd Banners Into Your App</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-03" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-03</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/16/Swift-Project-03/project_03.png&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x6CE8;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift-Project-02 TAP OR HOLD COUNTER</title>
+    <link href="http://www.genggongfa.com/2017/03/16/Swift-Project-02/"/>
+    <id>http://www.genggongfa.com/2017/03/16/Swift-Project-02/</id>
+    <published>2017-03-16T03:42:28.000Z</published>
+    <updated>2017-03-16T03:57:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/16/Swift-Project-02/project_02.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x76F4;&#x63A5;&#x8C03;&#x7528; <code>UIKit</code> &#x63D0;&#x4F9B;&#x7684; <code>UIGestureRecognizer</code> &#x65B9;&#x6CD5;</li>
+<li>&#x4EE3;&#x7801;&#x7EA7;&#x522B;&#x5173;&#x8054; events</li>
+<li>&#x5B66;&#x4E60;&#x4E86;&#x89E3; <code>Selector</code> &#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;</li>
+<li>&#x5B66;&#x4E60;&#x4E86;&#x89E3; <code>Timer</code> &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/foundation/timer" target="_blank" rel="external">Timer</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uigesturerecognizer" target="_blank" rel="external">UIGestureRecognizer</a><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uitapgesturerecognizer" target="_blank" rel="external">UITapGestureRecognizer</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uilongpressgesturerecognizer" target="_blank" rel="external">UILongPressGestureRecognizer</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="http://stackoverflow.com/questions/34548263/swift-button-tap-and-long-press-gesture" target="_blank" rel="external">Swift Button tap and long press gesture</a></li>
+<li><a href="http://en.swifter.tips/selector/" target="_blank" rel="external">Swift Tips - Selector</a></li>
+<li><a href="https://tommy.net.cn/2016/10/02/swift-project-02-tap-or-hold-counter/" target="_blank" rel="external">Swift NSTimer Tutorial &#x2013; Lets create a Swift Timer (counter) application</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-02" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-02</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/16/Swift-Project-02/project_02.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
   
   <entry>
     <title>Swift-Project-01 TAP COUNTER</title>
