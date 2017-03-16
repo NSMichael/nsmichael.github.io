@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.genggongfa.com/"/>
-  <updated>2016-10-21T09:49:00.000Z</updated>
+  <updated>2017-03-16T03:38:15.000Z</updated>
   <id>http://www.genggongfa.com/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift-Project-01 TAP COUNTER</title>
+    <link href="http://www.genggongfa.com/2017/03/16/Swift-Project-01/"/>
+    <id>http://www.genggongfa.com/2017/03/16/Swift-Project-01/</id>
+    <published>2017-03-16T02:53:26.000Z</published>
+    <updated>2017-03-16T03:38:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/16/Swift-Project-01/project_01.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x4F7F;&#x7528; Interface Builder &#x6765;&#x5EFA;&#x7ACB;&#x6807;&#x7B7E;&#x548C;&#x6309;&#x94AE;</li>
+<li>&#x7F16;&#x5199; Swift function &#x6765;&#x589E;&#x52A0;&#x548C;&#x91CD;&#x7F6E;&#x6570;&#x5B57;</li>
+<li>&#x5728;&#x6807;&#x7B7E;&#x3001;&#x6309;&#x94AE;&#x4E0E;&#x4EE3;&#x7801;&#x4E4B;&#x95F4;&#x5EFA;&#x7ACB;&#x5173;&#x8054;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit" target="_blank" rel="external">UIKit</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="https://www.sitepoint.com/creating-hello-world-app-swift/" target="_blank" rel="external">Creating a &#x2018;Hello World&#x2019; App with Swift</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-01" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-01</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/16/Swift-Project-01/project_01.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
   
   <entry>
     <title>UIView 基础动画</title>
