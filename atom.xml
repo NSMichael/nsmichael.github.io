@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.genggongfa.com/"/>
-  <updated>2017-03-16T04:02:11.000Z</updated>
+  <updated>2017-03-17T04:22:50.000Z</updated>
   <id>http://www.genggongfa.com/</id>
   
   <author>
@@ -14,6 +14,165 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift-Project-06 GETTING CURRENT DATE AND</title>
+    <link href="http://www.genggongfa.com/2017/03/17/Swift-Project-06/"/>
+    <id>http://www.genggongfa.com/2017/03/17/Swift-Project-06/</id>
+    <published>2017-03-17T04:10:33.000Z</published>
+    <updated>2017-03-17T04:22:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/17/Swift-Project-06/project_06.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x5F88;&#x591A;&#x7684;&#x53C2;&#x8003;&#x8D44;&#x6599;&#x90FD;&#x662F;&#x5173;&#x4E8E; NSDate &#x548C; NSDateFormatter &#x7684;&#x4ECB;&#x7ECD;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x4F7F;&#x7528;&#x4E86; Swift 3.0 &#x65B0;&#x7684; <code>Date</code> &#x548C; <code>DateFormatter</code> &#x800C;&#x4E0D;&#x662F;&#x5E26; <code>NS</code> &#x524D;&#x7F00;&#x7684;</li>
+<li>&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x8F93;&#x51FA;</li>
+<li>&#x5237;&#x65B0;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/foundation/date" target="_blank" rel="external">Date</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/dateformatter" target="_blank" rel="external">DateFormatter</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/timezone" target="_blank" rel="external">TimeZone</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/nsdate" target="_blank" rel="external">NSDate</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/nsdateformatter" target="_blank" rel="external">NSDateFormatter</a></li>
+<li><a href="https://github.com/apple/swift-evolution/blob/master/proposals/0086-drop-foundation-ns.md" target="_blank" rel="external">Drop NS Prefix in Swift Foundation</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="http://stackoverflow.com/questions/24070450/how-to-get-the-current-time-as-datetime" target="_blank" rel="external">How to get the current time as datetime</a></li>
+<li><a href="https://gist.github.com/stinger/553bdbd7af26f8c43059f8774cbab077" target="_blank" rel="external">Swift 3: Working with dates</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-06" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-06</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/17/Swift-Project-06/project_06.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift-Project-05 BASIC TABLE VIEW</title>
+    <link href="http://www.genggongfa.com/2017/03/17/Swift-Project-05/"/>
+    <id>http://www.genggongfa.com/2017/03/17/Swift-Project-05/</id>
+    <published>2017-03-17T04:10:22.000Z</published>
+    <updated>2017-03-17T04:18:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/17/Swift-Project-05/project_05.png" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>UITableViewController</li>
+<li>Interface Builder &#x91CC;&#x9762;&#x6DFB;&#x52A0; Table View Controller&#xFF0C;&#x5E76;&#x6574;&#x5408; Navigation</li>
+<li>&#x52A8;&#x6001;&#x8BBE;&#x7F6E; Table View &#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;</li>
+<li>&#x8BBE;&#x7F6E; Table View &#x6309;&#x94AE;</li>
+<li>TableViewCell &#x8BBE;&#x7F6E; Cell &#x4FEE;&#x9970;&#x7B26;&#xFF08;&#x53F3;&#x8FB9;&#x7684;&#x5C0F;&#x7BAD;&#x5934;&#xFF09;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uitableviewcontroller" target="_blank" rel="external">UITableViewController</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uitableviewcell" target="_blank" rel="external">UITableViewCell</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="https://www.ralfebert.de/tutorials/ios-swift-uitableviewcontroller/" target="_blank" rel="external">iOS &amp; Swift Tutorial: UITableViewController</a></li>
+<li><a href="http://stackoverflow.com/questions/7385835/uitableview-edit-done-button" target="_blank" rel="external">UITableView Edit/Done Button</a></li>
+<li><a href="http://stackoverflow.com/questions/6322798/adding-the-little-arrow-to-the-right-side-of-a-cell-in-an-iphone-tableview-cell" target="_blank" rel="external">Adding the little arrow to the right side of a cell in an iPhone TableView Cell</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-05" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-05</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/17/Swift-Project-05/project_05.png&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift-Project-04 TIP CALCULATOR</title>
+    <link href="http://www.genggongfa.com/2017/03/17/Swift-Project-04/"/>
+    <id>http://www.genggongfa.com/2017/03/17/Swift-Project-04/</id>
+    <published>2017-03-17T04:10:05.000Z</published>
+    <updated>2017-03-17T04:15:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/17/Swift-Project-04/project_04.gif" width="420" height="720"><br></div>
+
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x4E86;&#x89E3;&#x4E86; Navigation Bar</li>
+<li>&#x4F7F;&#x7528;&#x4E86; MVC &#x67B6;&#x6784;&#xFF08;&#x5176;&#x5B9E;&#x4E00;&#x76F4;&#x90FD;&#x662F;&#xFF0C;&#x53EA;&#x662F;&#x628A;&#x8BA1;&#x7B97;&#x90E8;&#x5206;&#x72EC;&#x7ACB;&#x4E86;&#x51FA;&#x6765;&#x800C;&#x5DF2;&#xFF09;</li>
+<li>&#x4E86;&#x89E3;&#x952E;&#x76D8; <code>Number Pad</code> &#x548C; <code>Decimal Pad</code> &#x7684;&#x533A;&#x522B;&#xFF08;&#x6709;&#x65E0;&#x5C0F;&#x6570;&#x70B9;&#xFF09;</li>
+<li>&#x7ED9; Keyboard &#x589E;&#x52A0; <code>Done</code> &#x6309;&#x952E;&#xFF08;UIBarButtonItem &#x7EC4;&#x4EF6;&#xFF09;</li>
+<li>&#x683C;&#x5F0F;&#x5316; String</li>
+<li>NSString &#x8F6C;&#x5316;&#x6210; Float &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</li>
+<li>UISlider &#x7EC4;&#x4EF6;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uibarbuttonitem" target="_blank" rel="external">UIBarButtonItem</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uislider" target="_blank" rel="external">UISlider</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="https://www.raywenderlich.com/86477/introducing-ios-design-patterns-in-swift-part-1" target="_blank" rel="external">Introducing iOS Design Patterns in Swift &#x2013; Part 1/2</a></li>
+<li><a href="http://stackoverflow.com/questions/28338981/how-to-add-done-button-to-numpad-in-ios-8-using-swift" target="_blank" rel="external">How to add &#x201C;Done&#x201D; button to Numpad in IOS 8 using Swift?</a></li>
+<li><a href="http://stackoverflow.com/questions/20192303/how-to-add-a-done-button-to-numpad-keyboard-in-ios" target="_blank" rel="external">How to add a &#x2018;Done&#x2019; button to numpad keyboard in iOS</a></li>
+<li><a href="http://stackoverflow.com/questions/29524191/swift-add-dot-in-number-pad-keyboard" target="_blank" rel="external">Swift - Add dot in Number Pad Keyboard</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-04" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-04</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/17/Swift-Project-04/project_04.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
   
   <entry>
     <title>Swift-Project-03 SWIFT IAD</title>

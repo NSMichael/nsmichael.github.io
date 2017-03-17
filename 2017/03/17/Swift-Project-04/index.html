@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Swift-Project-04 TIP CALCULATOR | 耿功发的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Swift," />
+  
+
+  <meta name="description" content="&amp;#x4E3B;&amp;#x8981;&amp;#x5B66;&amp;#x4E60;&amp;#x7684;&amp;#x5185;&amp;#x5BB9;&amp;#xFF1A;
+&amp;#x4E86;&amp;#x89E3;&amp;#x4E86; Navigation Bar
+&amp;#x4F7F;&amp;#x7528;&amp;#x4E86; MVC &amp;#x67B6;&amp;#x6784;&amp;#xFF08;&amp;#x5176;&amp;#x5B9E;&amp;#x4E00;&amp;#x76F4;&amp;#x90FD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift-Project-04 TIP CALCULATOR">
+<meta property="og:url" content="http://www.genggongfa.com/2017/03/17/Swift-Project-04/index.html">
+<meta property="og:site_name" content="耿功发的博客">
+<meta property="og:description" content="&amp;#x4E3B;&amp;#x8981;&amp;#x5B66;&amp;#x4E60;&amp;#x7684;&amp;#x5185;&amp;#x5BB9;&amp;#xFF1A;
+&amp;#x4E86;&amp;#x89E3;&amp;#x4E86; Navigation Bar
+&amp;#x4F7F;&amp;#x7528;&amp;#x4E86; MVC &amp;#x67B6;&amp;#x6784;&amp;#xFF08;&amp;#x5176;&amp;#x5B9E;&amp;#x4E00;&amp;#x76F4;&amp;#x90FD">
+<meta property="og:image" content="http://www.genggongfa.com/2017/03/17/Swift-Project-04/project_04.gif">
+<meta property="og:updated_time" content="2017-03-17T04:15:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift-Project-04 TIP CALCULATOR">
+<meta name="twitter:description" content="&amp;#x4E3B;&amp;#x8981;&amp;#x5B66;&amp;#x4E60;&amp;#x7684;&amp;#x5185;&amp;#x5BB9;&amp;#xFF1A;
+&amp;#x4E86;&amp;#x89E3;&amp;#x4E86; Navigation Bar
+&amp;#x4F7F;&amp;#x7528;&amp;#x4E86; MVC &amp;#x67B6;&amp;#x6784;&amp;#xFF08;&amp;#x5176;&amp;#x5B9E;&amp;#x4E00;&amp;#x76F4;&amp;#x90FD">
+<meta name="twitter:image" content="http://www.genggongfa.com/2017/03/17/Swift-Project-04/project_04.gif">
+
+  
+
+  
+    <link rel="icon" href="/images/avatar.jpg">
+  
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42596364-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+
+</head>
+
+<body>
+  <div class="post-header LEFT">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/archives">
+      <img class="avatar" src="/images/avatar.jpg" alt="">
+    </a>
+    <ul class="list-toolbox"
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#主要学习的内容："><span class="toc-text">主要学习的内容：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开发环境："><span class="toc-text">开发环境：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件："><span class="toc-text">组件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考："><span class="toc-text">参考：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#源代码："><span class="toc-text">源代码：</span></a></li></ol>
+  </div>
+
+
+<a class="back-top" href="#">
+  <i class="icon-angle-up"></i>
+</a>
+
+
+<div class="content-post LEFT">
+   <article id="post-Swift-Project-04" class="article article-type-post" itemscope itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Swift-Project-04 TIP CALCULATOR</h1>
+
+    <div class="article-meta">
+      <span>2017-03-17</span>
+
+      <span> | </span>
+
+      <span class="article-author">耿功发</span>
+
+      <span> | </span>
+
+      
+  <span class="article-category">
+    <a class="article-category-link" href="/categories/Swift/">Swift</a>
+  </span>
+
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <div align="center"><br><img src="/2017/03/17/Swift-Project-04/project_04.gif" width="420" height="720"><br></div>
+
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x4E86;&#x89E3;&#x4E86; Navigation Bar</li>
+<li>&#x4F7F;&#x7528;&#x4E86; MVC &#x67B6;&#x6784;&#xFF08;&#x5176;&#x5B9E;&#x4E00;&#x76F4;&#x90FD;&#x662F;&#xFF0C;&#x53EA;&#x662F;&#x628A;&#x8BA1;&#x7B97;&#x90E8;&#x5206;&#x72EC;&#x7ACB;&#x4E86;&#x51FA;&#x6765;&#x800C;&#x5DF2;&#xFF09;</li>
+<li>&#x4E86;&#x89E3;&#x952E;&#x76D8; <code>Number Pad</code> &#x548C; <code>Decimal Pad</code> &#x7684;&#x533A;&#x522B;&#xFF08;&#x6709;&#x65E0;&#x5C0F;&#x6570;&#x70B9;&#xFF09;</li>
+<li>&#x7ED9; Keyboard &#x589E;&#x52A0; <code>Done</code> &#x6309;&#x952E;&#xFF08;UIBarButtonItem &#x7EC4;&#x4EF6;&#xFF09;</li>
+<li>&#x683C;&#x5F0F;&#x5316; String</li>
+<li>NSString &#x8F6C;&#x5316;&#x6210; Float &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</li>
+<li>UISlider &#x7EC4;&#x4EF6;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uibarbuttonitem" target="_blank" rel="external">UIBarButtonItem</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uislider" target="_blank" rel="external">UISlider</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="https://www.raywenderlich.com/86477/introducing-ios-design-patterns-in-swift-part-1" target="_blank" rel="external">Introducing iOS Design Patterns in Swift &#x2013; Part 1/2</a></li>
+<li><a href="http://stackoverflow.com/questions/28338981/how-to-add-done-button-to-numpad-in-ios-8-using-swift" target="_blank" rel="external">How to add &#x201C;Done&#x201D; button to Numpad in IOS 8 using Swift?</a></li>
+<li><a href="http://stackoverflow.com/questions/20192303/how-to-add-a-done-button-to-numpad-keyboard-in-ios" target="_blank" rel="external">How to add a &#x2018;Done&#x2019; button to numpad keyboard in iOS</a></li>
+<li><a href="http://stackoverflow.com/questions/29524191/swift-add-dot-in-number-pad-keyboard" target="_blank" rel="external">Swift - Add dot in Number Pad Keyboard</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-04" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-04</a></li>
+</ul>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  
+      <div class="fexo-comments comments-post">
+  	<hr />
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+</body>
+</html>
