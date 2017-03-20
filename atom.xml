@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.genggongfa.com/"/>
-  <updated>2017-03-17T04:22:50.000Z</updated>
+  <updated>2017-03-20T07:15:22.000Z</updated>
   <id>http://www.genggongfa.com/</id>
   
   <author>
@@ -14,6 +14,159 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift-Project-09 ADD PHOTO FROM CAMERA ROLL</title>
+    <link href="http://www.genggongfa.com/2017/03/20/Swift-Project-09/"/>
+    <id>http://www.genggongfa.com/2017/03/20/Swift-Project-09/</id>
+    <published>2017-03-20T06:40:52.000Z</published>
+    <updated>2017-03-20T07:15:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/20/Swift-Project-09/project_09.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x4E86;&#x89E3;&#x5B66;&#x4E60; UIImagePickerController/UIImagePickerControllerDelegate</li>
+<li>iOS 10 &#x65B0;&#x7684;&#x9690;&#x79C1;&#x8BBE;&#x5B9A;&#xFF0C;&#x4E0D;&#x63D0;&#x524D;&#x58F0;&#x660E;&#x8981;&#x8BBF;&#x95EE;&#x9690;&#x79C1;&#x6570;&#x636E;&#x7684;&#x8BDD;&#xFF0C;App &#x76F4;&#x63A5; Crash</li>
+<li>Info.plist &#x4E2D;&#x589E;&#x52A0; NSPhotoLibraryUsageDescription &#x58F0;&#x660E;&#x4EE5;&#x4FBF;&#x8BBF;&#x95EE; Photo Library</li>
+<li>&#x5B66;&#x4E60;&#x4E86; NSMutableAttributedString &#x548C; NSAttributedString</li>
+<li>&#x4E86;&#x89E3;&#x4E86;&#x5982;&#x4F55;&#x7B80;&#x5355;&#x5904;&#x7406; UIImage &#x56FE;&#x50CF;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uiimagepickercontroller" target="_blank" rel="external">UIImagePickerController</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uiimagepickercontrollerdelegate" target="_blank" rel="external">UIImagePickerControllerDelegate</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/nsmutableattributedstring" target="_blank" rel="external">NSMutableAttributedString</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/nsattributedstring" target="_blank" rel="external">NSAttributedString</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uiimage" target="_blank" rel="external">UIImage</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="https://www.techotopia.com/index.php/Accessing_the_iOS_8_Camera_and_Photo_Library_in_Swift" target="_blank" rel="external">Accessing the iOS 8 Camera and Photo Library in Swift</a></li>
+<li><a href="https://makeapppie.com/2016/06/28/how-to-use-uiimagepickercontroller-for-a-camera-and-photo-library-in-swift-3-0/" target="_blank" rel="external">HOW TO USE UIIMAGEPICKERCONTROLLER FOR A CAMERA AND PHOTO LIBRARY IN SWIFT 3.0</a></li>
+<li><a href="https://useyourloaf.com/blog/privacy-settings-in-ios-10/" target="_blank" rel="external">Privacy Settings in iOS 10</a></li>
+<li><a href="http://stackoverflow.com/questions/32772007/how-to-add-images-as-text-attachment-in-swift-using-nsattributedstring" target="_blank" rel="external">How to add images as text attachment in Swift using nsattributedstring</a></li>
+<li><a href="http://stackoverflow.com/questions/5249664/iphone-how-can-i-get-the-height-and-width-of-uiimage" target="_blank" rel="external">iphone - how can i get the height and width of uiimage</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-09" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-09</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/20/Swift-Project-09/project_09.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift-Project-08 SWIPE TO DISMISS KEYBOARD</title>
+    <link href="http://www.genggongfa.com/2017/03/20/Swift-Project-08/"/>
+    <id>http://www.genggongfa.com/2017/03/20/Swift-Project-08/</id>
+    <published>2017-03-20T06:40:44.000Z</published>
+    <updated>2017-03-20T06:56:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/20/Swift-Project-08/project_08.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x7EE7;&#x91CD;&#x6E29;&#x4E86;&#x4E00;&#x4E0B; UIBarButtonItem</li>
+<li>&#x5B66;&#x4E60;&#x4E86;&#x89E3;&#x4E86; UISwipeGestureRecognizer &#x7684;&#x7528;&#x6CD5;</li>
+<li>&#x5904;&#x7406; 4 &#x79CD;&#x4E0D;&#x540C;&#x7684; swipe &#x52A8;&#x4F5C;</li>
+<li>&#x8D76;&#x8FDB;&#x4E00;&#x6B65;&#x4E86;&#x89E3; selector &#x7684;&#x7528;&#x6CD5;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uibarbuttonitem" target="_blank" rel="external">UIBarButtonItem</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uiswipegesturerecognizer" target="_blank" rel="external">UISwipeGestureRecognizer</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="http://stackoverflow.com/questions/30042352/dismiss-keyboard-with-swipe-gesture" target="_blank" rel="external">Dismiss keyboard with swipe gesture</a></li>
+<li><a href="http://stackoverflow.com/questions/36958911/dismiss-uitextfield-keyboard-with-swipe" target="_blank" rel="external">Dismiss UITextField Keyboard With Swipe</a></li>
+<li><a href="http://stackoverflow.com/questions/24215117/how-to-recognize-swipe-in-all-4-directions" target="_blank" rel="external">How to recognize swipe in all 4 directions</a></li>
+<li><a href="http://stackoverflow.com/questions/36166248/understanding-swift-2-2-selector-syntax-selector" target="_blank" rel="external">Understanding Swift 2.2 Selector Syntax - #selector()</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-08" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-08</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/20/Swift-Project-08/project_08.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift-Project-07 PASSING DATA TO ANOTHER VIEW</title>
+    <link href="http://www.genggongfa.com/2017/03/20/Swift-Project-07/"/>
+    <id>http://www.genggongfa.com/2017/03/20/Swift-Project-07/</id>
+    <published>2017-03-20T06:40:31.000Z</published>
+    <updated>2017-03-20T06:47:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/20/Swift-Project-07/project_07.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x7EE7;&#x7EED;&#x4E86;&#x89E3;&#x4E86;&#x4E00;&#x4E0B; Navigation Controller &#x548C; UIViewController &#x7684;&#x6574;&#x5408;</li>
+<li>&#x4E86;&#x89E3;&#x4E86; UIBarButtonItem &#x6765;&#x8BBE;&#x7F6E; <code>Done</code> &#x6309;&#x94AE;&#xFF0C;&#x5E76;&#x6307;&#x5B9A; selector &#x6765; pass &#x6570;&#x636E;</li>
+<li>&#x4E86;&#x89E3;&#x4E86; UITextView</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uitextview" target="_blank" rel="external">UITextView</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="https://code.tutsplus.com/tutorials/ios-sdk-passing-data-between-controllers-in-swift--cms-27151" target="_blank" rel="external">Passing Data Between Controllers in Swift</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-07" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-07</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/20/Swift-Project-07/project_07.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
   
   <entry>
     <title>Swift-Project-06 GETTING CURRENT DATE AND</title>
