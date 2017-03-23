@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.genggongfa.com/"/>
-  <updated>2017-03-20T07:15:22.000Z</updated>
+  <updated>2017-03-23T03:02:06.000Z</updated>
   <id>http://www.genggongfa.com/</id>
   
   <author>
@@ -14,6 +14,153 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift-Project-12 ADD NEW ITEM</title>
+    <link href="http://www.genggongfa.com/2017/03/22/Swift-Project-12/"/>
+    <id>http://www.genggongfa.com/2017/03/22/Swift-Project-12/</id>
+    <published>2017-03-22T07:52:42.000Z</published>
+    <updated>2017-03-23T03:02:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/22/Swift-Project-12/project_12.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x8FDB;&#x4E00;&#x6B65;&#x4E86;&#x89E3;&#x4E86; TextView &#x5BF9;&#x4E8E;&#x952E;&#x76D8;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x5305;&#x62EC;&#x5982;&#x4F55;&#x76F4;&#x63A5;&#x6309; &#x201C;Done&#x201D; &#x6765;&#x5B8C;&#x6210;&#x8F93;&#x5165;</li>
+<li>&#x952E;&#x76D8;&#x754C;&#x9762;&#x4E0A; Return &#x53D8;&#x4E3A; Done</li>
+<li>&#x5904;&#x7406;&#x4E86;&#x4E00;&#x4E2A; Xcode 8 / Swift 3 NavigationController PopView &#x7684; warning</li>
+<li>&#x5728;&#x4E4B;&#x524D;&#x5355;&#x5411;&#x63A8;&#x9001;&#x6570;&#x636E;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x4E86;&#x89E3;&#x4E86;&#x5982;&#x4F55;&#x628A;&#x6570;&#x636E;&#x53CD;&#x5411;&#x4F20;&#x56DE;&#x4E0A;&#x4E00;&#x7EA7; Controller&#xFF08;&#x7528; Delegate&#xFF09;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uitableviewcontroller" target="_blank" rel="external">UITableViewController</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uinavigationcontroller" target="_blank" rel="external">UINavigationController</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uitextview" target="_blank" rel="external">UITextView</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="http://stackoverflow.com/questions/987975/how-do-i-give-a-uitextview-focus-programatically" target="_blank" rel="external">How do I give a UITextView focus programatically?</a></li>
+<li><a href="http://stackoverflow.com/questions/31886720/change-return-button-function-to-done-in-swift-in-uitextview" target="_blank" rel="external">Change &#x2018;Return&#x2019; button function to &#x2018;Done&#x2019; in swift in UITextView</a></li>
+<li><a href="http://stackoverflow.com/questions/37843049/xcode-8-swift-3-expression-of-type-uiviewcontroller-is-unused-warning" target="_blank" rel="external">Xcode 8 / Swift 3: &#x201C;Expression of type UIViewController? is unused&#x201D; warning</a></li>
+<li><a href="https://www.hackingwithswift.com/example-code/system/how-to-pass-data-between-two-view-controllers" target="_blank" rel="external">How to pass data between two view controllers</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-12" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-12</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/22/Swift-Project-12/project_12.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift-Project-11 DELETING AND REARRANGING</title>
+    <link href="http://www.genggongfa.com/2017/03/22/Swift-Project-11/"/>
+    <id>http://www.genggongfa.com/2017/03/22/Swift-Project-11/</id>
+    <published>2017-03-22T07:52:37.000Z</published>
+    <updated>2017-03-23T02:53:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/22/Swift-Project-11/project_11.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x8FDB;&#x4E00;&#x6B65;&#x4E86;&#x89E3;&#x4E86; UITableViewDelegate &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</li>
+<li>&#x5220;&#x9664; table row &#x7684;&#x5185;&#x5BB9;</li>
+<li>&#x5220;&#x9664;&#x7684;&#x65F6;&#x5019;&#x663E;&#x793A;&#x52A8;&#x753B;</li>
+<li>&#x5904;&#x7406; Table &#x663E;&#x793A;&#x5185;&#x5BB9;&#x7684;&#x987A;&#x5E8F;&#x8C03;&#x6574;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uitableviewcontroller" target="_blank" rel="external">UITableViewController</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uitableviewdelegate" target="_blank" rel="external">UITableViewDelegate</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="http://stackoverflow.com/questions/9471642/swipe-to-delete-tableview-row" target="_blank" rel="external">Swipe To Delete TableView Row</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-11" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-11</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/22/Swift-Project-11/project_11.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift-Project-10 PULL TO REFRESH TABLE VIEW</title>
+    <link href="http://www.genggongfa.com/2017/03/22/Swift-Project-10/"/>
+    <id>http://www.genggongfa.com/2017/03/22/Swift-Project-10/</id>
+    <published>2017-03-22T07:52:29.000Z</published>
+    <updated>2017-03-23T02:31:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/22/Swift-Project-10/project_10.gif" width="420" height="720"><br></div>
+
+<h4 id="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"><a href="#&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</h4><ul>
+<li>&#x4E86;&#x89E3;&#x4E86; UIRefreshControl &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x662F; TableView &#x7684;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; Storyboard &#x91CC;&#x9762;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x5F00;&#x542F; Refreshing&#xFF0C;&#x5F00;&#x542F;&#x5219;&#x521D;&#x59CB;&#x5316;&#x5B9E;&#x4F8B;&#xFF0C;&#x5426;&#x5219;&#x4E3A; nil</li>
+<li>&#x5B66;&#x4F1A;&#x4E86;&#x4E00;&#x79CD; Swift 3.0 &#x4E2D;&#x7684;&#x5EF6;&#x65F6;&#x65B9;&#x5F0F;</li>
+</ul>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.0</li>
+<li>iOS 10.0</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uirefreshcontrol" target="_blank" rel="external">UIRefreshControl</a></li>
+</ul>
+<h4 id="&#x53C2;&#x8003;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#xFF1A;"></a>&#x53C2;&#x8003;&#xFF1A;</h4><ul>
+<li><a href="https://www.andrewcbancroft.com/2015/03/17/basics-of-pull-to-refresh-for-swift-developers/" target="_blank" rel="external">Basics of Pull to Refresh for Swift Developers</a></li>
+<li><a href="http://stackoverflow.com/questions/30430550/how-to-create-an-empty-array-in-swift" target="_blank" rel="external">How to create an empty array in Swift?</a></li>
+<li><a href="http://stackoverflow.com/questions/38031137/how-to-program-a-delay-in-swift-3" target="_blank" rel="external">How to program a delay in Swift 3</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-10" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/Swift-Project-10</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/22/Swift-Project-10/project_10.gif&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;&amp;#x4E3B;&amp;#x8981;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+  </entry>
   
   <entry>
     <title>Swift-Project-09 ADD PHOTO FROM CAMERA ROLL</title>
