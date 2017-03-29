@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.genggongfa.com/"/>
-  <updated>2017-03-23T03:02:06.000Z</updated>
+  <updated>2017-03-29T10:11:03.000Z</updated>
   <id>http://www.genggongfa.com/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS-Programming-chapter1 A Simple iOS Application</title>
+    <link href="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/"/>
+    <id>http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/</id>
+    <published>2017-03-29T09:27:49.000Z</published>
+    <updated>2017-03-29T10:11:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-1.png" width="420" height="720"><br></div>
+
+<h4 id="&#x9879;&#x76EE;&#x4ECB;&#x7ECD;"><a href="#&#x9879;&#x76EE;&#x4ECB;&#x7ECD;" class="headerlink" title="&#x9879;&#x76EE;&#x4ECB;&#x7ECD;"></a>&#x9879;&#x76EE;&#x4ECB;&#x7ECD;</h4><p>&#x77E5;&#x8BC6;&#x7ADE;&#x8D5B;&#x7B80;&#x6613;&#x7248;APP&#xFF0C;&#x8FD0;&#x884C;Demo&#x663E;&#x793A;&#x9898;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4E0B;&#x4E00;&#x9898;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x9898;&#x76EE;&#x7684;&#x7B54;&#x6848;&#x3002;</p>
+<h4 id="&#x5F00;&#x53D1;&#x521D;&#x63A2;"><a href="#&#x5F00;&#x53D1;&#x521D;&#x63A2;" class="headerlink" title="&#x5F00;&#x53D1;&#x521D;&#x63A2;"></a>&#x5F00;&#x53D1;&#x521D;&#x63A2;</h4><ul>
+<li>(0) &#x8BBE;&#x8BA1;&#x601D;&#x8DEF;<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-3.png" width="773" height="534"><br></div></li>
+<li>(1) &#x65B0;&#x5EFA;&#x9879;&#x76EE;<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-2.png" width="663" height="468"><br></div></li>
+<li>(2) &#x754C;&#x9762;&#x8BBE;&#x8BA1;<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-4.png" width="308" height="568"><br></div></li>
+<li>(3)&#x53CC;&#x51FB; &#x91CD;&#x547D;&#x540D;&#x7EC4;&#x5EFA;&#x663E;&#x793A;&#x540D;&#x79F0;<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-5.png" width="315" height="350"><br></div></li>
+<li>(4) &#x53D8;&#x91CF;&#x58F0;&#x660E;</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import UIKit</div><div class="line">class ViewController: UIViewController {    @IBOutlet var questionLabel: UILabel!    @IBOutlet var answerLabel: UILabel!}</div></pre></td></tr></table></figure>
+<ul>
+<li><p>(5)&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;</p>
+<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-6.png" width="589" height="387"><br></div>
+</li>
+<li><p>(6)&#x5B9A;&#x4E49;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x65B9;&#x6CD5;</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class ViewController: UIViewController {    @IBOutlet var questionLabel: UILabel!    @IBOutlet var answerLabel: UILabel!    @IBAction func showNextQuestion(_ sender: UIButton) {    }    @IBAction func showAnswer(_ sender: UIButton) {    }}</div></pre></td></tr></table></figure>
+<ul>
+<li><p>(7) &#x5EFA;&#x7ACB;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x8FDE;&#x63A5;</p>
+<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-7.png" width="786" height="441"><br></div>
+</li>
+<li><p>(8) &#x6570;&#x636E;&#x6E90;&#x914D;&#x7F6E;&#x3001;&#x6309;&#x94AE;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class ViewController: UIViewController {    @IBOutlet var questionLabel: UILabel!    @IBOutlet var answerLabel: UILabel!    let questions: [String] = [        &quot;What is 7+7?&quot;,        &quot;What is the capital of Vermont?&quot;,        &quot;What is cognac made from?&quot;    ]    let answers: [String] = [        &quot;14&quot;,        &quot;Montpelier&quot;,		  &quot;Grapes&quot; ]    var currentQuestionIndex: Int = 0}</div><div class="line"></div><div class="line">@IBAction func showNextQuestion(_ sender: UIButton) {    currentQuestionIndex += 1    if currentQuestionIndex == questions.count {        currentQuestionIndex = 0    }    let question: String = questions[currentQuestionIndex]    questionLabel.text = question    answerLabel.text = &quot;???&quot;}@IBAction func showAnswer(_ sender: UIButton) {    let answer: String = answers[currentQuestionIndex]    answerLabel.text = answer}</div><div class="line"></div><div class="line">class ViewController: UIViewController {    ...    override func viewDidLoad() {        super.viewDidLoad()        questionLabel.text = questions[currentQuestionIndex]    }}</div></pre></td></tr></table></figure>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.3</li>
+<li>iOS 10.3</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uilabel" target="_blank" rel="external">UILabel</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uibutton" target="_blank" rel="external">UIButton</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/iOS-Programming-Chapter1-Quiz" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/iOS-Programming-Chapter1-Quiz</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-1.png&quot; width=&quot;420&quot; height=&quot;720&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://www.genggongfa.com/tags/Swift/"/>
+    
+      <category term="The Big Nerd Ranch" scheme="http://www.genggongfa.com/tags/The-Big-Nerd-Ranch/"/>
+    
+  </entry>
   
   <entry>
     <title>Swift-Project-12 ADD NEW ITEM</title>

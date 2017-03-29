@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS-Programming-chapter1 A Simple iOS Application | 耿功发的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Swift,The Big Nerd Ranch," />
+  
+
+  <meta name="description" content="&amp;#x9879;&amp;#x76EE;&amp;#x4ECB;&amp;#x7ECD;&amp;#x77E5;&amp;#x8BC6;&amp;#x7ADE;&amp;#x8D5B;&amp;#x7B80;&amp;#x6613;&amp;#x7248;APP&amp;#xFF0C;&amp;#x8FD0;&amp;#x884C;Demo&amp;#x663E;&amp;#x793A;&amp;#x9898;&amp;#x76EE;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x9009;&amp;#x62E9;&amp;#x4E0B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS-Programming-chapter1 A Simple iOS Application">
+<meta property="og:url" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/index.html">
+<meta property="og:site_name" content="耿功发的博客">
+<meta property="og:description" content="&amp;#x9879;&amp;#x76EE;&amp;#x4ECB;&amp;#x7ECD;&amp;#x77E5;&amp;#x8BC6;&amp;#x7ADE;&amp;#x8D5B;&amp;#x7B80;&amp;#x6613;&amp;#x7248;APP&amp;#xFF0C;&amp;#x8FD0;&amp;#x884C;Demo&amp;#x663E;&amp;#x793A;&amp;#x9898;&amp;#x76EE;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x9009;&amp;#x62E9;&amp;#x4E0B">
+<meta property="og:image" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-1.png">
+<meta property="og:image" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-3.png">
+<meta property="og:image" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-2.png">
+<meta property="og:image" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-4.png">
+<meta property="og:image" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-5.png">
+<meta property="og:image" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-6.png">
+<meta property="og:image" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-7.png">
+<meta property="og:updated_time" content="2017-03-29T10:11:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS-Programming-chapter1 A Simple iOS Application">
+<meta name="twitter:description" content="&amp;#x9879;&amp;#x76EE;&amp;#x4ECB;&amp;#x7ECD;&amp;#x77E5;&amp;#x8BC6;&amp;#x7ADE;&amp;#x8D5B;&amp;#x7B80;&amp;#x6613;&amp;#x7248;APP&amp;#xFF0C;&amp;#x8FD0;&amp;#x884C;Demo&amp;#x663E;&amp;#x793A;&amp;#x9898;&amp;#x76EE;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x9009;&amp;#x62E9;&amp;#x4E0B">
+<meta name="twitter:image" content="http://www.genggongfa.com/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-1.png">
+
+  
+
+  
+    <link rel="icon" href="/images/avatar.jpg">
+  
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42596364-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+
+</head>
+
+<body>
+  <div class="post-header LEFT">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/archives">
+      <img class="avatar" src="/images/avatar.jpg" alt="">
+    </a>
+    <ul class="list-toolbox"
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#项目介绍"><span class="toc-text">项目介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开发初探"><span class="toc-text">开发初探</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开发环境："><span class="toc-text">开发环境：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件："><span class="toc-text">组件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#源代码："><span class="toc-text">源代码：</span></a></li></ol>
+  </div>
+
+
+<a class="back-top" href="#">
+  <i class="icon-angle-up"></i>
+</a>
+
+
+<div class="content-post LEFT">
+   <article id="post-iOS-Programming-chapter1" class="article article-type-post" itemscope itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">iOS-Programming-chapter1 A Simple iOS Application</h1>
+
+    <div class="article-meta">
+      <span>2017-03-29</span>
+
+      <span> | </span>
+
+      <span class="article-author">耿功发</span>
+
+      <span> | </span>
+
+      
+  <span class="article-category">
+    <a class="article-category-link" href="/categories/Swift/">Swift</a>
+  </span>
+
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-1.png" width="420" height="720"><br></div>
+
+<h4 id="&#x9879;&#x76EE;&#x4ECB;&#x7ECD;"><a href="#&#x9879;&#x76EE;&#x4ECB;&#x7ECD;" class="headerlink" title="&#x9879;&#x76EE;&#x4ECB;&#x7ECD;"></a>&#x9879;&#x76EE;&#x4ECB;&#x7ECD;</h4><p>&#x77E5;&#x8BC6;&#x7ADE;&#x8D5B;&#x7B80;&#x6613;&#x7248;APP&#xFF0C;&#x8FD0;&#x884C;Demo&#x663E;&#x793A;&#x9898;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4E0B;&#x4E00;&#x9898;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x9898;&#x76EE;&#x7684;&#x7B54;&#x6848;&#x3002;</p>
+<h4 id="&#x5F00;&#x53D1;&#x521D;&#x63A2;"><a href="#&#x5F00;&#x53D1;&#x521D;&#x63A2;" class="headerlink" title="&#x5F00;&#x53D1;&#x521D;&#x63A2;"></a>&#x5F00;&#x53D1;&#x521D;&#x63A2;</h4><ul>
+<li>(0) &#x8BBE;&#x8BA1;&#x601D;&#x8DEF;<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-3.png" width="773" height="534"><br></div></li>
+<li>(1) &#x65B0;&#x5EFA;&#x9879;&#x76EE;<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-2.png" width="663" height="468"><br></div></li>
+<li>(2) &#x754C;&#x9762;&#x8BBE;&#x8BA1;<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-4.png" width="308" height="568"><br></div></li>
+<li>(3)&#x53CC;&#x51FB; &#x91CD;&#x547D;&#x540D;&#x7EC4;&#x5EFA;&#x663E;&#x793A;&#x540D;&#x79F0;<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-5.png" width="315" height="350"><br></div></li>
+<li>(4) &#x53D8;&#x91CF;&#x58F0;&#x660E;</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import UIKit</div><div class="line">class ViewController: UIViewController {    @IBOutlet var questionLabel: UILabel!    @IBOutlet var answerLabel: UILabel!}</div></pre></td></tr></table></figure>
+<ul>
+<li><p>(5)&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;</p>
+<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-6.png" width="589" height="387"><br></div>
+</li>
+<li><p>(6)&#x5B9A;&#x4E49;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x65B9;&#x6CD5;</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class ViewController: UIViewController {    @IBOutlet var questionLabel: UILabel!    @IBOutlet var answerLabel: UILabel!    @IBAction func showNextQuestion(_ sender: UIButton) {    }    @IBAction func showAnswer(_ sender: UIButton) {    }}</div></pre></td></tr></table></figure>
+<ul>
+<li><p>(7) &#x5EFA;&#x7ACB;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x8FDE;&#x63A5;</p>
+<div align="center"><br><img src="/2017/03/29/iOS-Programming-chapter1/ios-programming-chapter1-7.png" width="786" height="441"><br></div>
+</li>
+<li><p>(8) &#x6570;&#x636E;&#x6E90;&#x914D;&#x7F6E;&#x3001;&#x6309;&#x94AE;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class ViewController: UIViewController {    @IBOutlet var questionLabel: UILabel!    @IBOutlet var answerLabel: UILabel!    let questions: [String] = [        &quot;What is 7+7?&quot;,        &quot;What is the capital of Vermont?&quot;,        &quot;What is cognac made from?&quot;    ]    let answers: [String] = [        &quot;14&quot;,        &quot;Montpelier&quot;,		  &quot;Grapes&quot; ]    var currentQuestionIndex: Int = 0}</div><div class="line"></div><div class="line">@IBAction func showNextQuestion(_ sender: UIButton) {    currentQuestionIndex += 1    if currentQuestionIndex == questions.count {        currentQuestionIndex = 0    }    let question: String = questions[currentQuestionIndex]    questionLabel.text = question    answerLabel.text = &quot;???&quot;}@IBAction func showAnswer(_ sender: UIButton) {    let answer: String = answers[currentQuestionIndex]    answerLabel.text = answer}</div><div class="line"></div><div class="line">class ViewController: UIViewController {    ...    override func viewDidLoad() {        super.viewDidLoad()        questionLabel.text = questions[currentQuestionIndex]    }}</div></pre></td></tr></table></figure>
+<h4 id="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</h4><ul>
+<li>macOS 10.12</li>
+<li>Xcode 8.3</li>
+<li>iOS 10.3</li>
+<li>Swift 3.0</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#xFF1A;"><a href="#&#x7EC4;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x7EC4;&#x4EF6;&#xFF1A;"></a>&#x7EC4;&#x4EF6;&#xFF1A;</h4><ul>
+<li><a href="https://developer.apple.com/reference/uikit/uilabel" target="_blank" rel="external">UILabel</a></li>
+<li><a href="https://developer.apple.com/reference/uikit/uibutton" target="_blank" rel="external">UIButton</a></li>
+</ul>
+<h4 id="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</h4><ul>
+<li><a href="https://github.com/NSMichael/SampleCode/tree/master/iOS-Programming-Chapter1-Quiz" target="_blank" rel="external">https://github.com/NSMichael/SampleCode/tree/master/iOS-Programming-Chapter1-Quiz</a></li>
+</ul>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  
+      <div class="fexo-comments comments-post">
+  	<hr />
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+</body>
+</html>
